@@ -1,0 +1,4 @@
+
+core:
+  endpoint: "http://localhost:8000"
+  auth_token: "local-dev"

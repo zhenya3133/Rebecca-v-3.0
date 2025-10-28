@@ -1,0 +1,186 @@
+[2025-10-28T03:30:13.914529] architect.main: started with data hello
+[2025-10-28T03:30:13.918094] architect.main: completed successfully
+[2025-10-28T03:30:13.921989] researcher.main: started with data architect complete
+[2025-10-28T03:30:13.923751] researcher.main: completed successfully
+[2025-10-28T03:30:13.925666] knowledge_curator.main: started with data research complete
+[2025-10-28T03:30:13.927395] knowledge_curator.main: completed successfully
+[2025-10-28T03:30:13.928972] blueprint_generator.main: started with data knowledge curated
+[2025-10-28T03:30:13.931552] blueprint_generator.main: completed successfully
+[2025-10-28T03:30:13.933779] codegen.main: started with data {'modules': ['ingest', 'memory', 'analytics'], 'pipelines': ['collect', 'enrich', 'deploy']}
+[2025-10-28T03:30:13.936321] codegen.main: completed successfully
+[2025-10-28T03:30:13.938545] qa_guardian.main: started with data codegen complete
+[2025-10-28T03:30:13.940888] qa_guardian.main: completed successfully
+[2025-10-28T03:30:13.943069] sec_ops.main: started with data {'tests': ['unit', 'integration', 'security'], 'focus': 'codegen complete'}
+[2025-10-28T03:30:13.945222] sec_ops.main: completed successfully
+[2025-10-28T03:30:13.949242] deployment_ops.main: started with data security review complete
+[2025-10-28T03:30:13.953255] deployment_ops.main: completed successfully
+[2025-10-28T03:30:13.957760] ops_commander.main: started with data {'environments': ['dev', 'staging', 'prod'], 'strategy': 'blue-green', 'inputs': 'security review complete'}
+[2025-10-28T03:30:13.960317] ops_commander.main: completed successfully
+[2025-10-28T03:30:13.962589] feedback.main: started with data {'cadence': 'bi-weekly', 'tasks': ['research_scan', 'memory_sync']}
+[2025-10-28T03:30:13.965219] feedback.main: completed successfully
+[2025-10-28T03:30:13.967658] integration.main: started with data feedback saved
+[2025-10-28T03:30:13.970002] integration.main: completed successfully
+[2025-10-28T03:30:13.984401] memory_manager.main: started with data logger complete
+[2025-10-28T03:30:13.986836] memory_manager.main: completed successfully
+[2025-10-28T03:30:13.989098] scheduler.main: started with data memory_manager active
+[2025-10-28T03:30:13.991315] scheduler.main: completed successfully
+[2025-10-28T03:30:13.993597] security.main: started with data scheduler run
+[2025-10-28T03:30:13.996146] security.main: completed successfully
+[2025-10-28T03:30:13.998671] ui_ux.main: started with data security audit
+[2025-10-28T03:30:14.001170] ui_ux.main: completed successfully
+[2025-10-28T03:30:24.874325] architect.main: started with data hello
+[2025-10-28T03:30:24.877078] architect.main: completed successfully
+[2025-10-28T03:30:24.879695] researcher.main: started with data architect complete
+[2025-10-28T03:30:24.882043] researcher.main: completed successfully
+[2025-10-28T03:30:24.884915] knowledge_curator.main: started with data research complete
+[2025-10-28T03:30:24.888634] knowledge_curator.main: completed successfully
+[2025-10-28T03:30:24.891326] blueprint_generator.main: started with data knowledge curated
+[2025-10-28T03:30:24.894402] blueprint_generator.main: completed successfully
+[2025-10-28T03:30:24.899301] codegen.main: started with data {'modules': ['ingest', 'memory', 'analytics'], 'pipelines': ['collect', 'enrich', 'deploy']}
+[2025-10-28T03:30:24.902612] codegen.main: completed successfully
+[2025-10-28T03:30:24.905776] qa_guardian.main: started with data codegen complete
+[2025-10-28T03:30:24.908513] qa_guardian.main: completed successfully
+[2025-10-28T03:30:24.912613] sec_ops.main: started with data {'tests': ['unit', 'integration', 'security'], 'focus': 'codegen complete'}
+[2025-10-28T03:30:24.915693] sec_ops.main: completed successfully
+[2025-10-28T03:30:24.917920] deployment_ops.main: started with data security review complete
+[2025-10-28T03:30:24.920560] deployment_ops.main: completed successfully
+[2025-10-28T03:30:24.922699] ops_commander.main: started with data {'environments': ['dev', 'staging', 'prod'], 'strategy': 'blue-green', 'inputs': 'security review complete'}
+[2025-10-28T03:30:24.926027] ops_commander.main: completed successfully
+[2025-10-28T03:30:24.928675] feedback.main: started with data {'cadence': 'bi-weekly', 'tasks': ['research_scan', 'memory_sync']}
+[2025-10-28T03:30:24.933017] feedback.main: completed successfully
+[2025-10-28T03:30:24.934828] integration.main: started with data feedback saved
+[2025-10-28T03:30:24.936662] integration.main: completed successfully
+[2025-10-28T03:30:24.944023] memory_manager.main: started with data logger complete
+[2025-10-28T03:30:24.945483] memory_manager.main: completed successfully
+[2025-10-28T03:30:24.948164] scheduler.main: started with data memory_manager active
+[2025-10-28T03:30:24.950785] scheduler.main: completed successfully
+[2025-10-28T03:30:24.953621] security.main: started with data scheduler run
+[2025-10-28T03:30:24.956939] security.main: completed successfully
+[2025-10-28T03:30:24.959486] ui_ux.main: started with data security audit
+[2025-10-28T03:30:24.962207] ui_ux.main: completed successfully
+[2025-10-28T03:33:34.705787] architect.main: started with data test query
+[2025-10-28T03:33:34.708106] architect.main: completed successfully
+[2025-10-28T03:33:34.710234] researcher.main: started with data architect complete
+[2025-10-28T03:33:34.712259] researcher.main: completed successfully
+[2025-10-28T03:33:34.715142] knowledge_curator.main: started with data research complete
+[2025-10-28T03:33:34.717235] knowledge_curator.main: completed successfully
+[2025-10-28T03:33:34.719584] blueprint_generator.main: started with data knowledge curated
+[2025-10-28T03:33:34.721838] blueprint_generator.main: completed successfully
+[2025-10-28T03:33:34.724006] codegen.main: started with data {'modules': ['ingest', 'memory', 'analytics'], 'pipelines': ['collect', 'enrich', 'deploy']}
+[2025-10-28T03:33:34.726164] codegen.main: completed successfully
+[2025-10-28T03:33:34.728499] qa_guardian.main: started with data codegen complete
+[2025-10-28T03:33:34.730712] qa_guardian.main: completed successfully
+[2025-10-28T03:33:34.732849] sec_ops.main: started with data {'tests': ['unit', 'integration', 'security'], 'focus': 'codegen complete'}
+[2025-10-28T03:33:34.734963] sec_ops.main: completed successfully
+[2025-10-28T03:33:34.737052] deployment_ops.main: started with data security review complete
+[2025-10-28T03:33:34.739319] deployment_ops.main: completed successfully
+[2025-10-28T03:33:34.741586] ops_commander.main: started with data {'environments': ['dev', 'staging', 'prod'], 'strategy': 'blue-green', 'inputs': 'security review complete'}
+[2025-10-28T03:33:34.743885] ops_commander.main: completed successfully
+[2025-10-28T03:33:34.745880] feedback.main: started with data {'cadence': 'bi-weekly', 'tasks': ['research_scan', 'memory_sync']}
+[2025-10-28T03:33:34.748099] feedback.main: completed successfully
+[2025-10-28T03:33:34.750193] integration.main: started with data feedback saved
+[2025-10-28T03:33:34.752277] integration.main: completed successfully
+[2025-10-28T03:33:34.759508] memory_manager.main: started with data logger complete
+[2025-10-28T03:33:34.761662] memory_manager.main: completed successfully
+[2025-10-28T03:33:34.764109] scheduler.main: started with data memory_manager active
+[2025-10-28T03:33:34.766254] scheduler.main: completed successfully
+[2025-10-28T03:33:34.772863] security.main: started with data scheduler run
+[2025-10-28T03:33:34.774976] security.main: completed successfully
+[2025-10-28T03:33:34.777124] ui_ux.main: started with data security audit
+[2025-10-28T03:33:34.779358] ui_ux.main: completed successfully
+[2025-10-28T03:33:34.792162] architect.main: started with data 
+[2025-10-28T03:33:34.794485] architect.main: completed successfully
+[2025-10-28T03:33:34.796546] researcher.main: started with data architect complete
+[2025-10-28T03:33:34.799040] researcher.main: completed successfully
+[2025-10-28T03:33:34.801152] knowledge_curator.main: started with data research complete
+[2025-10-28T03:33:34.803252] knowledge_curator.main: completed successfully
+[2025-10-28T03:33:34.805334] blueprint_generator.main: started with data knowledge curated
+[2025-10-28T03:33:34.807467] blueprint_generator.main: completed successfully
+[2025-10-28T03:33:34.808890] codegen.main: started with data {'modules': ['ingest', 'memory', 'analytics'], 'pipelines': ['collect', 'enrich', 'deploy']}
+[2025-10-28T03:33:34.810275] codegen.main: completed successfully
+[2025-10-28T03:33:34.811710] qa_guardian.main: started with data codegen complete
+[2025-10-28T03:33:34.813062] qa_guardian.main: completed successfully
+[2025-10-28T03:33:34.814492] sec_ops.main: started with data {'tests': ['unit', 'integration', 'security'], 'focus': 'codegen complete'}
+[2025-10-28T03:33:34.816847] sec_ops.main: completed successfully
+[2025-10-28T03:33:34.818895] deployment_ops.main: started with data security review complete
+[2025-10-28T03:33:34.821160] deployment_ops.main: completed successfully
+[2025-10-28T03:33:34.823434] ops_commander.main: started with data {'environments': ['dev', 'staging', 'prod'], 'strategy': 'blue-green', 'inputs': 'security review complete'}
+[2025-10-28T03:33:34.826246] ops_commander.main: completed successfully
+[2025-10-28T03:33:34.828280] feedback.main: started with data {'cadence': 'bi-weekly', 'tasks': ['research_scan', 'memory_sync']}
+[2025-10-28T03:33:34.830412] feedback.main: completed successfully
+[2025-10-28T03:33:34.859482] integration.main: started with data feedback saved
+[2025-10-28T03:33:34.861969] integration.main: completed successfully
+[2025-10-28T03:33:34.870068] memory_manager.main: started with data logger complete
+[2025-10-28T03:33:34.872304] memory_manager.main: completed successfully
+[2025-10-28T03:33:34.874616] scheduler.main: started with data memory_manager active
+[2025-10-28T03:33:34.876905] scheduler.main: completed successfully
+[2025-10-28T03:33:34.879393] security.main: started with data scheduler run
+[2025-10-28T03:33:34.882106] security.main: completed successfully
+[2025-10-28T03:33:34.884684] ui_ux.main: started with data security audit
+[2025-10-28T03:33:34.887524] ui_ux.main: completed successfully
+[2025-10-28T03:33:34.898461] architect.main: started with data 
+[2025-10-28T03:33:34.901181] architect.main: completed successfully
+[2025-10-28T03:33:34.903409] researcher.main: started with data architect complete
+[2025-10-28T03:33:34.907243] researcher.main: completed successfully
+[2025-10-28T03:33:34.909506] knowledge_curator.main: started with data research complete
+[2025-10-28T03:33:34.912245] knowledge_curator.main: completed successfully
+[2025-10-28T03:33:34.915076] blueprint_generator.main: started with data knowledge curated
+[2025-10-28T03:33:34.917383] blueprint_generator.main: completed successfully
+[2025-10-28T03:33:34.919645] codegen.main: started with data {'modules': ['ingest', 'memory', 'analytics'], 'pipelines': ['collect', 'enrich', 'deploy']}
+[2025-10-28T03:33:34.922275] codegen.main: completed successfully
+[2025-10-28T03:33:34.924716] qa_guardian.main: started with data codegen complete
+[2025-10-28T03:33:34.926983] qa_guardian.main: completed successfully
+[2025-10-28T03:33:34.929573] sec_ops.main: started with data {'tests': ['unit', 'integration', 'security'], 'focus': 'codegen complete'}
+[2025-10-28T03:33:34.937143] sec_ops.main: completed successfully
+[2025-10-28T03:33:34.939533] deployment_ops.main: started with data security review complete
+[2025-10-28T03:33:34.941910] deployment_ops.main: completed successfully
+[2025-10-28T03:33:34.944385] ops_commander.main: started with data {'environments': ['dev', 'staging', 'prod'], 'strategy': 'blue-green', 'inputs': 'security review complete'}
+[2025-10-28T03:33:34.946617] ops_commander.main: completed successfully
+[2025-10-28T03:33:34.949005] feedback.main: started with data {'cadence': 'bi-weekly', 'tasks': ['research_scan', 'memory_sync']}
+[2025-10-28T03:33:34.951838] feedback.main: completed successfully
+[2025-10-28T03:33:34.954166] integration.main: started with data feedback saved
+[2025-10-28T03:33:34.957339] integration.main: completed successfully
+[2025-10-28T03:33:34.966123] memory_manager.main: started with data logger complete
+[2025-10-28T03:33:34.968668] memory_manager.main: completed successfully
+[2025-10-28T03:33:34.971336] scheduler.main: started with data memory_manager active
+[2025-10-28T03:33:34.972801] scheduler.main: completed successfully
+[2025-10-28T03:33:34.974310] security.main: started with data scheduler run
+[2025-10-28T03:33:34.975949] security.main: completed successfully
+[2025-10-28T03:33:34.977405] ui_ux.main: started with data security audit
+[2025-10-28T03:33:34.979198] ui_ux.main: completed successfully
+Executing step: input_processing
+Step input_processing completed successfully
+Executing step: context_preparation
+Step context_preparation completed successfully
+Executing step: architect_step
+Step architect_step completed successfully
+Executing step: rebecca_metagent_step
+Step rebecca_metagent_step completed successfully
+Executing step: task_planning
+Starting task planning step
+Task planning step completed
+Step task_planning completed successfully
+Executing step: agent_orchestration
+Starting agent orchestration step
+Step agent_orchestration completed successfully
+Executing step: result_compilation
+Starting result compilation step
+Executing step: input_processing
+Step input_processing completed successfully
+Executing step: context_preparation
+Step context_preparation completed successfully
+Executing step: architect_step
+Step architect_step completed successfully
+Executing step: rebecca_metagent_step
+Step rebecca_metagent_step completed successfully
+Executing step: task_planning
+Starting task planning step
+Task planning step completed
+Step task_planning completed successfully
+Executing step: agent_orchestration
+Starting agent orchestration step
+Step agent_orchestration completed successfully
+Executing step: result_compilation
+Starting result compilation step
+Result compilation step completed
+Step result_compilation completed successfully

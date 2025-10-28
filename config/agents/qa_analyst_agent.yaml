@@ -1,0 +1,306 @@
+# Конфигурация QA Analyst агента для Rebecca-Platform
+# Специализируется на тестировании, контроле качества и валидации
+
+qa_analyst_agent:
+  # Основная информация
+  agent_type: qa_analyst
+  name: "Quality Assurance Analyst Agent"
+  version: "1.0.0"
+  description: "Специализированный агент для тестирования ПО, контроля качества и валидации функциональности"
+  
+  # Поддерживаемые типы задач
+  supported_tasks:
+    - "unit_testing"
+    - "integration_testing"
+    - "e2e_testing"
+    - "performance_testing"
+    - "security_testing"
+    - "usability_testing"
+    - "api_testing"
+    - "load_testing"
+    - "regression_testing"
+    - "test_automation"
+    - "test_documentation"
+    - "bug_reporting"
+    - "test_planning"
+    - "coverage_analysis"
+    - "quality_metrics"
+    - "compliance_checking"
+  
+  # Поддерживаемые языки и технологии
+  supported_languages:
+    - "python"
+    - "javascript"
+    - "typescript"
+    - "java"
+    - "csharp"
+    - "ruby"
+    - "go"
+  
+  # Тестирование фреймворки
+  specializations:
+    # Unit Testing
+    - "pytest"
+    - "unittest"
+    - "Jest"
+    - "Vitest"
+    - "JUnit"
+    - "TestNG"
+    - "NUnit"
+    - "xUnit"
+    - "rspec"
+    - "Go test"
+    
+    # Integration & E2E Testing
+    - "Selenium"
+    - "Cypress"
+    - "Playwright"
+    - "Puppeteer"
+    - "WebDriverIO"
+    - "TestCafe"
+    - "Protractor"
+    
+    # API Testing
+    - "Postman"
+    - "Newman"
+    - "Rest Assured"
+    - "HTTPie"
+    - "SuperTest"
+    - "SoapUI"
+    
+    # Performance Testing
+    - "JMeter"
+    - "k6"
+    - "Locust"
+    - " Artillery"
+    - "Gatling"
+    
+    # Security Testing
+    - "OWASP ZAP"
+    - "Burp Suite"
+    - "OWASP Dependency Check"
+    - "Bandit"
+    - "ESLint security"
+  
+  # Платформы и браузеры
+  integrations:
+    - "Chrome"
+    - "Firefox"
+    - "Safari"
+    - "Edge"
+    - "Mobile browsers"
+    - "Docker containers"
+    - "CI/CD pipelines"
+    - "Jenkins"
+    - "GitHub Actions"
+    - "GitLab CI"
+    - "Azure DevOps"
+    - "Slack notifications"
+  
+  # Требования к ресурсам
+  resource_requirements:
+    memory: "2GB"
+    cpu: "2 cores"
+    disk: "5GB"
+    network: "stable internet"
+  
+  # Зависимости
+  dependencies:
+    - "python3.11+"
+    - "node.js"
+    - "git"
+    - "docker"
+    - "chrome"
+    - "firefox"
+    - "chromedriver"
+    - "geckodriver"
+  
+  # Переменные окружения
+  environment_vars:
+    REBEECA_QA_TEST_ENV: "staging"
+    REBEECA_BROWSER_HEADLESS: "true"
+    REBEECA_TEST_TIMEOUT: "30"
+    REBEECA_MAX_RETRIES: "3"
+    REBEECA_COVERAGE_THRESHOLD: "80"
+    REBEECA_PARALLEL_WORKERS: "4"
+  
+  # Профили производительности
+  performance_profile:
+    avg_task_duration: 180  # 3 минуты
+    complexity_factor: 1.3
+    memory_efficiency: 0.75
+    cpu_utilization: 0.7
+  
+  # Лимиты выполнения
+  limits:
+    max_concurrent_tasks: 3
+    max_execution_time: 3600  # 1 час
+    max_memory_usage: "4GB"
+    max_file_operations: 1000
+    max_parallel_browsers: 4
+  
+  # Конфигурация тестирования
+  testing:
+    default_timeout: 30000
+    retry_attempts: 3
+    screenshot_on_failure: true
+    video_recording: false
+    network_monitoring: true
+    console_logging: true
+    
+  # Покрытие кода
+  code_coverage:
+    enabled: true
+    minimum_threshold: 80
+    exclusion_patterns:
+      - "*/tests/*"
+      - "*/test/*"
+      - "*/migrations/*"
+      - "*/__pycache__/*"
+    reporting_formats:
+      - "html"
+      - "xml"
+      - "json"
+  
+  # API тестирование
+  api_testing:
+    base_url: "${API_BASE_URL:-http://localhost:8000}"
+    default_headers:
+      "Content-Type": "application/json"
+    timeout: 30000
+    retry_attempts: 3
+    schema_validation: true
+    authentication:
+      enabled: true
+      methods: ["bearer", "api_key", "basic"]
+  
+  # Performance тестирование
+  performance:
+    load_test_duration: 300  # 5 минут
+    virtual_users: 10
+    ramp_up_time: 60  # 1 минута
+    response_time_threshold: 2000  # 2 секунды
+    error_rate_threshold: 1.0  # 1%
+  
+  # Безопасность
+  security:
+    vulnerability_scanning: true
+    dependency_checking: true
+    sql_injection_testing: true
+    xss_testing: true
+    csrf_testing: true
+    authentication_bypass_testing: true
+  
+  # Специальные возможности
+  capabilities:
+    can_generate_test_plans: true
+    can_create_test_cases: true
+    can_automate_ui_tests: true
+    can_perform_api_contract_testing: true
+    can_monitor_performance_metrics: true
+    can_generate_test_reports: true
+    can_validate_accessibility: true
+    can_test_mobile_responsiveness: true
+  
+  # Примеры типовых задач
+  example_tasks:
+    - description: "Создать unit тесты для функций авторизации"
+      complexity: "medium"
+      estimated_time: 900
+    - description: "Настроить E2E тестирование основного пользовательского флоу"
+      complexity: "high"
+      estimated_time: 1800
+    - description: "Провести нагрузочное тестирование API эндпоинтов"
+      complexity: "medium"
+      estimated_time: 1200
+    - description: "Выполнить security audit приложения"
+      complexity: "high"
+      estimated_time: 3600
+  
+  # Метрики качества
+  quality_metrics:
+    test_success_rate: 95
+    bug_detection_rate: 80
+    code_coverage_minimum: 80
+    performance_benchmark: "p95 < 2s"
+    security_score_minimum: 90
+    accessibility_score_minimum: 90
+  
+  # Отчетность
+  reporting:
+    formats:
+      - "html"
+      - "pdf"
+      - "json"
+      - "junit"
+    include_screenshots: true
+    include_logs: true
+    include_performance_data: true
+    send_notifications: true
+  
+  # Интеграция с CI/CD
+  cicd:
+    supported_platforms:
+      - "GitHub Actions"
+      - "GitLab CI"
+      - "Jenkins"
+      - "Azure DevOps"
+    required_checks:
+      - "unit_tests_passed"
+      - "coverage_threshold_met"
+      - "security_scan_passed"
+    fail_on_critical_bugs: true
+  
+  # Уведомления и алерты
+  notifications:
+    on_test_failure: true
+    on_coverage_drop: true
+    on_performance_degradation: true
+    on_security_issues: true
+    channels: ["console", "file", "slack"]
+  
+  # Логирование
+  logging:
+    format: "json"
+    level: "INFO"
+    retention_days: 30
+    max_file_size: "100MB"
+    rotation: "weekly"
+    include_screenshots: true
+  
+  # Конфигурация браузеров
+  browsers:
+    default_browser: "chrome"
+    headless_mode: true
+    viewport_size: "1920x1080"
+    timeout: 30000
+    capabilities:
+      chrome:
+        args:
+          - "--no-sandbox"
+          - "--disable-dev-shm-usage"
+          - "--disable-gpu"
+      firefox:
+        args:
+          - "--headless"
+  
+  # Настройки мобильного тестирования
+  mobile_testing:
+    responsive_testing: true
+    device_emulation:
+      - "iPhone 12"
+      - "Samsung Galaxy S21"
+      - "iPad"
+    viewport_breakpoints:
+      - "320px"
+      - "768px"
+      - "1024px"
+      - "1440px"
+  
+  # Accessibility тестирование
+  accessibility:
+    standard: "WCAG 2.1 AA"
+    automated_checking: true
+    color_contrast_checking: true
+    keyboard_navigation_checking: true
+    screen_reader_compatibility: true

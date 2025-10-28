@@ -1,0 +1,390 @@
+# Пример конфигурации Rebecca для крупного предприятия
+# Сценарий: Большая компания с высокими требованиями к качеству и масштабируемости
+
+# Настройки мета-агента для предприятия
+meta_agent:
+  name: "Rebecca-Enterprise"
+  version: "2.0.0"
+  
+  # Расширенные таймауты для сложных задач
+  timeouts:
+    task_planning: 60  # секунд
+    agent_delegation: 30
+    result_aggregation: 45
+    total_workflow: 1800  # 30 минут максимум
+  
+  # Агрессивные повторные попытки
+  retries:
+    max_attempts: 5
+    backoff_factor: 2.0
+    base_delay: 2.0
+    max_delay: 300.0
+  
+  # Высокие лимиты для масштабируемости
+  limits:
+    max_concurrent_agents: 15  # Большое количество агентов
+    max_tasks_per_workflow: 100
+    max_memory_usage_mb: 4096  # 4GB памяти
+    max_depth_hierarchy: 5  # Глубокая иерархия
+
+# Конфигурация специализированных агентов для предприятия
+specialized_agents:
+  # Backend агент - полный функционал
+  backend:
+    name: "EnterpriseBackendAgent"
+    capabilities:
+      - api_development
+      - database_design
+      - server_optimization
+      - security_implementation
+      - microservices_architecture
+      - legacy_system_integration
+    
+    config:
+      max_execution_time: 600  # 10 минут
+      memory_limit_mb: 1024
+      allowed_languages: ["python", "javascript", "go", "java", "csharp"]
+      frameworks: ["fastapi", "django", "express", "spring", "dotnet"]
+      
+    # Продвинутые API настройки
+    api_settings:
+      timeout: 60
+      max_concurrent_requests: 50
+      rate_limit: 10000
+      load_balancing: true
+      circuit_breaker: true
+      
+    # Корпоративные настройки базы данных
+    database_settings:
+      connection_pool_size: 50
+      query_timeout: 30
+      max_retries: 5
+      connection_timeout: 10
+      read_replicas: true
+  
+  # Frontend агент - корпоративный уровень
+  frontend:
+    name: "EnterpriseFrontendAgent"
+    capabilities:
+      - ui_design
+      - component_development
+      - user_experience
+      - responsive_design
+      - accessibility_compliance
+      - internationalization
+      - performance_optimization
+    
+    config:
+      max_execution_time: 300
+      memory_limit_mb: 512
+      allowed_technologies: ["react", "vue", "angular"]
+      build_tools: ["vite", "webpack", "rollup"]
+      
+    # Корпоративные UI настройки
+    ui_settings:
+      design_system: "enterprise_design"
+      responsive_breakpoints:
+        mobile: 576
+        tablet: 768
+        desktop: 992
+        large: 1200
+        xlarge: 1400
+      accessibility_level: "wcag_2_1_aaa"  # Максимальный уровень
+      internationalization: true
+  
+  # ML агент - корпоративный уровень
+  ml:
+    name: "EnterpriseMLAgent"
+    capabilities:
+      - model_training
+      - data_analysis
+      - predictive_modeling
+      - nlp_processing
+      - computer_vision
+      - federated_learning
+      - model_governance
+    
+    config:
+      max_execution_time: 1800  # 30 минут
+      memory_limit_mb: 8192  # 8GB памяти
+      allowed_frameworks: ["pytorch", "tensorflow", "scikit-learn", "huggingface"]
+      gpu_support: true
+      multi_node_support: true
+      
+    # Продвинутые ML настройки
+    training_settings:
+      max_epochs: 1000
+      early_stopping_patience: 20
+      validation_split: 0.2
+      batch_size: 128
+      distributed_training: true
+      experiment_tracking: true
+    
+    # Корпоративные настройки inference
+    inference_settings:
+      batch_processing: true
+      max_inference_time: 10
+      confidence_threshold: 0.95
+      model_versioning: true
+      a_b_testing: true
+  
+  # QA агент - комплексное тестирование
+  qa:
+    name: "EnterpriseQAAgent"
+    capabilities:
+      - automated_testing
+      - manual_testing
+      - performance_testing
+      - security_testing
+      - code_review
+      - compliance_testing
+      - accessibility_testing
+    
+    config:
+      max_execution_time: 600
+      memory_limit_mb: 512
+      test_frameworks: ["pytest", "jest", "mocha", "selenium", "cypress"]
+      
+    # Комплексные настройки тестирования
+    testing_settings:
+      coverage_threshold: 95  # Высокий порог покрытия
+      max_test_duration: 60
+      parallel_execution: true
+      report_format: "html"
+      performance_benchmarks: true
+      security_scan: true
+      accessibility_scan: true
+      compliance_checks: true
+  
+  # DevOps агент - корпоративная инфраструктура
+  devops:
+    name: "EnterpriseDevOpsAgent"
+    capabilities:
+      - ci_cd_pipeline
+      - infrastructure_management
+      - monitoring_setup
+      - deployment_orchestration
+      - container_management
+      - kubernetes_orchestration
+      - security_compliance
+      - disaster_recovery
+    
+    config:
+      max_execution_time: 900  # 15 минут
+      memory_limit_mb: 1024
+      cloud_platforms: ["aws", "azure", "gcp"]
+      container_tools: ["docker", "kubernetes", "helm", "istio"]
+      
+    # Корпоративные настройки деплоя
+    deployment_settings:
+      environment: "production"
+      rollback_enabled: true
+      health_check_enabled: true
+      blue_green_deployment: true
+      canary_deployment: true
+      monitoring_integration: true
+      notification_channels: ["slack", "email", "teams", "pagerduty"]
+    
+    # Продвинутый мониторинг
+    monitoring_settings:
+      metrics_interval: 30
+      alert_thresholds:
+        cpu: 75
+        memory: 80
+        disk: 85
+        error_rate: 5
+      log_aggregation: true
+      distributed_tracing: true
+      apm_integration: true
+
+# Настройки памяти для предприятия
+memory:
+  layers_used:
+    - "working_memory"
+    - "episodic_memory"
+    - "semantic_memory"
+    - "procedural_memory"
+    - "long_term_memory"
+  
+  # Продвинутые настройки кэша
+  cache_settings:
+    enabled: true
+    max_size_mb: 2048  # 2GB кэша
+    ttl_seconds: 14400  # 4 часа
+    compression: true
+    
+    eviction_policies:
+      - "lru"
+      - "lfu"  # Least Frequently Used
+      - "ttl"
+    
+    # Кластеризация кэша
+    clustering:
+      enabled: true
+      nodes: 3
+      replication_factor: 2
+  
+  # Продвинутые настройки контекста
+  context_settings:
+    max_context_length: 16384  # Большой контекст
+    summarization_enabled: true
+    context_window_overlap: 0.1
+    semantic_clustering: true
+
+# Продвинутая коммуникация
+communication:
+  protocol: "async"
+  message_format: "json"
+  
+  # Корпоративные настройки очереди
+  queue_settings:
+    max_queue_size: 10000
+    message_ttl: 3600
+    dead_letter_queue: true
+    priority_queue: true
+    message_ordering: true
+  
+  # Мониторинг коммуникации
+  monitoring:
+    enabled: true
+    log_level: "INFO"
+    metrics_collection: true
+    distributed_tracing: true
+
+# Корпоративное логирование
+logging:
+  level: "INFO"
+  format: "json"
+  output: ["console", "file", "elasticsearch"]
+  
+  file_settings:
+    path: "logs/enterprise/rebecca.log"
+    max_size_mb: 500
+    backup_count: 10
+    rotation: "time"
+    compression: true
+  
+  # Корпоративные настройки метрик
+  metrics:
+    enabled: true
+    collection_interval: 30
+    export_format: "prometheus"
+    aggregation: true
+    retention: "90d"
+
+# Продвинутая безопасность
+security:
+  authentication:
+    required: true
+    method: "oauth2"
+    token_expiry: 1800
+    refresh_token: true
+    mfa_required: true
+  
+  encryption:
+    enabled: true
+    algorithm: "aes-256"
+    key_rotation: true
+    certificate_management: true
+  
+  # Корпоративный контроль доступа
+  access_control:
+    role_based: true
+    attribute_based: true
+    policy_engine: true
+    permissions:
+      - "read"
+      - "write"
+      - "execute"
+      - "admin"
+      - "audit"
+      - "compliance"
+
+# Корпоративные интеграции
+integrations:
+  # Git интеграция
+  git:
+    enabled: true
+    default_branch: "main"
+    merge_strategy: "squash"
+    code_review_required: true
+    branch_protection: true
+  
+  # CI/CD интеграция
+  cicd:
+    platforms: ["github_actions", "gitlab_ci", "jenkins", "azure_devops"]
+    auto_deploy: false  # Manual approval
+    compliance_checks: true
+    security_scanning: true
+  
+  # Мониторинг интеграция
+  monitoring:
+    tools: ["prometheus", "grafana", "datadog", "new_relic", "dynatrace"]
+    alerting_enabled: true
+    sla_monitoring: true
+  
+  # Корпоративные системы
+  enterprise_systems:
+    - name: "ServiceNow"
+      integration_type: "ticketing"
+    
+    - name: "Jira"
+      integration_type: "project_management"
+    
+    - name: "Confluence"
+      integration_type: "documentation"
+    
+    - name: "Active Directory"
+      integration_type: "authentication"
+    
+    - name: "Splunk"
+      integration_type: "security_logging"
+
+# Экспериментальные функции
+experimental:
+  auto_scaling: true
+  predictive_scheduling: true
+  adaptive_timeout: true
+  intelligent_caching: true
+  federated_learning: true
+
+# Корпоративные настройки по умолчанию
+defaults:
+  agent_timeout: 300
+  max_retries: 3
+  logging_level: "INFO"
+  parallel_execution: true
+  fallback_enabled: true
+  compliance_mode: true
+  audit_logging: true
+
+# Специфичные настройки для предприятия
+enterprise_specific:
+  # Высокая доступность
+  high_availability:
+    redundancy_level: 3
+    failover_time: 30  # секунд
+    disaster_recovery: true
+    backup_frequency: "hourly"
+  
+  # Комплаенс и регулирование
+  compliance:
+    sox_compliance: true
+    gdpr_compliance: true
+    hipaa_compliance: true
+    audit_trail: true
+    data_retention: "7_years"
+  
+  # Производительность и масштабирование
+  performance:
+    throughput_requirement: 10000  # запросов в секунду
+    latency_requirement: 100  # миллисекунд
+    scalability_factor: 10
+    load_testing: true
+  
+  # Интеграция с legacy системами
+  legacy_integration:
+    mainframe_connectivity: true
+    cobol_support: true
+    api_gateway: true
+    message_queues: true

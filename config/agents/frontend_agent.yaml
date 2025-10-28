@@ -1,0 +1,205 @@
+# Конфигурация Frontend агента для Rebecca-Platform
+# Специализируется на разработке пользовательских интерфейсов и клиентской логики
+
+frontend_agent:
+  # Основная информация
+  agent_type: frontend
+  name: "Frontend Development Agent"
+  version: "1.0.0"
+  description: "Специализированный агент для разработки пользовательских интерфейсов, SPA и клиентских приложений"
+  
+  # Поддерживаемые типы задач
+  supported_tasks:
+    - "ui_development"
+    - "component_creation"
+    - "responsive_design"
+    - "state_management"
+    - "routing_implementation"
+    - "api_integration"
+    - "theme_development"
+    - "accessibility_implementation"
+    - "performance_optimization"
+    - "testing_unit"
+    - "testing_e2e"
+    - "test_task"
+  
+  # Поддерживаемые языки и технологии
+  supported_languages:
+    - "javascript"
+    - "typescript"
+    - "jsx"
+    - "tsx"
+    - "css"
+    - "scss"
+    - "html"
+  
+  # Конкретные фреймворки и библиотеки
+  specializations:
+    - "React"
+    - "Vue.js"
+    - "Angular"
+    - "Svelte"
+    - "Next.js"
+    - "Nuxt.js"
+    - "Vite"
+    - "Webpack"
+    - "Parcel"
+    - "Tailwind CSS"
+    - "Bootstrap"
+    - "Material-UI"
+    - "Ant Design"
+    - "Chakra UI"
+  
+  # Инструменты разработки
+  integrations:
+    - "npm"
+    - "yarn"
+    - "pnpm"
+    - "ESLint"
+    - "Prettier"
+    - "TypeScript"
+    - "Storybook"
+    - "Cypress"
+    - "Playwright"
+    - "Jest"
+    - "Vitest"
+    - "Webpack Dev Server"
+    - "Hot Module Replacement"
+  
+  # Требования к ресурсам
+  resource_requirements:
+    memory: "1.5GB"
+    cpu: "1.5 cores"
+    disk: "5GB"
+    network: "stable internet connection"
+  
+  # Зависимости
+  dependencies:
+    - "node.js"
+    - "npm"
+    - "git"
+    - "chrome"
+    - "python3"  # для сборки некоторых пакетов
+    - "pnpm"
+  
+  # Переменные окружения
+  environment_vars:
+    REBEECA_FRONTEND_DEV_PORT: "3000"
+    REBEECA_BUILD_TIMEOUT: "300"
+    REBEECA_HOT_RELOAD: "true"
+    REBEECA_SOURCE_MAPS: "true"
+    REBEECA_BUNDLE_ANALYZER: "false"
+  
+  # Профили производительности
+  performance_profile:
+    avg_task_duration: 240  # 4 минуты
+    complexity_factor: 1.2
+    memory_efficiency: 0.7
+    cpu_utilization: 0.5
+  
+  # Лимиты выполнения
+  limits:
+    max_concurrent_tasks: 3
+    max_execution_time: 1800  # 30 минут
+    max_memory_usage: "3GB"
+    max_file_operations: 500
+  
+  # Конфигурация сборки
+  build:
+    default_framework: "React"
+    bundle_analyzer: false
+    source_maps: true
+    minification: true
+    tree_shaking: true
+    code_splitting: true
+    lazy_loading: true
+  
+  # Конфигурация тестирования
+  testing:
+    unit_test_frameworks:
+      - "Jest"
+      - "Vitest"
+      - "Testing Library"
+    e2e_test_frameworks:
+      - "Cypress"
+      - "Playwright"
+    coverage_threshold: 80
+    test_timeout: 30000
+  
+  # Конфигурация стилизации
+  styling:
+    default_preprocessor: "scss"
+    css_framework: "Tailwind CSS"
+    component_library: "Material-UI"
+    icon_library: "Lucide Icons"
+    animations: "Framer Motion"
+  
+  # Конфигурация производительности
+  performance:
+    lazy_loading_threshold: 100  # KB
+    bundle_size_limit: "2MB"
+    lcp_benchmark: "< 2.5s"
+    fid_benchmark: "< 100ms"
+    cls_benchmark: "< 0.1"
+  
+  # Специальные возможности
+  capabilities:
+    can_create_progressive_web_app: true
+    can_implement_server_side_rendering: true
+    can_optimize_images: true
+    can_generate_pwa_manifest: true
+    can_set_up_service_workers: true
+    can_implement_internationalization: true
+    can_create_dark_mode: true
+    can_optimize_for_seo: true
+  
+  # Примеры типовых задач
+  example_tasks:
+    - description: "Создать React компонент формы с валидацией"
+      complexity: "low"
+      estimated_time: 600
+    - description: "Реализовать систему роутинга с защищенными маршрутами"
+      complexity: "medium"
+      estimated_time: 1200
+    - description: "Создать адаптивную таблицу с пагинацией и фильтрацией"
+      complexity: "medium"
+      estimated_time: 1800
+    - description: "Интегрировать с внешним API и обработка состояний"
+      complexity: "high"
+      estimated_time: 2400
+  
+  # Метрики качества
+  quality_metrics:
+    accessibility_score: "WCAG 2.1 AA"
+    performance_score: "90+"
+    seo_score: "90+"
+    best_practices_score: "90+"
+    lighthouse_audit: true
+  
+  # Конфигурация развертывания
+  deployment:
+    supported_platforms:
+      - "Vercel"
+      - "Netlify"
+      - "GitHub Pages"
+      - "Firebase Hosting"
+      - "AWS S3"
+      - "Azure Static Web Apps"
+    build_command: "npm run build"
+    output_directory: "dist"
+    environment_variables: true
+  
+  # Уведомления и алерты
+  notifications:
+    on_build_failure: true
+    on_performance_issues: true
+    on_accessibility_violations: true
+    channels: ["console", "file"]
+  
+  # Логирование
+  logging:
+    format: "text"
+    level: "INFO"
+    retention_days: 14
+    max_file_size: "50MB"
+    rotation: "weekly"

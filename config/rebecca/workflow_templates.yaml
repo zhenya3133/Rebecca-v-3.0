@@ -1,0 +1,682 @@
+# Шаблоны workflow для мета-агента Rebecca
+# Стандартные последовательности выполнения для разных типов задач
+
+# Стандартные workflow шаблоны
+workflow_templates:
+  # Базовый workflow
+  basic:
+    name: "Базовый workflow"
+    description: "Основной процесс обработки задач"
+    version: "1.0"
+    
+    steps:
+      - name: "Анализ задачи"
+        id: "task_analysis"
+        type: "analysis"
+        agent: "meta"
+        timeout: 30
+        inputs: ["task_description"]
+        outputs: ["task_analysis_result"]
+        criteria: ["completeness", "accuracy"]
+        
+        # Условия перехода
+        transitions:
+          - condition: "analysis_complete"
+            next_step: "planning"
+          - condition: "needs_clarification"
+            next_step: "clarification"
+          - condition: "task_too_complex"
+            next_step: "decomposition"
+        
+        # Обработка ошибок
+        error_handling:
+          - action: "retry"
+            max_attempts: 3
+          - action: "escalate_to_user"
+            condition: "critical_error"
+      
+      - name: "Планирование"
+        id: "planning"
+        type: "planning"
+        agent: "meta"
+        timeout: 45
+        inputs: ["task_analysis_result"]
+        outputs: ["execution_plan"]
+        criteria: ["feasibility", "optimality"]
+        
+        transitions:
+          - condition: "plan_approved"
+            next_step: "execution"
+          - condition: "plan_needs_revision"
+            next_step: "task_analysis"
+      
+      - name: "Исполнение"
+        id: "execution"
+        type: "execution"
+        timeout: 300
+        parallel: true
+        
+        # Подшаги исполнения
+        substeps:
+          - name: "Делегирование задач"
+            agent: "meta"
+            timeout: 60
+            
+          - name: "Мониторинг выполнения"
+            agent: "meta"
+            timeout: 240
+            
+          - name: "Сбор результатов"
+            agent: "meta"
+            timeout: 60
+        
+        transitions:
+          - condition: "all_tasks_complete"
+            next_step: "validation"
+          - condition: "task_failed"
+            next_step: "error_handling"
+      
+      - name: "Валидация результатов"
+        id: "validation"
+        type: "validation"
+        agent: "qa"
+        timeout: 60
+        inputs: ["execution_results"]
+        outputs: ["validation_report"]
+        criteria: ["quality", "completeness"]
+        
+        transitions:
+          - condition: "validation_passed"
+            next_step: "finalization"
+          - condition: "validation_failed"
+            next_step: "error_handling"
+      
+      - name: "Финализация"
+        id: "finalization"
+        type: "finalization"
+        agent: "meta"
+        timeout: 30
+        inputs: ["validation_report"]
+        outputs: ["final_result"]
+        
+        transitions:
+          - condition: "completed"
+            next_step: "END"
+      
+      - name: "Обработка ошибок"
+        id: "error_handling"
+        type: "error_handling"
+        agent: "meta"
+        timeout: 60
+        
+        substeps:
+          - name: "Анализ ошибки"
+          - name: "Выбор стратегии восстановления"
+          - name: "Исправление или перезапуск"
+      
+      - name: "Запрос уточнений"
+        id: "clarification"
+        type: "interaction"
+        agent: "meta"
+        timeout: 120
+        
+        transitions:
+          - condition: "clarification_received"
+            next_step: "task_analysis"
+          - condition: "user_cancelled"
+            next_step: "END"
+      
+      - name: "Декомпозиция задачи"
+      - id: "decomposition"
+        type: "decomposition"
+        agent: "meta"
+        timeout: 60
+        
+        transitions:
+          - condition: "decomposed"
+            next_step: "planning"
+
+  # Web разработка
+  web_development:
+    name: "Разработка веб-приложения"
+    description: "Комплексный процесс создания веб-приложения"
+    version: "2.0"
+    
+    steps:
+      - name: "Анализ требований"
+        id: "requirements_analysis"
+        type: "analysis"
+        agent: "analyst"
+        timeout: 60
+        inputs: ["project_requirements"]
+        outputs: ["detailed_requirements"]
+        
+      - name: "Архитектурное проектирование"
+        id: "architecture_design"
+        type: "design"
+        agent: "architect"
+        timeout: 90
+        inputs: ["detailed_requirements"]
+        outputs: ["system_architecture"]
+        
+      - name: "Frontend разработка"
+        id: "frontend_development"
+        type: "development"
+        agent: "frontend"
+        timeout: 300
+        inputs: ["system_architecture"]
+        outputs: ["frontend_code"]
+        parallel: true
+        
+      - name: "Backend разработка"
+        id: "backend_development"
+        type: "development"
+        agent: "backend"
+        timeout: 300
+        inputs: ["system_architecture"]
+        outputs: ["backend_api"]
+        parallel: true
+        
+      - name: "Интеграция компонентов"
+        id: "integration"
+        type: "integration"
+        agent: "integration"
+        timeout: 120
+        inputs: ["frontend_code", "backend_api"]
+        outputs: ["integrated_application"]
+        
+      - name: "Тестирование"
+        id: "testing"
+        type: "testing"
+        agent: "qa"
+        timeout: 180
+        inputs: ["integrated_application"]
+        outputs: ["test_results"]
+        
+        substeps:
+          - name: "Unit тестирование"
+          - name: "Интеграционное тестирование"
+          - name: "UI тестирование"
+          - name: "Производительность"
+        
+      - name: "Деплой приложения"
+        id: "deployment"
+        type: "deployment"
+        agent: "devops"
+        timeout: 120
+        inputs: ["test_results"]
+        outputs: ["deployed_application"]
+
+  # ML проект
+  ml_project:
+    name: "Проект машинного обучения"
+    description: "Полный цикл разработки ML решения"
+    version: "1.5"
+    
+    steps:
+      - name: "Постановка задачи ML"
+        id: "ml_problem_definition"
+        type: "analysis"
+        agent: "ml"
+        timeout: 45
+        inputs: ["business_requirements"]
+        outputs: ["ml_objective"]
+        
+      - name: "Сбор и анализ данных"
+        id: "data_collection_analysis"
+        type: "data_analysis"
+        agent: "ml"
+        timeout: 120
+        outputs: ["data_analysis_report"]
+        
+        substeps:
+          - name: "Исследование данных"
+          - name: "Статистический анализ"
+          - name: "Выявление паттернов"
+        
+      - name: "Подготовка данных"
+        id: "data_preprocessing"
+        type: "preprocessing"
+        agent: "ml"
+        timeout: 90
+        inputs: ["raw_data", "data_analysis_report"]
+        outputs: ["processed_data"]
+        
+        substeps:
+          - name: "Очистка данных"
+          - name: "Feature engineering"
+          - name: "Нормализация"
+          - name: "Разделение на выборки"
+        
+      - name: "Обучение моделей"
+        id: "model_training"
+        type: "training"
+        agent: "ml"
+        timeout: 600
+        inputs: ["processed_data"]
+        outputs: ["trained_models"]
+        parallel: true
+        
+        substeps:
+          - name: "Базовые модели"
+          - name: "Продвинутые алгоритмы"
+          - name: "Hyperparameter tuning"
+        
+      - name: "Оценка моделей"
+        id: "model_evaluation"
+        type: "evaluation"
+        agent: "ml"
+        timeout: 90
+        inputs: ["trained_models", "test_data"]
+        outputs: ["evaluation_results"]
+        
+      - name: "Выбор лучшей модели"
+        id: "model_selection"
+        type: "selection"
+        agent: "ml"
+        timeout: 30
+        inputs: ["evaluation_results"]
+        outputs: ["best_model"]
+        
+      - name: "Деплой модели"
+        id: "model_deployment"
+        type: "deployment"
+        agent: "devops"
+        timeout: 120
+        inputs: ["best_model"]
+        outputs: ["deployed_ml_service"]
+
+  # API разработка
+  api_development:
+    name: "Разработка API"
+    description: "Создание RESTful API сервиса"
+    version: "1.2"
+    
+    steps:
+      - name: "Дизайн API"
+        id: "api_design"
+        type: "design"
+        agent: "backend"
+        timeout: 60
+        inputs: ["api_requirements"]
+        outputs: ["api_specification"]
+        
+      - name: "Реализация эндпоинтов"
+        id: "endpoint_implementation"
+        type: "development"
+        agent: "backend"
+        timeout: 240
+        inputs: ["api_specification"]
+        outputs: ["api_implementation"]
+        
+      - name: "Аутентификация и безопасность"
+        id: "security_implementation"
+        type: "security"
+        agent: "backend"
+        timeout: 90
+        outputs: ["secure_api"]
+        
+      - name: "Документация API"
+        id: "api_documentation"
+        type: "documentation"
+        agent: "backend"
+        timeout: 60
+        outputs: ["api_docs"]
+        
+      - name: "Тестирование API"
+        id: "api_testing"
+        type: "testing"
+        agent: "qa"
+        timeout: 120
+        inputs: ["secure_api"]
+        outputs: ["api_test_results"]
+
+  # DevOps pipeline
+  devops_pipeline:
+    name: "CI/CD пайплайн"
+    description: "Настройка непрерывной интеграции и деплоя"
+    version: "1.0"
+    
+    steps:
+      - name: "Анализ инфраструктуры"
+        id: "infrastructure_analysis"
+        type: "analysis"
+        agent: "devops"
+        timeout: 60
+        inputs: ["application_code"]
+        outputs: ["infrastructure_requirements"]
+        
+      - name: "Настройка CI/CD"
+        id: "cicd_setup"
+        type: "setup"
+        agent: "devops"
+        timeout: 120
+        outputs: ["cicd_pipeline"]
+        
+        substeps:
+          - name: "Настройка Git репозитория"
+          - name: "Создание build пайплайна"
+          - name: "Настройка автоматического тестирования"
+          - name: "Конфигурация деплоя"
+        
+      - name: "Контейнеризация"
+        id: "containerization"
+        type: "containerization"
+        agent: "devops"
+        timeout: 90
+        outputs: ["containerized_app"]
+        
+      - name: "Мониторинг и логирование"
+        id: "monitoring_setup"
+        type: "monitoring"
+        agent: "devops"
+        timeout: 120
+        outputs: ["monitoring_system"]
+
+# Условия для переходов между шагами
+transition_conditions:
+  # Общие условия
+  general:
+    completed: "step.status == 'completed'"
+    failed: "step.status == 'failed'"
+    timeout: "step.execution_time > step.timeout"
+    error: "step.has_errors == true"
+    
+  # Аналитические условия
+  analysis:
+    analysis_complete: "result.completeness_score > 0.8"
+    needs_clarification: "result.ambiguity_detected == true"
+    requirements_ambiguous: "requirements.clarity < 0.7"
+    scope_defined: "project_scope.is_defined == true"
+  
+  # Планирование
+  planning:
+    plan_approved: "plan.score > 0.9"
+    plan_feasible: "plan.feasibility_score > 0.8"
+    resource_adequate: "plan.resource_requirement <= available_resources"
+    timeline_realistic: "plan.estimated_time <= deadline"
+  
+  # Исполнение
+  execution:
+    all_tasks_complete: "completion_percentage == 100"
+    task_failed: "failed_tasks > 0"
+    critical_failure: "critical_errors > 0"
+    partial_success: "completion_percentage > 0.5"
+  
+  # Валидация
+  validation:
+    validation_passed: "quality_score >= 0.85"
+    validation_failed: "quality_score < 0.85"
+    performance_ok: "performance_metrics.meets_requirements == true"
+    security_approved: "security_scan.passed == true"
+  
+  # Качество
+  quality:
+    code_quality_high: "code_quality.score > 0.9"
+    test_coverage_ok: "test_coverage.percentage > 80"
+    documentation_complete: "documentation.completeness > 0.9"
+    performance_acceptable: "performance.benchmarks.passed == true"
+
+# Fallback сценарии
+fallback_scenarios:
+  # Fallback для анализа
+  analysis_fallback:
+    description: "План действий при сбое анализа"
+    triggers: ["analysis_timeout", "analysis_error", "incomplete_analysis"]
+    
+    actions:
+      - name: "Упростить анализ"
+        type: "simplification"
+        parameters:
+          scope: "reduced"
+          depth: "basic"
+      
+      - name: "Использовать шаблонный анализ"
+        type: "template_based"
+        parameters:
+          template: "standard_analysis"
+      
+      - name: "Запросить пользователя"
+        type: "user_request"
+        parameters:
+          question: "Можете ли вы предоставить больше деталей о задаче?"
+    
+    recovery_steps:
+      - step: "request_clarification"
+      - step: "retry_analysis"
+      - step: "use_template"
+  
+  # Fallback для исполнения
+  execution_fallback:
+    description: "План действий при сбое исполнения"
+    triggers: ["execution_timeout", "resource_exhaustion", "agent_failure"]
+    
+    actions:
+      - name: "Перераспределить нагрузку"
+        type: "load_balancing"
+        parameters:
+          strategy: "round_robin"
+      
+      - name: "Использовать альтернативного агента"
+        type: "agent_replacement"
+        parameters:
+          fallback_agents: ["backup_agent", "general_agent"]
+      
+      - name: "Последовательное выполнение"
+        type: "sequential_execution"
+        parameters:
+          max_parallel: 1
+      
+    recovery_steps:
+      - step: "identify_bottleneck"
+      - step: "adjust_resources"
+      - step: "restart_with_fallback"
+  
+  # Fallback для валидации
+  validation_fallback:
+    description: "План действий при сбое валидации"
+    triggers: ["validation_failure", "quality_below_threshold"]
+    
+    actions:
+      - name: "Автоматическое исправление"
+        type: "auto_fix"
+        parameters:
+          fix_types: ["formatting", "typos", "simple_bugs"]
+      
+      - name: "Перезапуск с изменениями"
+        type: "retry_with_modifications"
+        parameters:
+          modifications: "auto_generated"
+      
+      - name: "Ручная проверка"
+        type: "manual_review"
+        parameters:
+          priority: "high"
+    
+    recovery_steps:
+      - step: "analyze_failures"
+      - step: "generate_fixes"
+      - step: "apply_fixes"
+      - step: "revalidate"
+  
+  # Fallback для деплоя
+  deployment_fallback:
+    description: "План действий при сбое деплоя"
+    triggers: ["deployment_failed", "environment_issues", "configuration_error"]
+    
+    actions:
+      - name: "Откат к предыдущей версии"
+        type: "rollback"
+        parameters:
+          target: "last_known_good"
+      
+      - name: "Деплой в тестовую среду"
+        type: "staged_deployment"
+        parameters:
+          environment: "staging"
+      
+      - name: "Исправление конфигурации"
+        type: "fix_configuration"
+        parameters:
+          auto_fix: true
+    
+    recovery_steps:
+      - step: "identify_deployment_issue"
+      - step: "fix_configuration"
+      - step: "retry_deployment"
+      - step: "verify_deployment"
+
+# Параллельные и последовательные паттерны
+execution_patterns:
+  # Параллельное выполнение
+  parallel:
+    description: "Параллельное выполнение независимых задач"
+    max_parallel: 5
+    timeout_per_task: 300
+    
+    examples:
+      - scenario: "Frontend и Backend разработка"
+        tasks: ["frontend_development", "backend_development"]
+        condition: "no_interdependencies"
+      
+      - scenario: "Тестирование и документация"
+        tasks: ["automated_testing", "documentation"]
+        condition: "independent_activities"
+      
+      - scenario: "Анализ данных и feature engineering"
+        tasks: ["data_analysis", "feature_selection"]
+        condition: "different_data_views"
+  
+  # Последовательное выполнение
+  sequential:
+    description: "Последовательное выполнение зависимых задач"
+    max_depth: 3
+    timeout_total: 1800
+    
+    examples:
+      - scenario: "Анализ -> Планирование -> Исполнение"
+        tasks: ["task_analysis", "planning", "execution"]
+        condition: "strict_dependencies"
+      
+      - scenario: "Подготовка данных -> Обучение -> Оценка"
+        tasks: ["data_preprocessing", "model_training", "model_evaluation"]
+        condition: "ml_pipeline"
+
+# Мониторинг и контроль выполнения
+monitoring:
+  # Метрики выполнения
+  metrics:
+    - name: "execution_time"
+      type: "timing"
+      unit: "seconds"
+      threshold: 300
+      
+    - name: "completion_rate"
+      type: "percentage"
+      unit: "percent"
+      threshold: 95
+      
+    - name: "error_rate"
+      type: "percentage"
+      unit: "percent"
+      threshold: 5
+      
+    - name: "resource_utilization"
+      type: "percentage"
+      unit: "percent"
+      threshold: 80
+  
+  # Алерты и уведомления
+  alerts:
+    - condition: "execution_time > 2 * timeout"
+      severity: "high"
+      action: "escalate"
+      
+    - condition: "error_rate > 10%"
+      severity: "medium"
+      action: "notify_team"
+      
+    - condition: "resource_utilization > 90%"
+      severity: "medium"
+      action: "optimize"
+  
+  # Логирование
+  logging:
+    levels: ["DEBUG", "INFO", "WARNING", "ERROR"]
+    retention_days: 30
+    aggregation: true
+
+# Интеграция с внешними системами
+integrations:
+  # Системы управления задачами
+  task_management:
+    - system: "Jira"
+      integration_type: "api"
+      sync_tasks: true
+      sync_status: true
+      
+    - system: "Trello"
+      integration_type: "api"
+      sync_tasks: true
+      
+  # Системы мониторинга
+  monitoring:
+    - system: "Prometheus"
+      integration_type: "metrics"
+      export_metrics: true
+      
+    - system: "Grafana"
+      integration_type: "visualization"
+      dashboards: true
+  
+  # Системы уведомлений
+  notifications:
+    - system: "Slack"
+      integration_type: "webhook"
+      channels: ["alerts", "updates"]
+      
+    - system: "Email"
+      integration_type: "smtp"
+      recipients: ["team", "stakeholders"]
+      
+    - system: "PagerDuty"
+      integration_type: "api"
+      critical_alerts: true
+
+# Конфигурация для различных сред
+environments:
+  # Разработка
+  development:
+    timeout_multiplier: 2.0
+    logging_level: "DEBUG"
+    validation_enabled: false
+    testing_enabled: true
+    parallel_execution: true
+  
+  # Тестирование
+  testing:
+    timeout_multiplier: 1.5
+    logging_level: "INFO"
+    validation_enabled: true
+    testing_enabled: true
+    parallel_execution: true
+    coverage_required: 80
+  
+  # Прод
+  production:
+    timeout_multiplier: 1.0
+    logging_level: "WARNING"
+    validation_enabled: true
+    testing_enabled: true
+    parallel_execution: false
+    rollback_enabled: true
+    monitoring_enabled: true
+  
+  # Демо
+  demo:
+    timeout_multiplier: 0.5
+    logging_level: "ERROR"
+    validation_enabled: false
+    testing_enabled: false
+    parallel_execution: true
+    simulate_delays: false

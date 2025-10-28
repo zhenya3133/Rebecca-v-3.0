@@ -1,0 +1,395 @@
+# Пример конфигурации Rebecca для образовательных целей
+# Сценарий: Образовательная платформа с фокусом на обучение и демонстрацию
+
+# Настройки мета-агента для образования
+meta_agent:
+  name: "Rebecca-Education"
+  version: "2.0.0"
+  
+  # Умеренные таймауты для обучения
+  timeouts:
+    task_planning: 45  # секунд
+    agent_delegation: 20
+    result_aggregation: 30
+    total_workflow: 900  # 15 минут максимум
+  
+  # Мягкие повторные попытки для обучения
+  retries:
+    max_attempts: 4
+    backoff_factor: 1.8
+    base_delay: 1.0
+    max_delay: 120.0
+  
+  # Образовательные лимиты
+  limits:
+    max_concurrent_agents: 6  # Умеренное количество для обучения
+    max_tasks_per_workflow: 25
+    max_memory_usage_mb: 2048  # 2GB памяти
+    max_depth_hierarchy: 3
+
+# Конфигурация специализированных агентов для образования
+specialized_agents:
+  # Backend агент - образовательный
+  backend:
+    name: "EducationBackendAgent"
+    capabilities:
+      - api_development
+      - database_design
+      - server_optimization
+      - security_implementation
+      - educational_apis
+      - progress_tracking
+    
+    config:
+      max_execution_time: 180  # 3 минуты
+      memory_limit_mb: 512
+      allowed_languages: ["python", "javascript"]  # Популярные языки
+      frameworks: ["fastapi", "express", "flask"]
+      
+    # Образовательные API настройки
+    api_settings:
+      timeout: 30
+      max_concurrent_requests: 15
+      rate_limit: 2000
+      educational_features: true
+      progress_tracking: true
+      learning_analytics: true
+      
+    # Специализированные настройки БД для образования
+    database_settings:
+      connection_pool_size: 15
+      query_timeout: 20
+      max_retries: 3
+      learning_progress_tracking: true
+      user_analytics: true
+  
+  # Frontend агент - образовательный интерфейс
+  frontend:
+    name: "EducationFrontendAgent"
+    capabilities:
+      - ui_design
+      - component_development
+      - user_experience
+      - responsive_design
+      - educational_interfaces
+      - gamification
+      - accessibility_education
+    
+    config:
+      max_execution_time: 180
+      memory_limit_mb: 256
+      allowed_technologies: ["react", "vue"]  # Современные фреймворки
+      build_tools: ["vite"]
+      
+    # Образовательные UI настройки
+    ui_settings:
+      design_system: "education_design"
+      responsive_breakpoints:
+        mobile: 768
+        tablet: 1024
+        desktop: 1200
+      accessibility_level: "wcag_2_1_aa"
+      gamification: true
+      progress_indicators: true
+      interactive_tutorials: true
+  
+  # ML агент - образовательный AI
+  ml:
+    name: "EducationMLAgent"
+    capabilities:
+      - model_training
+      - data_analysis
+      - predictive_modeling
+      - adaptive_learning
+      - personalized_recommendations
+      - learning_analytics
+      - assessment_automation
+    
+    config:
+      max_execution_time: 600  # 10 минут
+      memory_limit_mb: 4096  # 4GB памяти
+      allowed_frameworks: ["scikit-learn", "pytorch", "tensorflow"]
+      gpu_support: false  # Для экономии в образовании
+      
+    # Образовательные ML настройки
+    training_settings:
+      max_epochs: 200
+      early_stopping_patience: 15
+      validation_split: 0.2
+      batch_size: 32
+      adaptive_learning: true
+      personalized_models: true
+      learning_curve_analysis: true
+    
+    # Настройки inference для образования
+    inference_settings:
+      batch_processing: true
+      max_inference_time: 5
+      confidence_threshold: 0.85
+      learning_recommendations: true
+      difficulty_adaptation: true
+  
+  # QA агент - образовательное тестирование
+  qa:
+    name: "EducationQAAgent"
+    capabilities:
+      - automated_testing
+      - manual_testing
+      - performance_testing
+      - security_testing
+      - code_review
+      - educational_testing
+      - accessibility_testing
+      - learning_assessment
+    
+    config:
+      max_execution_time: 300
+      memory_limit_mb: 256
+      test_frameworks: ["pytest", "jest"]
+      
+    # Образовательные настройки тестирования
+    testing_settings:
+      coverage_threshold: 85
+      max_test_duration: 60
+      parallel_execution: true
+      report_format: "html"
+      educational_validations: true
+      learning_objectives_testing: true
+      user_journey_testing: true
+  
+  # DevOps агент - для образовательной инфраструктуры
+  devops:
+    name: "EducationDevOpsAgent"
+    capabilities:
+      - ci_cd_pipeline
+      - infrastructure_management
+      - monitoring_setup
+      - deployment_orchestration
+      - container_management
+      - educational_deployment
+      - performance_monitoring
+      - user_experience_monitoring
+    
+    config:
+      max_execution_time: 360  # 6 минут
+      memory_limit_mb: 512
+      cloud_platforms: ["aws", "azure", "gcp", "education_cloud"]
+      container_tools: ["docker"]
+      
+    # Образовательные настройки деплоя
+    deployment_settings:
+      environment: "education"
+      rollback_enabled: true
+      health_check_enabled: true
+      educational_deployment: true
+      user_monitoring: true
+      learning_analytics: true
+      notification_channels: ["email", "slack"]
+    
+    # Образовательный мониторинг
+    monitoring_settings:
+      metrics_interval: 60
+      alert_thresholds:
+        cpu: 80
+        memory: 85
+        disk: 85
+        user_experience: 3  # секунды загрузки
+      user_experience_monitoring: true
+      learning_progress_tracking: true
+
+# Настройки памяти для образования
+memory:
+  layers_used:
+    - "working_memory"
+    - "episodic_memory"
+    - "semantic_memory"
+    - "educational_memory"  # Специальная память для образовательного контента
+  
+  # Образовательные настройки кэша
+  cache_settings:
+    enabled: true
+    max_size_mb: 1024  # 1GB кэша
+    ttl_seconds: 7200  # 2 часа
+    compression: true
+    
+    eviction_policies:
+      - "lru"
+      - "educational_priority"  # Приоритет для образовательного контента
+    
+    # Образовательное хранение
+    educational_storage:
+      enabled: true
+      learning_content_caching: true
+      progress_preservation: true
+      learning_path_optimization: true
+  
+  # Настройки контекста для образования
+  context_settings:
+    max_context_length: 8192
+    summarization_enabled: true
+    context_window_overlap: 0.15
+    educational_content_priority: true
+
+# Коммуникация для образовательных платформ
+communication:
+  protocol: "async"
+  message_format: "json"
+  
+  # Настройки очереди для образования
+  queue_settings:
+    max_queue_size: 2000
+    message_ttl: 1800  # 30 минут
+    dead_letter_queue: true
+    priority_queue: true
+    educational_queue: true
+  
+  # Мониторинг коммуникации
+  monitoring:
+    enabled: true
+    log_level: "INFO"
+    metrics_collection: true
+    educational_metrics: true
+
+# Логирование для образования
+logging:
+  level: "INFO"
+  format: "json"
+  output: ["console", "file", "elasticsearch"]
+  
+  file_settings:
+    path: "logs/education/rebecca.log"
+    max_size_mb: 200
+    backup_count: 5
+    rotation: "time"
+    compression: true
+  
+  # Образовательные метрики
+  metrics:
+    enabled: true
+    collection_interval: 60
+    export_format: "prometheus"
+    educational_metrics: true
+    learning_progress: true
+    engagement_metrics: true
+
+# Безопасность для образовательных платформ
+security:
+  authentication:
+    required: true
+    method: "oauth2"
+    token_expiry: 7200  # 2 часа
+    educational_providers: true
+    student_portal: true
+  
+  encryption:
+    enabled: true
+    algorithm: "aes-256"
+    student_data_protection: true
+    ferpa_compliance: true  # Для образовательных учреждений США
+  
+  # Образовательный контроль доступа
+  access_control:
+    role_based: true
+    educational_roles: true
+    permissions:
+      - "read"
+      - "write"
+      - "execute"
+      - "teach"
+      - "learn"
+      - "assess"
+
+# Интеграции для образования
+integrations:
+  # Git интеграция
+  git:
+    enabled: true
+    default_branch: "main"
+    merge_strategy: "merge"
+    educational_repositories: true
+    student_projects: true
+  
+  # CI/CD для образования
+  cicd:
+    platforms: ["github_actions", "gitlab_ci"]
+    auto_deploy: false
+    educational_validation: true
+    learning_assessment: true
+    code_quality_checks: true
+  
+  # Образовательные инструменты
+  educational_tools:
+    - name: "Google Classroom"
+      integration_type: "lms"
+    
+    - name: "Canvas"
+      integration_type: "lms"
+    
+    - name: "Moodle"
+      integration_type: "lms"
+    
+    - name: "Zoom"
+      integration_type: "videoconference"
+    
+    - name: "Khan Academy"
+      integration_type: "content_provider"
+    
+    - name: "Coursera"
+      integration_type: "course_platform"
+
+# Экспериментальные функции для образования
+experimental:
+  auto_scaling: true
+  predictive_scheduling: true
+  adaptive_timeout: true
+  intelligent_caching: true
+  adaptive_learning: true
+  personalized_recommendations: true
+
+# Настройки по умолчанию для образования
+defaults:
+  agent_timeout: 180  # 3 минуты
+  max_retries: 3
+  logging_level: "INFO"
+  parallel_execution: true
+  fallback_enabled: true
+  educational_mode: true
+  student_assistance: true
+
+# Специфичные настройки для образования
+education_specific:
+  # Адаптивное обучение
+  adaptive_learning:
+    difficulty_adjustment: true
+    personalized_path: true
+    learning_style_detection: true
+    progress_based_pacing: true
+  
+  # Оценка и тестирование
+  assessment:
+    automated_grading: true
+    plagiarism_detection: true
+    learning_objectives_validation: true
+    competency_tracking: true
+  
+  # Вовлеченность студентов
+  engagement:
+    gamification: true
+    progress_tracking: true
+    achievement_system: true
+    peer_collaboration: true
+    instructor_insights: true
+  
+  # Доступность образования
+  accessibility:
+    multi_language_support: true
+    disability_support: true
+    low_bandwidth_optimization: true
+    offline_capabilities: true
+  
+  # Безопасность студентов
+  student_safety:
+    data_privacy: true
+    content_moderation: true
+    cyberbullying_detection: true
+    parental_controls: true

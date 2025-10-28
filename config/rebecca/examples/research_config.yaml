@@ -1,0 +1,402 @@
+# Пример конфигурации Rebecca для исследовательского проекта
+# Сценарий: Академическое исследование с фокусом на эксперименты и анализ
+
+# Настройки мета-агента для исследования
+meta_agent:
+  name: "Rebecca-Research"
+  version: "2.0.0"
+  
+  # Гибкие таймауты для долгих экспериментов
+  timeouts:
+    task_planning: 90  # секунд
+    agent_delegation: 45
+    result_aggregation: 60
+    total_workflow: 7200  # 2 часа максимум
+  
+  # Гибкие повторные попытки
+  retries:
+    max_attempts: 10  # Больше попыток для экспериментов
+    backoff_factor: 3.0
+    base_delay: 5.0
+    max_delay: 900.0  # 15 минут
+  
+  # Экспериментальные лимиты
+  limits:
+    max_concurrent_agents: 8  # Баланс между экспериментами и ресурсами
+    max_tasks_per_workflow: 50
+    max_memory_usage_mb: 8192  # 8GB памяти
+    max_depth_hierarchy: 4
+
+# Конфигурация специализированных агентов для исследования
+specialized_agents:
+  # Backend агент - исследовательский
+  backend:
+    name: "ResearchBackendAgent"
+    capabilities:
+      - api_development
+      - database_design
+      - server_optimization
+      - security_implementation
+      - data_processing
+      - api_experimentation
+    
+    config:
+      max_execution_time: 900  # 15 минут
+      memory_limit_mb: 2048
+      allowed_languages: ["python", "r", "julia"]  # Научные языки
+      frameworks: ["fastapi", "flask", "django", "streamlit"]
+      
+    # Настройки для исследований
+    api_settings:
+      timeout: 120
+      max_concurrent_requests: 20
+      rate_limit: 1000
+      experimental_endpoints: true
+      data_export: true
+      
+    # Специализированные настройки БД
+    database_settings:
+      connection_pool_size: 20
+      query_timeout: 120  # Длинные запросы
+      max_retries: 5
+      analytics_support: true
+      time_series_support: true
+  
+  # Frontend агент - для научной визуализации
+  frontend:
+    name: "ResearchFrontendAgent"
+    capabilities:
+      - ui_design
+      - component_development
+      - user_experience
+      - responsive_design
+      - scientific_visualization
+      - data_dashboards
+      - interactive_plots
+    
+    config:
+      max_execution_time: 300
+      memory_limit_mb: 512
+      allowed_technologies: ["react", "vue", "streamlit"]
+      build_tools: ["vite", "webpack"]
+      
+    # Специализированные UI настройки
+    ui_settings:
+      design_system: "scientific_design"
+      responsive_breakpoints:
+        mobile: 768
+        tablet: 1024
+        desktop: 1200
+        large: 1600
+      accessibility_level: "wcag_2_1_aa"
+      data_visualization: true
+      interactive_charts: true
+  
+  # ML агент - исследовательский фокус
+  ml:
+    name: "ResearchMLAgent"
+    capabilities:
+      - model_training
+      - data_analysis
+      - predictive_modeling
+      - nlp_processing
+      - computer_vision
+      - experimental_algorithms
+      - research_publication
+      - reproducibility
+    
+    config:
+      max_execution_time: 3600  # 1 час
+      memory_limit_mb: 16384  # 16GB памяти
+      allowed_frameworks: ["pytorch", "tensorflow", "scikit-learn", "huggingface", "optuna"]
+      gpu_support: true
+      experimental_support: true
+      
+    # Исследовательские ML настройки
+    training_settings:
+      max_epochs: 10000  # Много эпох для исследований
+      early_stopping_patience: 50
+      validation_split: 0.2
+      batch_size: 64
+      hyperparameter_optimization: true
+      experiment_tracking: true
+      reproducibility: true
+      wandb_integration: true
+      mlflow_integration: true
+    
+    # Экспериментальные настройки inference
+    inference_settings:
+      batch_processing: false  # Для исследований чаще нужно single inference
+      max_inference_time: 30
+      confidence_threshold: 0.8
+      model_interpretability: true
+      shap_analysis: true
+      feature_importance: true
+  
+  # QA агент - исследовательский подход
+  qa:
+    name: "ResearchQAAgent"
+    capabilities:
+      - automated_testing
+      - manual_testing
+      - performance_testing
+      - security_testing
+      - code_review
+      - reproducibility_testing
+      - statistical_validation
+      - benchmark_comparison
+    
+    config:
+      max_execution_time: 600
+      memory_limit_mb: 512
+      test_frameworks: ["pytest", "unittest", "hypothesis"]
+      
+    # Исследовательские настройки тестирования
+    testing_settings:
+      coverage_threshold: 90  # Высокое покрытие для исследований
+      max_test_duration: 300  # Длинные тесты
+      parallel_execution: true
+      report_format: "html"
+      statistical_tests: true
+      benchmark_validation: true
+      reproducibility_checks: true
+  
+  # DevOps агент - для исследовательской инфраструктуры
+  devops:
+    name: "ResearchDevOpsAgent"
+    capabilities:
+      - ci_cd_pipeline
+      - infrastructure_management
+      - monitoring_setup
+      - deployment_orchestration
+      - container_management
+      - ml_pipeline_setup
+      - data_pipeline_management
+      - reproducibility_infrastructure
+    
+    config:
+      max_execution_time: 1200  # 20 минут
+      memory_limit_mb: 1024
+      cloud_platforms: ["aws", "azure", "gcp", "hpc_clusters"]
+      container_tools: ["docker", "singularity", "apptainer"]  # Для HPC
+      
+    # Настройки деплоя для исследований
+    deployment_settings:
+      environment: "research"
+      rollback_enabled: true
+      health_check_enabled: true
+      research_deployment: true
+      experiment_tracking: true
+      data_lineage: true
+      model_versioning: true
+      notification_channels: ["email", "slack"]
+    
+    # Мониторинг для исследований
+    monitoring_settings:
+      metrics_interval: 60
+      alert_thresholds:
+        cpu: 90  # Более высокие пороги для HPC
+        memory: 95
+        disk: 90
+        experiment_duration: 3600  # 1 час
+      experiment_monitoring: true
+      resource_utilization: true
+
+# Настройки памяти для исследования
+memory:
+  layers_used:
+    - "working_memory"
+    - "episodic_memory"
+    - "semantic_memory"
+    - "procedural_memory"
+    - "research_memory"  # Долгосрочное хранение исследований
+  
+  # Исследовательские настройки кэша
+  cache_settings:
+    enabled: true
+    max_size_mb: 4096  # 4GB кэша
+    ttl_seconds: 86400  # 24 часа
+    compression: true
+    
+    eviction_policies:
+      - "lru"
+      - "fifo"
+      - "research_priority"  # Специальная политика для исследований
+    
+    # Долгосрочное хранение
+    long_term_storage:
+      enabled: true
+      storage_backend: "file_system"
+      backup_enabled: true
+      version_control: true
+  
+  # Настройки контекста для исследований
+  context_settings:
+    max_context_length: 32768  # Большой контекст для анализа
+    summarization_enabled: true
+    context_window_overlap: 0.05
+    research_knowledge_base: true
+
+# Коммуникация для исследовательских команд
+communication:
+  protocol: "async"
+  message_format: "json"
+  
+  # Настройки очереди для исследований
+  queue_settings:
+    max_queue_size: 5000
+    message_ttl: 7200  # 2 часа
+    dead_letter_queue: true
+    priority_queue: true
+    research_queue: true
+  
+  # Мониторинг коммуникации
+  monitoring:
+    enabled: true
+    log_level: "DEBUG"  # Подробное логирование для исследований
+    metrics_collection: true
+    research_metrics: true
+
+# Логирование для исследований
+logging:
+  level: "DEBUG"
+  format: "json"
+  output: ["console", "file", "elasticsearch"]
+  
+  file_settings:
+    path: "logs/research/rebecca.log"
+    max_size_mb: 1000
+    backup_count: 20
+    rotation: "size"
+    compression: true
+  
+  # Научные метрики
+  metrics:
+    enabled: true
+    collection_interval: 30
+    export_format: "prometheus"
+    research_metrics: true
+    experiment_tracking: true
+    benchmark_metrics: true
+
+# Безопасность для исследований
+security:
+  authentication:
+    required: false  # Для открытых исследований
+    method: "basic"
+    token_expiry: 3600
+    research_permissions: true
+  
+  encryption:
+    enabled: true
+    algorithm: "aes-256"
+    data_encryption: true
+    research_data_protection: true
+  
+  # Упрощенный контроль доступа
+  access_control:
+    role_based: true
+    research_groups: true
+    permissions:
+      - "read"
+      - "write"
+      - "execute"
+      - "research"
+      - "publish"
+
+# Интеграции для исследований
+integrations:
+  # Git интеграция
+  git:
+    enabled: true
+    default_branch: "main"
+    merge_strategy: "rebase"  # Для чистой истории
+    research_branching: true
+    doi_integration: true
+  
+  # CI/CD для исследований
+  cicd:
+    platforms: ["github_actions", "gitlab_ci", "zenodo"]
+    auto_deploy: false
+    research_validation: true
+    reproducibility_checks: true
+    benchmark_validation: true
+  
+  # Исследовательские инструменты
+  research_tools:
+    - name: "Jupyter"
+      integration_type: "notebook"
+    
+    - name: "Weights & Biases"
+      integration_type: "experiment_tracking"
+    
+    - name: "MLflow"
+      integration_type: "ml_lifecycle"
+    
+    - name: "Zenodo"
+      integration_type: "data_publication"
+    
+    - name: "arXiv"
+      integration_type: "paper_submission"
+    
+    - name: "ORCID"
+      integration_type: "researcher_identity"
+
+# Экспериментальные функции для исследований
+experimental:
+  auto_scaling: true
+  predictive_scheduling: true
+  adaptive_timeout: true
+  intelligent_caching: true
+  research_optimization: true
+  benchmark_automation: true
+
+# Настройки по умолчанию для исследований
+defaults:
+  agent_timeout: 600  # 10 минут
+  max_retries: 5
+  logging_level: "DEBUG"
+  parallel_execution: true
+  fallback_enabled: true
+  research_mode: true
+  experiment_tracking: true
+
+# Специфичные настройки для исследований
+research_specific:
+  # Экспериментальная среда
+  experimentation:
+    hypothesis_testing: true
+    ab_testing: true
+    statistical_analysis: true
+    data_collection: "comprehensive"
+    iteration_speed: "research_paced"
+  
+  # Воспроизводимость исследований
+  reproducibility:
+    seed_setting: true
+    environment_versioning: true
+    data_lineage: true
+    code_versioning: "strict"
+    experiment_versioning: true
+  
+  # Публикация и распространение
+  publication:
+    doi_generation: true
+    preprint_submission: true
+    data_sharing: true
+    code_sharing: true
+    open_access: true
+  
+  # Академическое сотрудничество
+  collaboration:
+    multi_institutional: true
+    shared_resources: true
+    peer_review_support: true
+    grant_management: true
+  
+  # Безопасность данных исследований
+  data_security:
+    anonymization: true
+    data_classification: true
+    export_controls: true
+    ip_protection: true

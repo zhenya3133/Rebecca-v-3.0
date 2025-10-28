@@ -1,0 +1,277 @@
+# Главный конфигурационный файл агентов Rebecca-Platform
+# Объединяет все конфигурации специализированных агентов
+
+agents:
+  # Backend Development Agent
+  backend_agent:
+    config_path: "config/agents/backend_agent.yaml"
+    factory_class: "BackendAgent"
+    enabled: true
+    priority: 1
+    max_instances: 2
+    resource_pool: "compute"
+  
+  # Frontend Development Agent
+  frontend_agent:
+    config_path: "config/agents/frontend_agent.yaml"
+    factory_class: "FrontendAgent"
+    enabled: true
+    priority: 1
+    max_instances: 3
+    resource_pool: "compute"
+  
+  # Machine Learning Engineering Agent
+  ml_engineer_agent:
+    config_path: "config/agents/ml_engineer_agent.yaml"
+    factory_class: "MLEngineerAgent"
+    enabled: true
+    priority: 2
+    max_instances: 1
+    resource_pool: "gpu"
+  
+  # Quality Assurance Analyst Agent
+  qa_analyst_agent:
+    config_path: "config/agents/qa_analyst_agent.yaml"
+    factory_class: "QAAnalystAgent"
+    enabled: true
+    priority: 1
+    max_instances: 2
+    resource_pool: "compute"
+  
+  # DevOps Engineering Agent
+  devops_agent:
+    config_path: "config/agents/devops_agent.yaml"
+    factory_class: "DevOpsAgent"
+    enabled: true
+    priority: 2
+    max_instances: 1
+    resource_pool: "infrastructure"
+
+# Глобальные настройки агентов
+global_settings:
+  # Общие лимиты для всех агентов
+  limits:
+    max_total_agents: 9
+    max_memory_usage: "32GB"
+    max_cpu_cores: 16
+    max_concurrent_tasks: 10
+    
+  # Настройки производительности
+  performance:
+    task_queue_size: 100
+    heartbeat_interval: 30  # секунды
+    health_check_interval: 60  # секунды
+    metrics_collection_interval: 15  # секунды
+    
+  # Настройки безопасности
+  security:
+    agent_authentication: true
+    encrypted_communication: true
+    secure_file_transfers: true
+    audit_logging: true
+    
+  # Настройки мониторинга
+  monitoring:
+    enable_metrics: true
+    enable_tracing: true
+    enable_logging: true
+    metrics_retention_days: 30
+    alert_thresholds:
+      cpu_usage: 80
+      memory_usage: 85
+      error_rate: 5
+      response_time: 5000  # миллисекунды
+      
+  # Настройки взаимодействия с Rebecca Meta Agent
+  rebecca_integration:
+    communication_protocol: "async"
+    task_assignment_strategy: "capability_based"
+    load_balancing: "round_robin"
+    failover_enabled: true
+    health_monitoring: true
+    
+  # Настройки памяти
+  memory:
+    context_layers: ["CORE", "EPISODIC", "SEMANTIC", "PROCEDURAL", "VAULT", "SECURITY"]
+    vector_store: "chromadb"
+    embedding_model: "all-MiniLM-L6-v2"
+    max_context_tokens: 8192
+    memory_retention_days: 365
+    
+  # Настройки логирования
+  logging:
+    level: "INFO"
+    format: "json"
+    retention_days: 30
+    max_file_size: "100MB"
+    rotation: "daily"
+    include_performance_metrics: true
+    include_audit_trail: true
+
+# Настройки пулов ресурсов
+resource_pools:
+  compute:
+    cpu_cores: 8
+    memory: "16GB"
+    storage: "50GB"
+    network: "1Gbps"
+    priority: "normal"
+    
+  gpu:
+    gpu_count: 1
+    gpu_memory: "8GB"
+    cpu_cores: 4
+    memory: "16GB"
+    storage: "100GB"
+    priority: "high"
+    
+  infrastructure:
+    cpu_cores: 2
+    memory: "4GB"
+    storage: "20GB"
+    network: "100Mbps"
+    priority: "normal"
+    special_access: ["docker", "kubectl", "terraform"]
+
+# Настройки оркестрации
+orchestration:
+  # Стратегии распределения задач
+  task_distribution:
+    strategy: "capability_and_load_based"
+    load_threshold: 80  # процент использования
+    capability_weight: 0.7
+    load_weight: 0.3
+    
+  # Настройки fallback
+  fallback:
+    enabled: true
+    max_fallback_attempts: 3
+    fallback_timeout: 300  # секунды
+    fallback_agents: ["coordinator", "research"]
+    
+  # Настройки восстановления
+  recovery:
+    auto_restart_failed_agents: true
+    max_restart_attempts: 3
+    restart_delay: 60  # секунды
+    graceful_shutdown_timeout: 30  # секунды
+
+# Настройки интеграции с внешними системами
+integrations:
+  # Версионный контроль
+  version_control:
+    provider: "git"
+    default_branch: "main"
+    auto_commit: false
+    gpg_signing: false
+    
+  # CI/CD системы
+  cicd:
+    supported_platforms:
+      - "GitHub Actions"
+      - "GitLab CI"
+      - "Jenkins"
+    webhook_secret: "${CI_WEBHOOK_SECRET}"
+    
+  # Платформы мониторинга
+  monitoring:
+    prometheus:
+      enabled: true
+      endpoint: "http://prometheus:9090"
+    grafana:
+      enabled: true
+      endpoint: "http://grafana:3000"
+      
+  # Системы уведомлений
+  notifications:
+    slack:
+      enabled: false
+      webhook_url: "${SLACK_WEBHOOK_URL}"
+    email:
+      enabled: false
+      smtp_server: "${SMTP_SERVER}"
+    webhook:
+      enabled: false
+      endpoint: "${NOTIFICATION_WEBHOOK}"
+
+# Настройки API
+api:
+  base_url: "http://localhost:8000"
+  version: "v1"
+  rate_limiting:
+    requests_per_minute: 1000
+    burst_limit: 100
+  authentication:
+    enabled: true
+    method: "jwt"
+    secret_key: "${JWT_SECRET_KEY}"
+  cors:
+    enabled: true
+    allowed_origins: ["http://localhost:3000", "http://localhost:5173"]
+    allowed_methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    allowed_headers: ["*"]
+
+# Настройки производительности
+performance:
+  # Пулы потоков
+  thread_pools:
+    default:
+      max_workers: 4
+      thread_name_prefix: "rebeeca"
+    io_bound:
+      max_workers: 8
+      thread_name_prefix: "io"
+    cpu_bound:
+      max_workers: 2
+      thread_name_prefix: "cpu"
+      
+  # Кэширование
+  caching:
+    enabled: true
+    backend: "redis"
+    ttl: 3600  # секунды
+    max_size: "1GB"
+    
+  # Оптимизация памяти
+  memory_optimization:
+    gc_threshold: 700
+    object_pooling: true
+    lazy_loading: true
+    
+# Настройки разработки и отладки
+development:
+  debug_mode: false
+  profiling_enabled: false
+  hot_reload: false
+  mock_external_apis: false
+  test_data_generation: true
+  
+# Настройки производства
+production:
+  debug_mode: false
+  profiling_enabled: true
+  health_checks: true
+  graceful_shutdown: true
+  metrics_exposure: true
+  
+# Конфигурация для различных окружений
+environments:
+  development:
+    debug: true
+    log_level: "DEBUG"
+    hot_reload: true
+    mock_external_apis: true
+    
+  staging:
+    debug: false
+    log_level: "INFO"
+    health_checks: true
+    performance_monitoring: true
+    
+  production:
+    debug: false
+    log_level: "WARNING"
+    health_checks: true
+    performance_monitoring: true
+    security_hardening: true
+    audit_logging: true

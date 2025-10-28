@@ -1,0 +1,28 @@
+{
+  "title": "Rebecca-Platform (DROId)",
+  "description": "Rebecca/DROId covers research->deployment automation with multi-agent coordination. Freeze build providing mock mode and upgrade path.",
+  "freeze_date": "2025-10-18",
+  "tests": [
+    "python -m pytest tests/test_core_connection.py"
+  ],
+  "mock_launch": [
+    {
+      "OS": "Windows",
+      "cmd": "powershell -ExecutionPolicy Bypass -File install/setup_mock.ps1"
+    },
+    {
+      "OS": "Linux/macOS",
+      "cmd": "bash install/setup_mock.sh"
+    },
+    {
+      "OS": "Docker",
+      "cmd": "docker compose -f docker/docker-compose.mock.yml up"
+    }
+  ],
+  "production_steps": [
+    "Update config/core.yaml with endpoints/tokens/LLM settings",
+    "Provide .env secrets and swap DAO/ObjectStore/VectorStore implementations",
+    "Connect ingest pipeline to S3/Postgres/Qdrant",
+    "Prepare production docker-compose and CI/CD pipelines"
+  ]
+}

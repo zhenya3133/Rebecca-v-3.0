@@ -1,0 +1,1 @@
+"""PDF ingest pipeline placeholder."""

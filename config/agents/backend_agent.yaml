@@ -1,0 +1,164 @@
+# Конфигурация Backend агента для Rebecca-Platform
+# Специализируется на разработке backend API и серверной логики
+
+backend_agent:
+  # Основная информация
+  agent_type: backend
+  name: "Backend Development Agent"
+  version: "1.0.0"
+  description: "Специализированный агент для разработки backend API, микросервисов и серверной логики"
+  
+  # Поддерживаемые типы задач
+  supported_tasks:
+    - "api_development"
+    - "database_design"
+    - "microservices_architecture"
+    - "authentication_implementation"
+    - "api_optimization"
+    - "server_configuration"
+    - "data_processing"
+    - "backend_testing"
+    - "test_task"
+  
+  # Поддерживаемые языки и фреймворки
+  supported_languages:
+    - "python"
+    - "javascript"
+    - "typescript"
+    - "go"
+    - "rust"
+    - "java"
+  
+  # Конкретные фреймворки
+  specializations:
+    - "FastAPI"
+    - "Express.js"
+    - "Django"
+    - "Flask"
+    - "Spring Boot"
+    - "Gin"
+    - "Actix"
+    - "SQLAlchemy"
+    - "Prisma"
+    - "TypeORM"
+  
+  # Интеграции
+  integrations:
+    - "PostgreSQL"
+    - "MySQL"
+    - "MongoDB"
+    - "Redis"
+    - "Elasticsearch"
+    - "Docker"
+    - "Kubernetes"
+    - "JWT"
+    - "OAuth2"
+  
+  # Требования к ресурсам
+  resource_requirements:
+    memory: "2GB"
+    cpu: "2 cores"
+    disk: "10GB"
+    network: "stable internet connection"
+  
+  # Зависимости
+  dependencies:
+    - "git"
+    - "docker"
+    - "docker-compose"
+    - "python3.11+"
+    - "node.js"
+    - "postgresql-client"
+    - "redis-cli"
+  
+  # Переменные окружения
+  environment_vars:
+    REBEECA_BACKEND_DEBUG: "false"
+    REBEECA_API_TIMEOUT: "30"
+    REBEECA_DB_POOL_SIZE: "10"
+    REBEECA_RETRY_ATTEMPTS: "3"
+  
+  # Профили производительности
+  performance_profile:
+    avg_task_duration: 300  # 5 минут
+    complexity_factor: 1.5
+    memory_efficiency: 0.8
+    cpu_utilization: 0.6
+  
+  # Лимиты выполнения
+  limits:
+    max_concurrent_tasks: 2
+    max_execution_time: 3600  # 1 час
+    max_memory_usage: "4GB"
+    max_file_operations: 1000
+  
+  # Конфигурация тестирования
+  testing:
+    unit_test_frameworks:
+      - "pytest"
+      - "jest"
+      - "mocha"
+    integration_testing: true
+    load_testing: false
+    security_testing: true
+  
+  # Конфигурация развертывания
+  deployment:
+    supported_platforms:
+      - "Docker"
+      - "Kubernetes"
+      - "Railway"
+      - "Heroku"
+      - "AWS"
+      - "GCP"
+    health_check_endpoint: "/health"
+    metrics_endpoint: "/metrics"
+    logging_level: "INFO"
+  
+  # Специальные возможности
+  capabilities:
+    can_generate_api_docs: true
+    can_implement_caching: true
+    can_optimize_queries: true
+    can_handle_async_operations: true
+    can_implement_circuit_breakers: true
+    can_generate_migrations: true
+    can_set_up_monitoring: true
+  
+  # Примеры типовых задач
+  example_tasks:
+    - description: "Создать REST API для управления пользователями"
+      complexity: "medium"
+      estimated_time: 1800
+    - description: "Настроить базу данных с миграциями"
+      complexity: "low"
+      estimated_time: 600
+    - description: "Реализовать аутентификацию JWT"
+      complexity: "medium"
+      estimated_time: 1200
+    - description: "Создать микросервис для обработки файлов"
+      complexity: "high"
+      estimated_time: 3600
+  
+  # Метрики качества
+  quality_metrics:
+    code_coverage_threshold: 80
+    cyclomatic_complexity_limit: 10
+    duplicate_code_threshold: 5
+    security_vulnerability_level: "medium"
+    performance_benchmark: "p95 < 200ms"
+  
+  # Уведомления и алерты
+  notifications:
+    on_task_failure: true
+    on_timeout: true
+    on_performance_degradation: true
+    channels: ["console", "file"]
+  
+  # Логирование
+  logging:
+    format: "json"
+    level: "INFO"
+    retention_days: 30
+    max_file_size: "100MB"
+    rotation: "daily"

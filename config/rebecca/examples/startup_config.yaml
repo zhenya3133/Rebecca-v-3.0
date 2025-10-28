@@ -1,0 +1,216 @@
+# Пример конфигурации Rebecca для разработки стартапа
+# Сценарий: Небольшая команда с ограниченными ресурсами
+
+# Настройки мета-агента для стартапа
+meta_agent:
+  name: "Rebecca-Startup"
+  version: "2.0.0"
+  
+  # Укороченные таймауты для быстрой итерации
+  timeouts:
+    task_planning: 15  # секунд
+    agent_delegation: 10
+    result_aggregation: 15
+    total_workflow: 180  # 3 минуты максимум
+  
+  # Минимальные повторные попытки
+  retries:
+    max_attempts: 2
+    backoff_factor: 1.5
+    base_delay: 0.5
+    max_delay: 30.0
+  
+  # Ограниченные лимиты для экономии ресурсов
+  limits:
+    max_concurrent_agents: 3  # Ограниченное количество агентов
+    max_tasks_per_workflow: 10
+    max_memory_usage_mb: 512  # Ограниченная память
+    max_depth_hierarchy: 2  # Простая иерархия
+
+# Конфигурация специализированных агентов для стартапа
+specialized_agents:
+  # Backend агент - минимальный набор
+  backend:
+    name: "StartupBackendAgent"
+    config:
+      max_execution_time: 90
+      memory_limit_mb: 256
+      allowed_languages: ["python", "javascript"]  # Только популярные языки
+      frameworks: ["fastapi", "express"]  # Быстрые фреймворки
+      
+    # Упрощенные настройки API
+    api_settings:
+      timeout: 20
+      max_concurrent_requests: 5
+      rate_limit: 500
+  
+  # Frontend агент - быстрая разработка
+  frontend:
+    name: "StartupFrontendAgent"
+    config:
+      max_execution_time: 120
+      memory_limit_mb: 128
+      allowed_technologies: ["react"]  # Только React для скорости
+      build_tools: ["vite"]  # Быстрая сборка
+      
+    # Упрощенные UI настройки
+    ui_settings:
+      design_system: "minimal_design"
+      responsive_breakpoints:
+        mobile: 768
+        desktop: 1024  # Только основные брекпоинты
+      accessibility_level: "wcag_2_1_a"  # Базовый уровень
+  
+  # ML агент - легковесный
+  ml:
+    name: "StartupMLAgent"
+    config:
+      max_execution_time: 300
+      memory_limit_mb: 512
+      allowed_frameworks: ["scikit-learn"]  # Только легкие фреймворки
+      gpu_support: false  # Без GPU
+      
+    # Простые ML настройки
+    training_settings:
+      max_epochs: 50  # Ограниченное количество эпох
+      early_stopping_patience: 5
+      validation_split: 0.2
+      batch_size: 16  # Маленький batch size
+  
+  # QA агент - автоматизированный
+  qa:
+    name: "StartupQAAgent"
+    config:
+      max_execution_time: 60
+      memory_limit_mb: 128
+      test_frameworks: ["pytest"]  # Только основной фреймворк
+      
+    # Базовые настройки тестирования
+    testing_settings:
+      coverage_threshold: 70  # Сниженный порог
+      max_test_duration: 10
+      parallel_execution: true
+      report_format: "text"  # Простой формат
+  
+  # DevOps агент - автоматизированный
+  devops:
+    name: "StartupDevOpsAgent"
+    config:
+      max_execution_time: 120
+      memory_limit_mb: 256
+      cloud_platforms: ["digital_ocean"]  # Дешевая платформа
+      container_tools: ["docker"]  # Только Docker
+      
+    # Простые настройки деплоя
+    deployment_settings:
+      environment: "production"
+      rollback_enabled: false  # Отключено для экономии
+      health_check_enabled: true
+      notification_channels: ["email"]  # Только email
+
+# Настройки памяти для стартапа
+memory:
+  layers_used:
+    - "working_memory"
+    - "episodic_memory"
+  
+  cache_settings:
+    enabled: true
+    max_size_mb: 256  # Ограниченный размер
+    ttl_seconds: 1800  # 30 минут
+    compression: true
+    
+    eviction_policies:
+      - "ttl"
+      - "fifo"
+  
+  context_settings:
+    max_context_length: 4096  # Уменьшенный контекст
+    summarization_enabled: true
+    context_window_overlap: 0.3
+
+# Упрощенные настройки коммуникации
+communication:
+  protocol: "sync"  # Синхронный для экономии ресурсов
+  message_format: "json"
+  
+  queue_settings:
+    max_queue_size: 100  # Небольшая очередь
+    message_ttl: 60
+    dead_letter_queue: false  # Отключено
+
+# Минимальное логирование
+logging:
+  level: "WARNING"  # Только важные сообщения
+  format: "text"
+  output: ["console"]
+  
+  # Отключен файл логов
+  file_settings:
+    enabled: false
+
+# Упрощенная безопасность
+security:
+  authentication:
+    required: false  # Отключено для стартапа
+    method: "basic"
+    token_expiry: 3600
+  
+  encryption:
+    enabled: true
+    algorithm: "aes-128"  # Более быстрый алгоритм
+  
+  access_control:
+    role_based: false
+    permissions:
+      - "read"
+      - "write"
+
+# Ограниченные интеграции
+integrations:
+  git:
+    enabled: true
+    default_branch: "main"
+    merge_strategy: "merge"
+  
+  cicd:
+    platforms: ["github_actions"]  # Только GitHub Actions
+    auto_deploy: true
+  
+  monitoring:
+    tools: []  # Без мониторинга для экономии
+
+# Агрессивные настройки для быстрой разработки
+experimental:
+  auto_scaling: false
+  predictive_scheduling: false
+  adaptive_timeout: true
+  intelligent_caching: false
+
+# Настройки по умолчанию для стартапа
+defaults:
+  agent_timeout: 60
+  max_retries: 2
+  logging_level: "WARNING"
+  parallel_execution: true
+  fallback_enabled: true
+
+# Специфичные настройки для различных задач стартапа
+startup_specific:
+  # Быстрое прототипирование
+  rapid_prototyping:
+    timeout_multiplier: 0.5
+    quality_threshold: 0.7
+    auto_optimize: true
+  
+  # MVP разработка
+  mvp_development:
+    features_limit: 5
+    complexity_limit: "simple"
+    deployment_speed: "fast"
+  
+  # Тестирование гипотез
+  hypothesis_testing:
+    test_duration: "short"
+    feedback_collection: "immediate"
+    iteration_speed: "high"

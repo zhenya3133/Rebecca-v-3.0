@@ -1,0 +1,347 @@
+# Конфигурация DevOps агента для Rebecca-Platform
+# Специализируется на автоматизации развертывания, инфраструктуре и CI/CD
+
+devops_agent:
+  # Основная информация
+  agent_type: devops
+  name: "DevOps Engineering Agent"
+  version: "1.0.0"
+  description: "Специализированный агент для автоматизации инфраструктуры, развертывания и CI/CD процессов"
+  
+  # Поддерживаемые типы задач
+  supported_tasks:
+    - "infrastructure_setup"
+    - "deployment_automation"
+    - "cicd_pipeline_creation"
+    - "container_orchestration"
+    - "monitoring_setup"
+    - "security_hardening"
+    - "backup_strategy"
+    - "disaster_recovery"
+    - "performance_optimization"
+    - "scaling_configuration"
+    - "environment_management"
+    - "infrastructure_as_code"
+    - "log_management"
+    - "cost_optimization"
+    - "compliance_automation"
+  
+  # Поддерживаемые языки и технологии
+  supported_languages:
+    - "yaml"
+    - "json"
+    - "python"
+    - "bash"
+    - "powershell"
+    - "groovy"
+    - "go"
+    - "ruby"
+  
+  # DevOps инструменты и технологии
+  specializations:
+    # Containerization
+    - "Docker"
+    - "Docker Compose"
+    - "Podman"
+    - "Buildah"
+    - "Kaniko"
+    
+    # Orchestration
+    - "Kubernetes"
+    - "Helm"
+    - "Kustomize"
+    - "Rancher"
+    - "Docker Swarm"
+    
+    # CI/CD
+    - "Jenkins"
+    - "GitHub Actions"
+    - "GitLab CI"
+    - "Azure DevOps"
+    - "CircleCI"
+    - "Travis CI"
+    - "ArgoCD"
+    - "Flux"
+    
+    # Infrastructure as Code
+    - "Terraform"
+    - "Pulumi"
+    - "CloudFormation"
+    - "Ansible"
+    - "Chef"
+    - "Puppet"
+    - "SaltStack"
+    
+    # Cloud Platforms
+    - "AWS"
+    - "Google Cloud Platform"
+    - "Microsoft Azure"
+    - "DigitalOcean"
+    - "Linode"
+    
+    # Monitoring & Logging
+    - "Prometheus"
+    - "Grafana"
+    - "ELK Stack"
+    - "Splunk"
+    - "Datadog"
+    - "New Relic"
+    - "Jaeger"
+    - "Zipkin"
+    
+    # Security
+    - "Vault"
+    - "SonarQube"
+    - "Trivy"
+    - "Falco"
+    - "Twistlock"
+    - "Aqua Security"
+  
+  # Платформы облачных сервисов
+  integrations:
+    # AWS Services
+    - "EC2"
+    - "ECS/EKS"
+    - "S3"
+    - "RDS"
+    - "Lambda"
+    - "CloudFormation"
+    - "CloudWatch"
+    - "IAM"
+    - "VPC"
+    - "Route 53"
+    
+    # Google Cloud
+    - "Compute Engine"
+    - "GKE"
+    - "Cloud Storage"
+    - "Cloud SQL"
+    - "Cloud Functions"
+    - "Cloud Build"
+    - "Stackdriver"
+    - "Cloud IAM"
+    
+    # Azure
+    - "Virtual Machines"
+    - "AKS"
+    - "Blob Storage"
+    - "Azure SQL"
+    - "Functions"
+    - "Azure DevOps"
+    - "Monitor"
+    - "Azure AD"
+  
+  # Требования к ресурсам
+  resource_requirements:
+    memory: "3GB"
+    cpu: "2 cores"
+    disk: "10GB"
+    network: "stable high-speed internet"
+  
+  # Зависимости
+  dependencies:
+    - "git"
+    - "docker"
+    - "docker-compose"
+    - "kubectl"
+    - "helm"
+    - "terraform"
+    - "ansible"
+    - "aws-cli"
+    - "gcloud-cli"
+    - "az-cli"
+    - "python3.11+"
+    - "node.js"
+  
+  # Переменные окружения
+  environment_vars:
+    REBEECA_ENVIRONMENT: "production"
+    REBEECA_MONITORING_ENABLED: "true"
+    REBEECA_AUTO_SCALING: "true"
+    REBEECA_BACKUP_RETENTION_DAYS: "30"
+    REBEECA_LOG_RETENTION_DAYS: "90"
+    REBEECA_SECURITY_SCANNING: "true"
+    REBEECA_COST_ALERTS_ENABLED: "true"
+  
+  # Профили производительности
+  performance_profile:
+    avg_task_duration: 600  # 10 минут
+    complexity_factor: 2.0
+    memory_efficiency: 0.7
+    cpu_utilization: 0.6
+  
+  # Лимиты выполнения
+  limits:
+    max_concurrent_tasks: 2
+    max_execution_time: 7200  # 2 часа
+    max_memory_usage: "6GB"
+    max_file_operations: 1500
+    max_cloud_api_calls: 1000
+  
+  # Конфигурация инфраструктуры
+  infrastructure:
+    default_provider: "aws"
+    region: "us-west-2"
+    availability_zones: ["us-west-2a", "us-west-2b"]
+    vpc_cidr: "10.0.0.0/16"
+    default_instance_type: "t3.medium"
+    auto_scaling_enabled: true
+    load_balancer_enabled: true
+  
+  # Конфигурация контейнеризации
+  containers:
+    base_image: "alpine:latest"
+    registry: "docker.io"
+    image_tagging: "semantic"
+    security_scanning: true
+    vulnerability_threshold: "medium"
+    max_image_size: "1GB"
+  
+  # CI/CD конфигурация
+  cicd:
+    default_platform: "GitHub Actions"
+    stages:
+      - "build"
+      - "test"
+      - "security-scan"
+      - "deploy"
+      - "verify"
+    parallel_execution: true
+    artifact_retention: 30  # days
+    rollback_strategy: "blue-green"
+  
+  # Мониторинг и алертинг
+  monitoring:
+    prometheus_enabled: true
+    grafana_enabled: true
+    alertmanager_enabled: true
+    metrics_retention: "30d"
+    logs_retention: "90d"
+    health_checks_enabled: true
+    uptime_sla: 99.9
+  
+  # Безопасность
+  security:
+    network_isolation: true
+    encryption_in_transit: true
+    encryption_at_rest: true
+    secret_management: "vault"
+    iam_best_practices: true
+    security_scanning: true
+    compliance_monitoring: true
+  
+  # Резервное копирование
+  backup:
+    strategy: "incremental"
+    retention_policy: "30 days daily, 12 months monthly"
+    encryption: true
+    cross_region_replication: true
+    automated_testing: true
+  
+  # Специальные возможности
+  capabilities:
+    can_create_terraform_modules: true
+    can_setup_kubernetes_clusters: true
+    can_configure_cicd_pipelines: true
+    can_implement_monitoring_stacks: true
+    can_setup_security_policies: true
+    can_optimize_cloud_costs: true
+    can_create_disaster_recovery_plans: true
+    can_setup_log_aggregation: true
+  
+  # Примеры типовых задач
+  example_tasks:
+    - description: "Настроить Kubernetes кластер с monitoring stack"
+      complexity: "high"
+      estimated_time: 3600
+    - description: "Создать CI/CD pipeline для микросервиса"
+      complexity: "medium"
+      estimated_time: 1800
+    - description: "Развернуть инфраструктуру через Terraform"
+      complexity: "medium"
+      estimated_time: 2400
+    - description: "Настроить мониторинг и алертинг"
+      complexity: "medium"
+      estimated_time: 2700
+  
+  # Метрики качества
+  quality_metrics:
+    deployment_success_rate: 99
+    mean_time_to_recovery: "< 15 minutes"
+    infrastructure_availability: 99.9
+    security_compliance_score: 95
+    cost_optimization_score: 85
+    automation_coverage: 80
+  
+  # Конфигурация масштабирования
+  scaling:
+    auto_scaling_enabled: true
+    min_instances: 2
+    max_instances: 10
+    cpu_threshold: 70
+    memory_threshold: 80
+    scale_up_cooldown: "5m"
+    scale_down_cooldown: "10m"
+  
+  # Конфигурация логирования
+  logging:
+    structured_logging: true
+    log_levels: "INFO"
+    log_format: "json"
+    log_aggregation: true
+    log_analysis: true
+    retention_period: "90d"
+  
+  # Cost Management
+  cost_management:
+    budget_alerts_enabled: true
+    cost_optimization_recommendations: true
+    resource_tagging_enforced: true
+    unused_resources_cleanup: true
+    savings_plan_recommendations: true
+  
+  # Конфигурация сетей
+  networking:
+    vpc_isolation: true
+    load_balancer_type: "application"
+    ssl_termination: true
+    waf_enabled: true
+    ddos_protection: true
+    private_subnets: true
+  
+  # Уведомления и алерты
+  notifications:
+    on_deployment_failure: true
+    on_infrastructure_issues: true
+    on_security_alerts: true
+    on_cost_threshold_exceeded: true
+    on_performance_degradation: true
+    channels: ["console", "file", "slack", "email"]
+  
+  # Логирование
+  logging:
+    format: "json"
+    level: "INFO"
+    retention_days: 90
+    max_file_size: "500MB"
+    rotation: "daily"
+    include_infrastructure_logs: true
+  
+  # Compliance и аудит
+  compliance:
+    frameworks:
+      - "SOC 2"
+      - "GDPR"
+      - "HIPAA"
+      - "ISO 27001"
+    audit_logging: true
+    access_tracking: true
+    change_management: true
+  
+  # Disaster Recovery
+  disaster_recovery:
+    rto_target: "1 hour"
+    rpo_target: "15 minutes"
+    backup_testing_frequency: "weekly"
+    recovery_testing: "monthly"
+    documentation_maintained: true

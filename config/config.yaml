@@ -1,0 +1,86 @@
+# Rebecca-Platform runtime configuration
+
+storage:
+  primary:
+    type: postgres
+    host: localhost
+    port: 5432
+    user: postgres
+    password: change-me
+    database: rebecca_core
+
+  archive:
+    type: local_files
+    root_path: ./vault_storage/
+
+  vector:
+    type: qdrant
+    url: http://localhost:6333
+    api_key: null
+
+# Optional secondary storages can be added here, e.g. mongo, s3, etc.
+
+llm_adapters:
+  default:
+    type: ollama
+    base_url: http://localhost:11434
+    model: mistral
+  creative:
+    type: openai
+    api_url: https://api.openai.com/v1/chat/completions
+    api_key: ""
+    model: gpt-4
+  code:
+    type: openrouter
+    api_url: https://openrouter.ai/api/v1/chat
+    api_key: ""
+    model: mistral-8x7b
+
+agents:
+  architect:
+    role: architecture
+    llm: creative
+    prompt: config/prompts/architect.md
+  research_scout:
+    role: research
+    llm: creative
+    prompt: config/prompts/research_scout.md
+  knowledge_curator:
+    role: knowledge
+    llm: default
+    prompt: config/prompts/knowledge_curator.md
+  blueprint_generator:
+    role: codegen
+    llm: code
+    prompt: config/prompts/blueprint_generator.md
+  qa_guardian:
+    role: qa
+    llm: default
+    prompt: config/prompts/qa_guardian.md
+  sec_ops:
+    role: security
+    llm: default
+    prompt: config/prompts/sec_ops.md
+  ops_commander:
+    role: operations
+    llm: default
+    prompt: config/prompts/ops_commander.md
+  deployment_ops:
+    role: devops
+    llm: code
+    prompt: config/prompts/deployment_ops.md
+
+ingest:
+  default_pipeline: auto
+  pipeline_map:
+    pdf: pdf_ocr
+    docx: docx_parse
+    mp3: audio_stt
+    zip: repo_scan
+    link: repo_loader
+    txt: text_parse
+
+misc:
+  telemetry_enabled: true
+  observability: full
+  audit: true

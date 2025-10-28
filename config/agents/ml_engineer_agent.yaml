@@ -1,0 +1,266 @@
+# Конфигурация ML Engineering агента для Rebecca-Platform
+# Специализируется на машинном обучении, глубоком обучении и AI
+
+ml_engineer_agent:
+  # Основная информация
+  agent_type: ml_engineer
+  name: "Machine Learning Engineering Agent"
+  version: "1.0.0"
+  description: "Специализированный агент для разработки ML моделей, глубокого обучения и AI систем"
+  
+  # Поддерживаемые типы задач
+  supported_tasks:
+    - "model_development"
+    - "data_preprocessing"
+    - "feature_engineering"
+    - "model_training"
+    - "model_evaluation"
+    - "model_optimization"
+    - "hyperparameter_tuning"
+    - "model_deployment"
+    - "inference_optimization"
+    - "ml_pipeline_creation"
+    - "data_visualization"
+    - "statistical_analysis"
+    - "experiment_tracking"
+    - "model_monitoring"
+  
+  # Поддерживаемые языки и технологии
+  supported_languages:
+    - "python"
+    - "r"
+    - "scala"
+    - "sql"
+  
+  # ML фреймворки и библиотеки
+  specializations:
+    - "Scikit-learn"
+    - "TensorFlow"
+    - "PyTorch"
+    - "Keras"
+    - "XGBoost"
+    - "LightGBM"
+    - "CatBoost"
+    - "Pandas"
+    - "NumPy"
+    - "Matplotlib"
+    - "Seaborn"
+    - "Plotly"
+    - "Jupyter"
+    - "Weights & Biases"
+    - "MLflow"
+    - "DVC"
+    - "Apache Spark"
+    - "Hugging Face"
+    - "OpenAI API"
+    - "LangChain"
+    - "LoRA"
+    - "QLoRA"
+  
+  # AI и ML области применения
+  specializations:
+    - "Natural Language Processing"
+    - "Computer Vision"
+    - "Time Series Analysis"
+    - "Recommendation Systems"
+    - "Anomaly Detection"
+    - "Clustering"
+    - "Reinforcement Learning"
+    - "Transfer Learning"
+    - "Generative AI"
+    - "Fine-tuning"
+    - "RAG Systems"
+    - "Vector Databases"
+    - "Embeddings"
+  
+  # Интеграции с платформами
+  integrations:
+    - "AWS SageMaker"
+    - "Google Cloud AI"
+    - "Azure ML"
+    - "Weights & Biases"
+    - "MLflow"
+    - "DVC"
+    - "Docker"
+    - "Kubernetes"
+    - "Apache Airflow"
+    - "PostgreSQL"
+    - "MongoDB"
+    - "Redis"
+    - "Apache Kafka"
+    - "TensorBoard"
+    - "Jupyter Lab"
+  
+  # Требования к ресурсам
+  resource_requirements:
+    memory: "8GB"
+    cpu: "4 cores"
+    gpu: "optional (NVIDIA GPU recommended)"
+    disk: "20GB"
+    network: "stable internet for model downloads"
+  
+  # Зависимости
+  dependencies:
+    - "python3.11+"
+    - "pip"
+    - "conda"
+    - "git"
+    - "docker"
+    - "nvidia-docker"  # для GPU
+    - "cuda-toolkit"
+    - "cudnn"
+  
+  # Переменные окружения
+  environment_vars:
+    REBEECA_ML_DEBUG: "false"
+    REBEECA_MODEL_CACHE_DIR: "./models"
+    REBEECA_DATA_CACHE_DIR: "./data"
+    REBEECA_EXPERIMENT_TRACKING: "wandb"
+    REBEECA_GPU_ENABLED: "false"
+    REBEECA_BATCH_SIZE: "32"
+    REBEECA_NUM_WORKERS: "4"
+  
+  # Профили производительности
+  performance_profile:
+    avg_task_duration: 900  # 15 минут (может быть очень долго)
+    complexity_factor: 2.5
+    memory_efficiency: 0.6
+    cpu_utilization: 0.8
+    gpu_utilization: 0.7
+  
+  # Лимиты выполнения
+  limits:
+    max_concurrent_tasks: 1  # ML задачи ресурсоемкие
+    max_execution_time: 14400  # 4 часа
+    max_memory_usage: "16GB"
+    max_gpu_memory: "8GB"
+    max_file_operations: 2000
+  
+  # Конфигурация обучения
+  training:
+    default_batch_size: 32
+    default_epochs: 100
+    early_stopping_patience: 10
+    learning_rate_scheduler: "ReduceLROnPlateau"
+    optimizer: "Adam"
+    loss_function: "CrossEntropyLoss"
+    validation_split: 0.2
+    test_split: 0.1
+  
+  # Конфигурация экспериментов
+  experiments:
+    tracking_backend: "wandb"
+    experiment_name_template: "rebecca_ml_{timestamp}"
+    artifact_storage: "./artifacts"
+    model_registry: "./model_registry"
+    data_versioning: "dvc"
+    reproducibility: true
+  
+  # Конфигурация развертывания
+  deployment:
+    supported_platforms:
+      - "Docker"
+      - "Kubernetes"
+      - "AWS SageMaker"
+      - "Google Cloud AI Platform"
+      - "Azure ML"
+      - "FastAPI"
+      - "Flask"
+      - "TorchServe"
+      - "TensorFlow Serving"
+    model_format: "pickle"
+    batch_size: 1
+    max_request_size: "10MB"
+    health_check_interval: 30
+  
+  # Конфигурация мониторинга
+  monitoring:
+    metrics_tracking: true
+    drift_detection: true
+    performance_monitoring: true
+    alerting_enabled: true
+    metrics_retention_days: 90
+  
+  # Специальные возможности
+  capabilities:
+    can_fine_tune_models: true
+    can_create_ensemble_models: true
+    can_optimize_inference: true
+    can_handle_imbalanced_data: true
+    can_generate_synthetic_data: true
+    can_implement_feature_selection: true
+    can_create_explainable_ai: true
+    can_handle_big_data: true
+  
+  # Примеры типовых задач
+  example_tasks:
+    - description: "Создать baseline модель для классификации текста"
+      complexity: "medium"
+      estimated_time: 1800
+    - description: "Fine-tuning BERT для анализа тональности"
+      complexity: "high"
+      estimated_time: 7200
+    - description: "Создать pipeline для предобработки данных"
+      complexity: "medium"
+      estimated_time: 2400
+    - description: "Реализовать систему рекомендаций"
+      complexity: "high"
+      estimated_time: 10800
+  
+  # Метрики качества
+  quality_metrics:
+    min_accuracy_threshold: 0.70
+    min_f1_score: 0.65
+    max_inference_time: 100  # ms
+    model_size_limit: "500MB"
+    data_quality_check: true
+    bias_detection: true
+    fairness_metrics: true
+  
+  # Уведомления и алерты
+  notifications:
+    on_training_failure: true
+    on_model_drift: true
+    on_performance_degradation: true
+    on_resource_exhaustion: true
+    channels: ["console", "file", "email"]
+  
+  # Логирование
+  logging:
+    format: "json"
+    level: "INFO"
+    retention_days: 90
+    max_file_size: "200MB"
+    rotation: "weekly"
+    tensorboard_logging: true
+  
+  # Безопасность
+  security:
+    model_encryption: true
+    data_anonymization: true
+    access_control: true
+    audit_logging: true
+  
+  # Настройки производительности
+  optimization:
+    mixed_precision_training: true
+    gradient_accumulation_steps: 4
+    gradient_checkpointing: true
+    model_parallelism: false
+    data_parallelism: true
+    memory_optimization: true
+  
+  # Конфигурация данных
+  data:
+    supported_formats:
+      - "CSV"
+      - "JSON"
+      - "Parquet"
+      - "HDF5"
+      - "SQL Database"
+      - "Image files"
+      - "Text files"
+    max_dataset_size: "10GB"
+    data_validation: true
+    missing_value_handling: "impute"
+    outlier_detection: "isolation_forest"

@@ -1,0 +1,303 @@
+# Конфигурация мета-агента Rebecca
+# Мета-агент для управления специализированными агентами
+
+meta_agent:
+  # Основные настройки мета-агента
+  name: "Rebecca"
+  version: "2.0.0"
+  description: "Мета-агент для оркестрации специализированных агентов"
+  
+  # Настройки таймаутов и повторных попыток
+  timeouts:
+    task_planning: 30  # секунд
+    agent_delegation: 15
+    result_aggregation: 20
+    total_workflow: 300  # максимальное время выполнения workflow
+  
+  # Настройки повторных попыток
+  retries:
+    max_attempts: 3
+    backoff_factor: 2.0
+    base_delay: 1.0
+    max_delay: 60.0
+  
+  # Лимиты и ограничения
+  limits:
+    max_concurrent_agents: 5
+    max_tasks_per_workflow: 20
+    max_memory_usage_mb: 1024
+    max_depth_hierarchy: 3
+  
+  # Настройки планирования
+  planning:
+    max_tasks: 50
+    priority_rules:
+      - critical: true
+        priority: 10
+      - deadline_approaching: true
+        priority: 9
+      - resource_intensive: true
+        priority: 8
+      - dependency_critical: true
+        priority: 7
+      - normal: true
+        priority: 5
+      - low_priority: true
+        priority: 1
+    
+    # Правила назначения приоритетов
+    priority_assignment:
+      syntax_errors: 10
+      security_issues: 10
+      performance_bottlenecks: 8
+      feature_requests: 4
+      documentation: 2
+      refactoring: 3
+
+# Конфигурация специализированных агентов
+specialized_agents:
+  # Backend агент
+  backend:
+    name: "BackendAgent"
+    capabilities:
+      - api_development
+      - database_design
+      - server_optimization
+      - security_implementation
+    
+    config:
+      max_execution_time: 180
+      memory_limit_mb: 512
+      allowed_languages: ["python", "javascript", "go", "java"]
+      frameworks: ["fastapi", "django", "express", "spring"]
+      
+    # Специфические настройки
+    api_settings:
+      timeout: 30
+      max_concurrent_requests: 10
+      rate_limit: 1000
+    
+    database_settings:
+      connection_pool_size: 10
+      query_timeout: 15
+      max_retries: 3
+  
+  # Frontend агент
+  frontend:
+    name: "FrontendAgent"
+    capabilities:
+      - ui_design
+      - component_development
+      - user_experience
+      - responsive_design
+    
+    config:
+      max_execution_time: 150
+      memory_limit_mb: 256
+      allowed_technologies: ["react", "vue", "angular", "svelte"]
+      build_tools: ["vite", "webpack", "rollup"]
+      
+    # Настройки UI/UX
+    ui_settings:
+      design_system: "material_design"
+      responsive_breakpoints:
+        mobile: 768
+        tablet: 1024
+        desktop: 1200
+      accessibility_level: "wcag_2_1_aa"
+  
+  # ML агент
+  ml:
+    name: "MLAgent"
+    capabilities:
+      - model_training
+      - data_analysis
+      - predictive_modeling
+      - nlp_processing
+      - computer_vision
+    
+    config:
+      max_execution_time: 600
+      memory_limit_mb: 2048
+      allowed_frameworks: ["pytorch", "tensorflow", "scikit-learn"]
+      gpu_support: true
+      
+    # Специфические ML настройки
+    training_settings:
+      max_epochs: 100
+      early_stopping_patience: 10
+      validation_split: 0.2
+      batch_size: 32
+    
+    inference_settings:
+      batch_processing: true
+      max_inference_time: 5
+      confidence_threshold: 0.8
+  
+  # QA агент
+  qa:
+    name: "QAAgent"
+    capabilities:
+      - automated_testing
+      - manual_testing
+      - performance_testing
+      - security_testing
+      - code_review
+    
+    config:
+      max_execution_time: 120
+      memory_limit_mb: 256
+      test_frameworks: ["pytest", "jest", "mocha", "selenium"]
+      
+    # Настройки тестирования
+    testing_settings:
+      coverage_threshold: 80
+      max_test_duration: 30
+      parallel_execution: true
+      report_format: "html"
+  
+  # DevOps агент
+  devops:
+    name: "DevOpsAgent"
+    capabilities:
+      - ci_cd_pipeline
+      - infrastructure_management
+      - monitoring_setup
+      - deployment_orchestration
+      - container_management
+    
+    config:
+      max_execution_time: 240
+      memory_limit_mb: 512
+      cloud_platforms: ["aws", "azure", "gcp", "digital_ocean"]
+      container_tools: ["docker", "kubernetes", "helm"]
+      
+    # DevOps специфические настройки
+    deployment_settings:
+      environment: "production"
+      rollback_enabled: true
+      health_check_enabled: true
+      notification_channels: ["slack", "email"]
+    
+    monitoring_settings:
+      metrics_interval: 60
+      alert_thresholds:
+        cpu: 80
+        memory: 85
+        disk: 90
+
+# Настройки памяти
+memory:
+  # Используемые слои памяти
+  layers_used:
+    - "working_memory"    # краткосрочная память
+    - "episodic_memory"   # эпизодическая память
+    - "semantic_memory"   # семантическая память
+    - "procedural_memory" # процедурная память
+  
+  # Настройки кэша
+  cache_settings:
+    enabled: true
+    max_size_mb: 512
+    ttl_seconds: 3600
+    compression: true
+    
+    # Стратегии очистки кэша
+    eviction_policies:
+      - "lru"  # Least Recently Used
+      - "fifo" # First In, First Out
+      - "ttl"  # Time To Live
+  
+  # Настройки контекста
+  context_settings:
+    max_context_length: 8192
+    summarization_enabled: true
+    context_window_overlap: 0.2
+
+# Настройки коммуникации между агентами
+communication:
+  protocol: "async"
+  message_format: "json"
+  
+  # Настройки очереди сообщений
+  queue_settings:
+    max_queue_size: 1000
+    message_ttl: 300
+    dead_letter_queue: true
+  
+  # Настройки мониторинга коммуникации
+  monitoring:
+    enabled: true
+    log_level: "INFO"
+    metrics_collection: true
+
+# Настройки логирования и мониторинга
+logging:
+  level: "INFO"
+  format: "json"
+  output: ["console", "file"]
+  
+  file_settings:
+    path: "logs/rebecca.log"
+    max_size_mb: 100
+    backup_count: 5
+    rotation: "time"
+  
+  # Настройки метрик
+  metrics:
+    enabled: true
+    collection_interval: 60
+    export_format: "prometheus"
+
+# Безопасность
+security:
+  authentication:
+    required: true
+    method: "jwt"
+    token_expiry: 3600
+  
+  encryption:
+    enabled: true
+    algorithm: "aes-256"
+  
+  # Настройки доступа
+  access_control:
+    role_based: true
+    permissions:
+      - "read"
+      - "write"
+      - "execute"
+      - "admin"
+
+# Интеграции с внешними сервисами
+integrations:
+  # Git интеграция
+  git:
+    enabled: true
+    default_branch: "main"
+    merge_strategy: "squash"
+  
+  # CI/CD интеграция
+  cicd:
+    platforms: ["github_actions", "gitlab_ci", "jenkins"]
+    auto_deploy: false
+  
+  # Мониторинг интеграция
+  monitoring:
+    tools: ["prometheus", "grafana", "datadog"]
+    alerting_enabled: true
+
+# Экспериментальные функции
+experimental:
+  auto_scaling: false
+  predictive_scheduling: false
+  adaptive_timeout: true
+  intelligent_caching: false
+
+# Настройки по умолчанию для новых workflow
+defaults:
+  agent_timeout: 120
+  max_retries: 2
+  logging_level: "INFO"
+  parallel_execution: true
+  fallback_enabled: true
