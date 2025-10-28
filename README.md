@@ -331,3 +331,4 @@ analysis = psychologist.analyze_cognitive_bias(user_input)
 **Автор:** MiniMax Agent  
 **Лицензия:** MIT  
 **Контакты:** support@rebecca-platform.ai
+# Rebecca-v-3.0
