@@ -3,7 +3,7 @@ platform linux -- Python 3.12.3, pytest-8.4.2, pluggy-1.6.0
 rootdir: /home/engine/project
 configfile: pytest.ini
 testpaths: tests, src
-plugins: asyncio-1.2.0, anyio-4.11.0
+plugins: anyio-4.11.0, asyncio-1.2.0
 asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
 collected 111 items / 55 errors
 
@@ -1882,4 +1882,4 @@ ERROR src/tests/test_orchestrator.py
 ERROR src/tests/test_policy_engine.py
 ERROR src/ui_ux/test_main.py
 !!!!!!!!!!!!!!!!!!! Interrupted: 55 errors during collection !!!!!!!!!!!!!!!!!!!
-=================== 111 tests collected, 55 errors in 6.50s ====================
+=================== 111 tests collected, 55 errors in 13.36s ===================

@@ -9,6 +9,12 @@ third-party dependency gaps. Run it after generating ``pytest_results.xml``::
         reports/baseline/pytest_results.xml \
         reports/baseline/failures_taxonomy.json
 
+The output path argument is optional—omit it to stream the JSON summary to
+stdout, which makes shell redirection straightforward::
+
+    python scripts/summarize_failures.py reports/baseline/pytest_results.xml \
+        > reports/baseline/failures_taxonomy.json
+
 The resulting JSON is intended to support baseline documentation and triage
 before remediation work begins.
 """
@@ -196,15 +202,24 @@ def parse_junit(xml_path: Path) -> ET.Element:
 def main(argv: Sequence[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description="Summarize pytest failure taxonomy from a JUnit XML report.")
     parser.add_argument("junit_xml", type=Path, help="Path to pytest --junitxml output.")
-    parser.add_argument("output_json", type=Path, help="Destination path for the failure taxonomy JSON.")
+    parser.add_argument(
+        "output_json",
+        type=Path,
+        nargs="?",
+        help="Optional destination path for the failure taxonomy JSON (defaults to stdout).",
+    )
     args = parser.parse_args(argv)
 
     testsuites = parse_junit(args.junit_xml)
     records = discover_failure_records(testsuites)
     report = build_report(records)
+    report_text = json.dumps(report, indent=2, sort_keys=True)
 
-    args.output_json.parent.mkdir(parents=True, exist_ok=True)
-    args.output_json.write_text(json.dumps(report, indent=2, sort_keys=True))
+    if args.output_json:
+        args.output_json.parent.mkdir(parents=True, exist_ok=True)
+        args.output_json.write_text(report_text + "\n")
+    else:
+        print(report_text)
 
 
 if __name__ == "__main__":

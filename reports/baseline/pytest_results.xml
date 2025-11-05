@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="29" failures="0" skipped="0" tests="29" time="9.855" timestamp="2025-11-05T01:26:37.883054+00:00" hostname="10.10.0.117"><testcase classname="" name="tests.simple_git_processor_test" time="0.000"><error message="collection failure">tests/simple_git_processor_test.py:32: in &lt;module&gt;
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="55" failures="0" skipped="0" tests="55" time="8.695" timestamp="2025-11-05T11:26:35.231161+00:00" hostname="10.10.1.237"><testcase classname="" name="tests.simple_git_processor_test" time="0.000"><error message="collection failure">tests/simple_git_processor_test.py:32: in &lt;module&gt;
     from ingest.git_processor import GitProcessor
 src/ingest/__init__.py:3: in &lt;module&gt;
     from .loader import (
@@ -392,6 +392,1556 @@ Traceback:
     exec(co, module.__dict__)
 tests/test_run.py:8: in &lt;module&gt;
     from fastapi.testclient import TestClient
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.architect.test_main" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/architect/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.codegen.test_main" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/codegen/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.consolidation.test_consolidator" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/consolidation/test_consolidator.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.educator.test_main" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/educator/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.feedback.test_main" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/feedback/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.idea_generator.test_main" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/idea_generator/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.ingest.test_audio_processor" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/ingest/test_audio_processor.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.ingest.test_audio_processor_run" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/ingest/test_audio_processor_run.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.ingest.test_image_processor" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/ingest/test_image_processor.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.ingest.test_ingest_pipeline" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/ingest/test_ingest_pipeline.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.integration.test_main" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/integration/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.logger.test_main" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/logger/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.memory_manager.test_interface" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/memory_manager/test_interface.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.memory_manager.test_main" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/memory_manager/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.memory_manager.test_memory_manager" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/memory_manager/test_memory_manager.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.memory_manager.test_vector_store" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/memory_manager/test_vector_store.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.observability.test_audit_log" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/observability/test_audit_log.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.orchestrator.test_main" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/orchestrator/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.platform_logger.test_main" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/platform_logger/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.qa.test_engine" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/qa/test_engine.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.qa.test_main" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/qa/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.researcher.test_main" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/researcher/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.retrieval.test_hybrid_retriever" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/retrieval/test_hybrid_retriever.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.scheduler.test_main" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/scheduler/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.security.test_main" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/security/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
 .venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
     from .applications import FastAPI as FastAPI
 .venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
@@ -1242,6 +2792,68 @@ src/api.py:11: in &lt;module&gt;
 .venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
     from pydantic.version import VERSION as PYDANTIC_VERSION
 E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.tests.test_policy_engine" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/tests/test_policy_engine.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:995: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+src/__init__.py:7: in &lt;module&gt;
+    from .api import app
+src/api.py:11: in &lt;module&gt;
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in &lt;module&gt;
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in &lt;module&gt;
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in &lt;module&gt;
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in &lt;module&gt;
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in &lt;module&gt;
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in &lt;module&gt;
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in &lt;module&gt;
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in &lt;module&gt;
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in &lt;module&gt;
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in &lt;module&gt;
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package</error></testcase><testcase classname="" name="src.ui_ux.test_main" time="0.000"><error message="collection failure">ImportError while importing test module '/home/engine/project/src/ui_ux/test_main.py'.
 Hint: make sure your test modules/packages have valid Python names.
 Traceback:
 .venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule

@@ -6,6 +6,31 @@
       ],
       "error_type": "ModuleNotFoundError",
       "modules": [
+        "src.architect.test_main",
+        "src.codegen.test_main",
+        "src.consolidation.test_consolidator",
+        "src.educator.test_main",
+        "src.feedback.test_main",
+        "src.idea_generator.test_main",
+        "src.ingest.test_audio_processor",
+        "src.ingest.test_audio_processor_run",
+        "src.ingest.test_image_processor",
+        "src.ingest.test_ingest_pipeline",
+        "src.integration.test_main",
+        "src.logger.test_main",
+        "src.memory_manager.test_interface",
+        "src.memory_manager.test_main",
+        "src.memory_manager.test_memory_manager",
+        "src.memory_manager.test_vector_store",
+        "src.observability.test_audit_log",
+        "src.orchestrator.test_main",
+        "src.platform_logger.test_main",
+        "src.qa.test_engine",
+        "src.qa.test_main",
+        "src.researcher.test_main",
+        "src.retrieval.test_hybrid_retriever",
+        "src.scheduler.test_main",
+        "src.security.test_main",
         "src.tests.test_audit_logger",
         "src.tests.test_core_pipeline",
         "src.tests.test_feedback_routine",
@@ -19,13 +44,14 @@
         "src.tests.test_mock_llm",
         "src.tests.test_orchestrator",
         "src.tests.test_policy_engine",
+        "src.ui_ux.test_main",
         "tests.test_agents",
         "tests.test_chat_stream",
         "tests.test_core_connection",
         "tests.test_health",
         "tests.test_run"
       ],
-      "occurrences": 18
+      "occurrences": 44
     },
     {
       "dependency_tags": [
@@ -49,6 +75,431 @@
     }
   ],
   "by_module": [
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.architect.test_main",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/architect/test_main.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.codegen.test_main",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/codegen/test_main.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.consolidation.test_consolidator",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/consolidation/test_consolidator.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.educator.test_main",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/educator/test_main.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.feedback.test_main",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/feedback/test_main.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.idea_generator.test_main",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/idea_generator/test_main.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.ingest.test_audio_processor",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/ingest/test_audio_processor.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.ingest.test_audio_processor_run",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/ingest/test_audio_processor_run.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.ingest.test_image_processor",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/ingest/test_image_processor.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.ingest.test_ingest_pipeline",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/ingest/test_ingest_pipeline.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.integration.test_main",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/integration/test_main.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.logger.test_main",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/logger/test_main.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.memory_manager.test_interface",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/memory_manager/test_interface.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.memory_manager.test_main",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/memory_manager/test_main.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.memory_manager.test_memory_manager",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/memory_manager/test_memory_manager.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.memory_manager.test_vector_store",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/memory_manager/test_vector_store.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.observability.test_audit_log",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/observability/test_audit_log.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.orchestrator.test_main",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/orchestrator/test_main.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.platform_logger.test_main",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/platform_logger/test_main.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.qa.test_engine",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/qa/test_engine.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.qa.test_main",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/qa/test_main.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.researcher.test_main",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/researcher/test_main.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.retrieval.test_hybrid_retriever",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/retrieval/test_hybrid_retriever.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.scheduler.test_main",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/scheduler/test_main.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.security.test_main",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/security/test_main.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
     {
       "dependency_tags": [
         "pydantic_missing_package"
@@ -281,6 +732,23 @@
       "occurrences": 1,
       "representative_detail": [
         "ImportError while importing test module '/home/engine/project/src/tests/test_policy_engine.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.ui_ux.test_main",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/ui_ux/test_main.py'.",
         "Hint: make sure your test modules/packages have valid Python names.",
         "Traceback:",
         ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
@@ -549,6 +1017,31 @@
         "ModuleNotFoundError"
       ],
       "affected_modules": [
+        "src.architect.test_main",
+        "src.codegen.test_main",
+        "src.consolidation.test_consolidator",
+        "src.educator.test_main",
+        "src.feedback.test_main",
+        "src.idea_generator.test_main",
+        "src.ingest.test_audio_processor",
+        "src.ingest.test_audio_processor_run",
+        "src.ingest.test_image_processor",
+        "src.ingest.test_ingest_pipeline",
+        "src.integration.test_main",
+        "src.logger.test_main",
+        "src.memory_manager.test_interface",
+        "src.memory_manager.test_main",
+        "src.memory_manager.test_memory_manager",
+        "src.memory_manager.test_vector_store",
+        "src.observability.test_audit_log",
+        "src.orchestrator.test_main",
+        "src.platform_logger.test_main",
+        "src.qa.test_engine",
+        "src.qa.test_main",
+        "src.researcher.test_main",
+        "src.retrieval.test_hybrid_retriever",
+        "src.scheduler.test_main",
+        "src.security.test_main",
         "src.tests.test_audit_logger",
         "src.tests.test_core_pipeline",
         "src.tests.test_feedback_routine",
@@ -562,6 +1055,7 @@
         "src.tests.test_mock_llm",
         "src.tests.test_orchestrator",
         "src.tests.test_policy_engine",
+        "src.ui_ux.test_main",
         "tests.test_agents",
         "tests.test_chat_stream",
         "tests.test_core_connection",
@@ -569,7 +1063,7 @@
         "tests.test_run"
       ],
       "description": "Environment lacks a functional pydantic installation (pytest reports ModuleNotFoundError).",
-      "occurrences": 18,
+      "occurrences": 44,
       "representative_detail": [
         "ImportError while importing test module '/home/engine/project/tests/test_agents.py'.",
         "Hint: make sure your test modules/packages have valid Python names.",
@@ -613,7 +1107,7 @@
       "ModuleNotFoundError",
       "TypeError"
     ],
-    "distinct_modules": 29,
-    "total_error_testcases": 29
+    "distinct_modules": 55,
+    "total_error_testcases": 55
   }
 }
