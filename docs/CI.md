@@ -62,3 +62,90 @@ Each job performs the following steps:
 
 These steps mirror the expectations for local development, so passing the local helper
 script should lead to green CI runs across both supported operating systems.
+
+## Change Summary and CI Reports
+
+The repository includes automated tooling to generate change summaries and CI status
+reports for every task or feature branch.
+
+### Generate Change Summary
+
+The `scripts/generate_change_summary.py` script creates a detailed Markdown report
+showing:
+
+- List of changed files with their status (Added/Modified/Deleted)
+- File changes categorized by directory (src/, tests/, docs/, .github/, etc.)
+- Line-by-line diff statistics
+- CI status summary (lint, format, type check, tests)
+- Links to available test reports and artifacts
+
+Reports are saved to `reports/changes/${ISO_DATETIME}_change_summary.md`.
+
+**Usage:**
+
+```bash
+# Use default base branch (study-repo-write-summary)
+python3 scripts/generate_change_summary.py
+
+# Specify a custom base branch
+BASE_BRANCH=main python3 scripts/generate_change_summary.py
+```
+
+**Environment Variables:**
+
+- `BASE_BRANCH` - The base branch to compare against (default: `study-repo-write-summary`)
+
+The script will automatically try to resolve the branch name by checking:
+1. The exact branch name
+2. The branch name with `origin/` prefix
+3. Common fallbacks like `main`, `origin/main`, `master`, `origin/master`
+
+### Post-Task Summary
+
+The `scripts/post_task_summary.sh` wrapper script combines change summary generation
+with test report collection. It provides a comprehensive view of all changes and
+quality checks for the current branch.
+
+**Usage:**
+
+```bash
+# Generate full post-task summary
+./scripts/post_task_summary.sh
+
+# With custom base branch
+BASE_BRANCH=main ./scripts/post_task_summary.sh
+
+# Skip specific steps
+SKIP_CHANGE_SUMMARY=1 ./scripts/post_task_summary.sh
+SKIP_TEST_REPORT=1 ./scripts/post_task_summary.sh
+```
+
+**Environment Variables:**
+
+- `BASE_BRANCH` - Base branch for comparison
+- `SKIP_CHANGE_SUMMARY` - Set to `1` to skip change summary generation
+- `SKIP_TEST_REPORT` - Set to `1` to skip test report collection
+
+### CI Status Artifacts
+
+The GitHub Actions workflow now generates a CI status summary after running all
+quality checks. This summary is uploaded as an artifact and includes the status
+of each check (lint, format, type check, tests).
+
+The artifact is named `ci-status-{os}-py{version}` and contains a `ci_status.md`
+file with the formatted results. This can be downloaded from the GitHub Actions
+run page or referenced in pull request reviews.
+
+### Integration with Development Workflow
+
+You can integrate the post-task summary script into your development workflow:
+
+1. **After completing a feature:** Run `./scripts/post_task_summary.sh` to generate
+   a comprehensive summary of your changes before creating a pull request.
+
+2. **Before merge decisions:** Review the generated change summary in
+   `reports/changes/` to quickly understand the scope and impact of changes.
+
+3. **CI integration:** The GitHub Actions workflow automatically generates status
+   summaries, making it easy to see which checks passed or failed without
+   reviewing individual job logs.

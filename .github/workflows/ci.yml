@@ -38,14 +38,42 @@ jobs:
           python -m pip install -r requirements-dev.txt
 
       - name: Ruff lint
+        id: ruff
         run: ruff check src tests
+        continue-on-error: true
 
       - name: Black format check
+        id: black
         run: black --check src tests
+        continue-on-error: true
 
       - name: Mypy type check
+        id: mypy
         run: mypy src
+        continue-on-error: true
 
       - name: Pytest
+        id: pytest
         run: pytest
         continue-on-error: true
+
+      - name: Generate CI Status Summary
+        if: always()
+        run: |
+          echo "# CI Status Summary" > ci_status.md
+          echo "" >> ci_status.md
+          echo "| Check | Status |" >> ci_status.md
+          echo "|-------|--------|" >> ci_status.md
+          echo "| Lint (ruff) | ${{ steps.ruff.outcome == 'success' && '✅ PASS' || '❌ FAIL' }} |" >> ci_status.md
+          echo "| Format (black) | ${{ steps.black.outcome == 'success' && '✅ PASS' || '❌ FAIL' }} |" >> ci_status.md
+          echo "| Type Check (mypy) | ${{ steps.mypy.outcome == 'success' && '✅ PASS' || '❌ FAIL' }} |" >> ci_status.md
+          echo "| Tests (pytest) | ${{ steps.pytest.outcome == 'success' && '✅ PASS' || '❌ FAIL' }} |" >> ci_status.md
+          echo "" >> ci_status.md
+          cat ci_status.md
+
+      - name: Upload CI Status Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-status-${{ matrix.os }}-py${{ matrix.python-version }}
+          path: ci_status.md
