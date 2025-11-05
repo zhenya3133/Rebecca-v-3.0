@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rebecca-platform"
+version = "3.0.0"
+description = "Rebecca-Platform v3.0 multi-agent orchestration stack"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Proprietary"}
+authors = [{name = "Rebecca Platform Team"}]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Framework :: FastAPI",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+]
+dynamic = ["dependencies"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests*", "test_env*", "frontend*", "install*", "examples*"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["src/requirements.txt"]}
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+include = "\\.pyi?$"
+extend-exclude = "test_env/|\\.venv/"
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+src = ["src", "tests"]
+exclude = [
+    "test_env",
+    ".venv",
+    "frontend/node_modules",
+    "frontend/dist",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "W"]
+ignore = ["E203", "E266", "E501"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_unused_configs = true
+ignore_missing_imports = true
+strict_optional = true
+namespace_packages = true
+mypy_path = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+pythonpath = ["src"]
+testpaths = ["tests", "src/tests"]
+addopts = "--strict-markers --strict-config"
+asyncio_mode = "auto"
+markers = [
+    "smoke: quick smoke validations focused on happy paths",
+    "integration: integration scenarios spanning multiple components",
+    "slow: slower running scenarios guarded for CI",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["src"]
+
+[tool.coverage.report]
+omit = ["tests/*", "src/tests/*", "test_env/*"]
+skip_empty = true
+show_missing = true
