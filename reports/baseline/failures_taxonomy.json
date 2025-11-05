@@ -1,0 +1,619 @@
+{
+  "by_error_type": [
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_type": "ModuleNotFoundError",
+      "modules": [
+        "src.tests.test_audit_logger",
+        "src.tests.test_core_pipeline",
+        "src.tests.test_feedback_routine",
+        "src.tests.test_indices",
+        "src.tests.test_kag_system.integration.test_episodic_memory_integration",
+        "src.tests.test_kag_system.integration.test_full_memory_stack_integration",
+        "src.tests.test_kag_system.integration.test_memory_integration",
+        "src.tests.test_kag_system.integration.test_semantic_memory_integration",
+        "src.tests.test_memory_layers",
+        "src.tests.test_metrics",
+        "src.tests.test_mock_llm",
+        "src.tests.test_orchestrator",
+        "src.tests.test_policy_engine",
+        "tests.test_agents",
+        "tests.test_chat_stream",
+        "tests.test_core_connection",
+        "tests.test_health",
+        "tests.test_run"
+      ],
+      "occurrences": 18
+    },
+    {
+      "dependency_tags": [
+        "chromadb_dependency"
+      ],
+      "error_type": "TypeError",
+      "modules": [
+        "src.tests.test_kag_system.unit.test_kag_graph_extended",
+        "tests.simple_git_processor_test",
+        "tests.test_agent_factory",
+        "tests.test_base_agent",
+        "tests.test_concept_extractor",
+        "tests.test_git_processor",
+        "tests.test_kag_graph.test_comprehensive",
+        "tests.test_kag_graph.test_memory_integration",
+        "tests.test_memory_manager",
+        "tests.test_memory_persistence",
+        "tests.test_meta_agent"
+      ],
+      "occurrences": 11
+    }
+  ],
+  "by_module": [
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.tests.test_audit_logger",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/tests/test_audit_logger.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.tests.test_core_pipeline",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/tests/test_core_pipeline.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.tests.test_feedback_routine",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/tests/test_feedback_routine.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.tests.test_indices",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/tests/test_indices.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.tests.test_kag_system.integration.test_episodic_memory_integration",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/tests/test_kag_system/integration/test_episodic_memory_integration.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.tests.test_kag_system.integration.test_full_memory_stack_integration",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/tests/test_kag_system/integration/test_full_memory_stack_integration.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.tests.test_kag_system.integration.test_memory_integration",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/tests/test_kag_system/integration/test_memory_integration.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.tests.test_kag_system.integration.test_semantic_memory_integration",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/tests/test_kag_system/integration/test_semantic_memory_integration.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "chromadb_dependency"
+      ],
+      "error_types": {
+        "TypeError": 1
+      },
+      "module": "src.tests.test_kag_system.unit.test_kag_graph_extended",
+      "occurrences": 1,
+      "representative_detail": [
+        "src/tests/test_kag_system/unit/test_kag_graph_extended.py:17: in <module>",
+        "    from knowledge_graph.kag_graph import KAGGraph, Concept, Relationship, RelationshipType, QueryResult",
+        "src/knowledge_graph/__init__.py:13: in <module>",
+        "    from .kag_graph import (",
+        "src/knowledge_graph/kag_graph.py:23: in <module>"
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.tests.test_memory_layers",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/tests/test_memory_layers.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.tests.test_metrics",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/tests/test_metrics.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.tests.test_mock_llm",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/tests/test_mock_llm.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.tests.test_orchestrator",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/tests/test_orchestrator.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "src.tests.test_policy_engine",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/src/tests/test_policy_engine.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "chromadb_dependency"
+      ],
+      "error_types": {
+        "TypeError": 1
+      },
+      "module": "tests.simple_git_processor_test",
+      "occurrences": 1,
+      "representative_detail": [
+        "tests/simple_git_processor_test.py:32: in <module>",
+        "    from ingest.git_processor import GitProcessor",
+        "src/ingest/__init__.py:3: in <module>",
+        "    from .loader import (",
+        "src/ingest/loader.py:42: in <module>"
+      ]
+    },
+    {
+      "dependency_tags": [
+        "chromadb_dependency"
+      ],
+      "error_types": {
+        "TypeError": 1
+      },
+      "module": "tests.test_agent_factory",
+      "occurrences": 1,
+      "representative_detail": [
+        "tests/test_agent_factory.py:36: in <module>",
+        "    from multi_agent.agent_factory import (",
+        "src/multi_agent/agent_factory.py:13: in <module>",
+        "    from .base_agent import (",
+        "src/multi_agent/base_agent.py:22: in <module>"
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "tests.test_agents",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/tests/test_agents.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "chromadb_dependency"
+      ],
+      "error_types": {
+        "TypeError": 1
+      },
+      "module": "tests.test_base_agent",
+      "occurrences": 1,
+      "representative_detail": [
+        "tests/test_base_agent.py:36: in <module>",
+        "    from multi_agent.base_agent import (",
+        "src/multi_agent/base_agent.py:22: in <module>",
+        "    from memory_manager.memory_manager import MemoryManager",
+        "src/memory_manager/__init__.py:21: in <module>"
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "tests.test_chat_stream",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/tests/test_chat_stream.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "chromadb_dependency"
+      ],
+      "error_types": {
+        "TypeError": 1
+      },
+      "module": "tests.test_concept_extractor",
+      "occurrences": 1,
+      "representative_detail": [
+        "tests/test_concept_extractor.py:16: in <module>",
+        "    from knowledge_graph.concept_extractor import (",
+        "src/knowledge_graph/__init__.py:13: in <module>",
+        "    from .kag_graph import (",
+        "src/knowledge_graph/kag_graph.py:23: in <module>"
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "tests.test_core_connection",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/tests/test_core_connection.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "chromadb_dependency"
+      ],
+      "error_types": {
+        "TypeError": 1
+      },
+      "module": "tests.test_git_processor",
+      "occurrences": 1,
+      "representative_detail": [
+        "tests/test_git_processor.py:24: in <module>",
+        "    from ingest.git_processor import GitProcessor, RepositoryInfo, FileAnalysis",
+        "src/ingest/__init__.py:3: in <module>",
+        "    from .loader import (",
+        "src/ingest/loader.py:42: in <module>"
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "tests.test_health",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/tests/test_health.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    },
+    {
+      "dependency_tags": [
+        "chromadb_dependency"
+      ],
+      "error_types": {
+        "TypeError": 1
+      },
+      "module": "tests.test_kag_graph.test_comprehensive",
+      "occurrences": 1,
+      "representative_detail": [
+        "tests/test_kag_graph/test_comprehensive.py:20: in <module>",
+        "    from knowledge_graph import (",
+        "src/knowledge_graph/__init__.py:13: in <module>",
+        "    from .kag_graph import (",
+        "src/knowledge_graph/kag_graph.py:23: in <module>"
+      ]
+    },
+    {
+      "dependency_tags": [
+        "chromadb_dependency"
+      ],
+      "error_types": {
+        "TypeError": 1
+      },
+      "module": "tests.test_kag_graph.test_memory_integration",
+      "occurrences": 1,
+      "representative_detail": [
+        "tests/test_kag_graph/test_memory_integration.py:17: in <module>",
+        "    from knowledge_graph import KAGGraph, Concept, Relationship, RelationshipType",
+        "src/knowledge_graph/__init__.py:13: in <module>",
+        "    from .kag_graph import (",
+        "src/knowledge_graph/kag_graph.py:23: in <module>"
+      ]
+    },
+    {
+      "dependency_tags": [
+        "chromadb_dependency"
+      ],
+      "error_types": {
+        "TypeError": 1
+      },
+      "module": "tests.test_memory_manager",
+      "occurrences": 1,
+      "representative_detail": [
+        "tests/test_memory_manager.py:38: in <module>",
+        "    from memory_manager.memory_manager import (",
+        "src/memory_manager/__init__.py:21: in <module>",
+        "    from .vector_store_client import VectorStoreClient, VectorStoreConfig, VectorItem",
+        "src/memory_manager/vector_store_client.py:35: in <module>"
+      ]
+    },
+    {
+      "dependency_tags": [
+        "chromadb_dependency"
+      ],
+      "error_types": {
+        "TypeError": 1
+      },
+      "module": "tests.test_memory_persistence",
+      "occurrences": 1,
+      "representative_detail": [
+        "tests/test_memory_persistence.py:13: in <module>",
+        "    from memory_manager.memory_manager import MemoryManager",
+        "src/memory_manager/__init__.py:21: in <module>",
+        "    from .vector_store_client import VectorStoreClient, VectorStoreConfig, VectorItem",
+        "src/memory_manager/vector_store_client.py:35: in <module>"
+      ]
+    },
+    {
+      "dependency_tags": [
+        "chromadb_dependency"
+      ],
+      "error_types": {
+        "TypeError": 1
+      },
+      "module": "tests.test_meta_agent",
+      "occurrences": 1,
+      "representative_detail": [
+        "tests/test_meta_agent.py:24: in <module>",
+        "    from rebecca.meta_agent import (",
+        "src/rebecca/__init__.py:8: in <module>",
+        "    from .meta_agent import RebeccaMetaAgent",
+        "src/rebecca/meta_agent.py:26: in <module>"
+      ]
+    },
+    {
+      "dependency_tags": [
+        "pydantic_missing_package"
+      ],
+      "error_types": {
+        "ModuleNotFoundError": 1
+      },
+      "module": "tests.test_run",
+      "occurrences": 1,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/tests/test_run.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ]
+    }
+  ],
+  "dependency_gaps": [
+    {
+      "affected_error_types": [
+        "ModuleNotFoundError"
+      ],
+      "affected_modules": [
+        "src.tests.test_audit_logger",
+        "src.tests.test_core_pipeline",
+        "src.tests.test_feedback_routine",
+        "src.tests.test_indices",
+        "src.tests.test_kag_system.integration.test_episodic_memory_integration",
+        "src.tests.test_kag_system.integration.test_full_memory_stack_integration",
+        "src.tests.test_kag_system.integration.test_memory_integration",
+        "src.tests.test_kag_system.integration.test_semantic_memory_integration",
+        "src.tests.test_memory_layers",
+        "src.tests.test_metrics",
+        "src.tests.test_mock_llm",
+        "src.tests.test_orchestrator",
+        "src.tests.test_policy_engine",
+        "tests.test_agents",
+        "tests.test_chat_stream",
+        "tests.test_core_connection",
+        "tests.test_health",
+        "tests.test_run"
+      ],
+      "description": "Environment lacks a functional pydantic installation (pytest reports ModuleNotFoundError).",
+      "occurrences": 18,
+      "representative_detail": [
+        "ImportError while importing test module '/home/engine/project/tests/test_agents.py'.",
+        "Hint: make sure your test modules/packages have valid Python names.",
+        "Traceback:",
+        ".venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule",
+        "    mod = import_path("
+      ],
+      "tag": "pydantic_missing_package"
+    },
+    {
+      "affected_error_types": [
+        "TypeError"
+      ],
+      "affected_modules": [
+        "src.tests.test_kag_system.unit.test_kag_graph_extended",
+        "tests.simple_git_processor_test",
+        "tests.test_agent_factory",
+        "tests.test_base_agent",
+        "tests.test_concept_extractor",
+        "tests.test_git_processor",
+        "tests.test_kag_graph.test_comprehensive",
+        "tests.test_kag_graph.test_memory_integration",
+        "tests.test_memory_manager",
+        "tests.test_memory_persistence",
+        "tests.test_meta_agent"
+      ],
+      "description": "Chromadb initialization failed, indicating vector store dependencies are unsatisfied or incompatible.",
+      "occurrences": 11,
+      "representative_detail": [
+        "tests/simple_git_processor_test.py:32: in <module>",
+        "    from ingest.git_processor import GitProcessor",
+        "src/ingest/__init__.py:3: in <module>",
+        "    from .loader import (",
+        "src/ingest/loader.py:42: in <module>"
+      ],
+      "tag": "chromadb_dependency"
+    }
+  ],
+  "summary": {
+    "distinct_error_types": [
+      "ModuleNotFoundError",
+      "TypeError"
+    ],
+    "distinct_modules": 29,
+    "total_error_testcases": 29
+  }
+}

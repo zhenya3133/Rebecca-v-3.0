@@ -1,0 +1,1885 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/engine/project
+configfile: pytest.ini
+testpaths: tests, src
+plugins: asyncio-1.2.0, anyio-4.11.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 111 items / 55 errors
+
+<Dir project>
+  <Package tests>
+    <Module integration_test.py>
+      <Function test_workflow_full>
+    <Module isolated_git_processor_test.py>
+      <Function test_basic_functionality>
+      <Function test_structure_analysis>
+      <Function test_metrics_calculation>
+    <Dir retrieval>
+      <Module test_new_cases.py>
+        <Function test_edge_cases>
+    <Module test_agent_army.py>
+      <Function test_agent_army_flow>
+    <Module test_core_adapter.py>
+      <Function test_core_config_load>
+      <Function test_adapter_connectivity>
+      <Function test_core_config_save>
+    <Module test_main_workflow_smoke.py>
+      <Function test_main_workflow_enriches_memory_layers>
+    <Module test_pdf_processor.py>
+      <Class TestPDFProcessor>
+        <Function test_init>
+        <Function test_calculate_checksum>
+        <Function test_extract_page_count_text_based>
+        <Function test_extract_page_count_fallback>
+        <Function test_extract_metadata>
+        <Function test_detect_pdf_type_text_based>
+        <Function test_detect_pdf_type_scanned>
+        <Function test_detect_pdf_type_mixed>
+        <Function test_extract_text_direct>
+        <Function test_extract_text_ocr>
+        <Function test_extract_text_with_progress>
+        <Function test_extract_images_scanned>
+        <Function test_extract_tables_camelot>
+        <Function test_detect_language_success>
+        <Function test_detect_language_no_langdetect>
+        <Function test_detect_language_short_text>
+        <Function test_progress_callback>
+        <Function test_process_full_pdf>
+        <Function test_error_handling>
+        <Function test_extract_images_directory_creation>
+      <Class TestExtractionResult>
+        <Function test_successful_result>
+        <Function test_error_result>
+      <Class TestPDFMetadata>
+        <Function test_metadata_creation>
+        <Function test_metadata_defaults>
+    <Module test_rebecca_meta_agent.py>
+      <Class TestUnitRebeccaMetaAgent>
+        <Function test_agent_initialization>
+        <Coroutine test_ingest_sources_single_file>
+        <Coroutine test_ingest_sources_multiple_sources>
+        <Coroutine test_plan_agent_basic>
+        <Coroutine test_plan_agent_with_context>
+        <Coroutine test_plan_agent_different_types>
+        <Coroutine test_plan_agent_priorities[critical-TaskPriority.CRITICAL]>
+        <Coroutine test_plan_agent_priorities[high-TaskPriority.HIGH]>
+        <Coroutine test_plan_agent_priorities[medium-TaskPriority.MEDIUM]>
+        <Coroutine test_plan_agent_priorities[low-TaskPriority.LOW]>
+        <Coroutine test_plan_agent_priorities[background-TaskPriority.BACKGROUND]>
+        <Coroutine test_generate_playbook>
+        <Coroutine test_generate_playbook_complex_task>
+        <Coroutine test_task_assignment>
+        <Coroutine test_resource_allocation>
+        <Coroutine test_get_status_system>
+        <Coroutine test_get_status_task>
+      <Class TestIntegrationRebeccaMetaAgent>
+        <Coroutine test_full_workflow>
+        <Coroutine test_memory_integration>
+        <Coroutine test_ingest_integration>
+        <Coroutine test_multiple_agents_workflow>
+      <Class TestPerformanceRebeccaMetaAgent>
+        <Coroutine test_large_task_planning>
+        <Coroutine test_concurrent_agents>
+        <Coroutine test_memory_performance>
+      <Class TestEdgeCasesRebeccaMetaAgent>
+        <Coroutine test_empty_input>
+        <Coroutine test_failed_ingestion>
+        <Coroutine test_complex_planning>
+        <Coroutine test_very_long_descriptions>
+      <Class TestTaskAnalyzer>
+        <Coroutine test_analyze_task_complexity_simple>
+        <Coroutine test_analyze_task_complexity_complex>
+        <Function test_determine_required_skills_backend>
+        <Function test_determine_required_skills_frontend>
+        <Function test_estimate_duration_various_tasks>
+      <Class TestResourceOptimizer>
+        <Function test_resource_optimization_basic>
+        <Function test_allocate_resources_basic>
+      <Class TestPlaybookGenerator>
+        <Coroutine test_generate_simple_playbook>
+      <Class TestMetaAgentValidator>
+        <Function test_validate_config_valid>
+        <Function test_validate_config_invalid>
+  <Package src>
+    <Package tests>
+      <Package test_kag_system>
+        <Dir unit>
+          <Module test_concept_extractor.py>
+            <Class TestConceptExtractor>
+              <Function test_extractor_initialization>
+              <Function test_extract_concepts_basic>
+              <Function test_extract_concepts_definitions>
+              <Function test_extract_concepts_relationships>
+              <Function test_extract_concepts_complex_text>
+              <Function test_validate_concept>
+              <Function test_link_concepts>
+              <Function test_score_concept_quality>
+              <Function test_normalize_concept>
+              <Function test_extraction_performance>
+              <Function test_edge_cases>
+              <Coroutine test_concurrent_extraction>
+              <Function test_confidence_calculation>
+          <Module test_context_engine.py>
+            <Class TestContextEngine>
+              <Function test_context_engine_initialization>
+              <Function test_build_context_basic>
+              <Function test_build_context_empty_query>
+              <Function test_query_analysis>
+              <Function test_context_relevance_ranking>
+              <Function test_context_merging_strategies>
+              <Function test_context_node_management>
+              <Function test_context_caching>
+              <Function test_performance_context_building>
+              <Coroutine test_concurrent_context_operations>
+              <Function test_edge_cases>
+              <Function test_context_engine_statistics>
+          <Module test_kag_graph.py>
+            <Class TestKAGGraph>
+              <Function test_graph_initialization>
+              <Function test_add_node>
+              <Function test_add_edge>
+              <Function test_remove_node>
+              <Function test_remove_edge>
+              <Function test_get_neighbors>
+              <Function test_search_related>
+              <Function test_traverse>
+              <Function test_get_path>
+              <Function test_graph_statistics>
+              <Function test_performance_large_graph>
+              <Function test_graph_limits>
+              <Coroutine test_concurrent_graph_operations>
+              <Function test_graph_serialization>
+
+==================================== ERRORS ====================================
+_____________ ERROR collecting tests/simple_git_processor_test.py ______________
+tests/simple_git_processor_test.py:32: in <module>
+    from ingest.git_processor import GitProcessor
+src/ingest/__init__.py:3: in <module>
+    from .loader import (
+src/ingest/loader.py:42: in <module>
+    from memory_manager.memory_manager import MemoryManager
+src/memory_manager/__init__.py:21: in <module>
+    from .vector_store_client import VectorStoreClient, VectorStoreConfig, VectorItem
+src/memory_manager/vector_store_client.py:35: in <module>
+    import chromadb
+.venv/lib/python3.12/site-packages/chromadb/__init__.py:3: in <module>
+    from chromadb.api.client import Client as ClientCreator
+.venv/lib/python3.12/site-packages/chromadb/api/__init__.py:2: in <module>
+    from chromadb.execution.expression import (  # noqa: F401, F403
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/__init__.py:5: in <module>
+    from chromadb.execution.expression.operator import (
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/operator.py:16: in <module>
+    from chromadb.types import (
+.venv/lib/python3.12/site-packages/chromadb/types.py:70: in <module>
+    class Collection(
+E   TypeError: Cannot create a consistent method resolution
+E   order (MRO) for bases object, BaseModelJSONSerializable
+_________________ ERROR collecting tests/test_agent_factory.py _________________
+tests/test_agent_factory.py:36: in <module>
+    from multi_agent.agent_factory import (
+src/multi_agent/agent_factory.py:13: in <module>
+    from .base_agent import (
+src/multi_agent/base_agent.py:22: in <module>
+    from memory_manager.memory_manager import MemoryManager
+src/memory_manager/__init__.py:21: in <module>
+    from .vector_store_client import VectorStoreClient, VectorStoreConfig, VectorItem
+src/memory_manager/vector_store_client.py:35: in <module>
+    import chromadb
+.venv/lib/python3.12/site-packages/chromadb/__init__.py:3: in <module>
+    from chromadb.api.client import Client as ClientCreator
+.venv/lib/python3.12/site-packages/chromadb/api/__init__.py:2: in <module>
+    from chromadb.execution.expression import (  # noqa: F401, F403
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/__init__.py:5: in <module>
+    from chromadb.execution.expression.operator import (
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/operator.py:16: in <module>
+    from chromadb.types import (
+.venv/lib/python3.12/site-packages/chromadb/types.py:70: in <module>
+    class Collection(
+E   TypeError: Cannot create a consistent method resolution
+E   order (MRO) for bases object, BaseModelJSONSerializable
+____________________ ERROR collecting tests/test_agents.py _____________________
+ImportError while importing test module '/home/engine/project/tests/test_agents.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_agents.py:17: in <module>
+    from src.multi_agent.base_agent import (
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+__________________ ERROR collecting tests/test_base_agent.py ___________________
+tests/test_base_agent.py:36: in <module>
+    from multi_agent.base_agent import (
+src/multi_agent/base_agent.py:22: in <module>
+    from memory_manager.memory_manager import MemoryManager
+src/memory_manager/__init__.py:21: in <module>
+    from .vector_store_client import VectorStoreClient, VectorStoreConfig, VectorItem
+src/memory_manager/vector_store_client.py:35: in <module>
+    import chromadb
+.venv/lib/python3.12/site-packages/chromadb/__init__.py:3: in <module>
+    from chromadb.api.client import Client as ClientCreator
+.venv/lib/python3.12/site-packages/chromadb/api/__init__.py:2: in <module>
+    from chromadb.execution.expression import (  # noqa: F401, F403
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/__init__.py:5: in <module>
+    from chromadb.execution.expression.operator import (
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/operator.py:16: in <module>
+    from chromadb.types import (
+.venv/lib/python3.12/site-packages/chromadb/types.py:70: in <module>
+    class Collection(
+E   TypeError: Cannot create a consistent method resolution
+E   order (MRO) for bases object, BaseModelJSONSerializable
+__________________ ERROR collecting tests/test_chat_stream.py __________________
+ImportError while importing test module '/home/engine/project/tests/test_chat_stream.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_chat_stream.py:5: in <module>
+    from fastapi.testclient import TestClient
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_______________ ERROR collecting tests/test_concept_extractor.py _______________
+tests/test_concept_extractor.py:16: in <module>
+    from knowledge_graph.concept_extractor import (
+src/knowledge_graph/__init__.py:13: in <module>
+    from .kag_graph import (
+src/knowledge_graph/kag_graph.py:23: in <module>
+    from memory_manager.memory_manager_interface import MemoryManager, MemoryLayer, MemoryItem
+src/memory_manager/__init__.py:21: in <module>
+    from .vector_store_client import VectorStoreClient, VectorStoreConfig, VectorItem
+src/memory_manager/vector_store_client.py:35: in <module>
+    import chromadb
+.venv/lib/python3.12/site-packages/chromadb/__init__.py:3: in <module>
+    from chromadb.api.client import Client as ClientCreator
+.venv/lib/python3.12/site-packages/chromadb/api/__init__.py:2: in <module>
+    from chromadb.execution.expression import (  # noqa: F401, F403
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/__init__.py:5: in <module>
+    from chromadb.execution.expression.operator import (
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/operator.py:16: in <module>
+    from chromadb.types import (
+.venv/lib/python3.12/site-packages/chromadb/types.py:70: in <module>
+    class Collection(
+E   TypeError: Cannot create a consistent method resolution
+E   order (MRO) for bases object, BaseModelJSONSerializable
+________________ ERROR collecting tests/test_core_connection.py ________________
+ImportError while importing test module '/home/engine/project/tests/test_core_connection.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_core_connection.py:7: in <module>
+    from fastapi.testclient import TestClient
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_________________ ERROR collecting tests/test_git_processor.py _________________
+tests/test_git_processor.py:24: in <module>
+    from ingest.git_processor import GitProcessor, RepositoryInfo, FileAnalysis
+src/ingest/__init__.py:3: in <module>
+    from .loader import (
+src/ingest/loader.py:42: in <module>
+    from memory_manager.memory_manager import MemoryManager
+src/memory_manager/__init__.py:21: in <module>
+    from .vector_store_client import VectorStoreClient, VectorStoreConfig, VectorItem
+src/memory_manager/vector_store_client.py:35: in <module>
+    import chromadb
+.venv/lib/python3.12/site-packages/chromadb/__init__.py:3: in <module>
+    from chromadb.api.client import Client as ClientCreator
+.venv/lib/python3.12/site-packages/chromadb/api/__init__.py:2: in <module>
+    from chromadb.execution.expression import (  # noqa: F401, F403
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/__init__.py:5: in <module>
+    from chromadb.execution.expression.operator import (
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/operator.py:16: in <module>
+    from chromadb.types import (
+.venv/lib/python3.12/site-packages/chromadb/types.py:70: in <module>
+    class Collection(
+E   TypeError: Cannot create a consistent method resolution
+E   order (MRO) for bases object, BaseModelJSONSerializable
+____________________ ERROR collecting tests/test_health.py _____________________
+ImportError while importing test module '/home/engine/project/tests/test_health.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_health.py:2: in <module>
+    from fastapi.testclient import TestClient
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_________ ERROR collecting tests/test_kag_graph/test_comprehensive.py __________
+tests/test_kag_graph/test_comprehensive.py:20: in <module>
+    from knowledge_graph import (
+src/knowledge_graph/__init__.py:13: in <module>
+    from .kag_graph import (
+src/knowledge_graph/kag_graph.py:23: in <module>
+    from memory_manager.memory_manager_interface import MemoryManager, MemoryLayer, MemoryItem
+src/memory_manager/__init__.py:21: in <module>
+    from .vector_store_client import VectorStoreClient, VectorStoreConfig, VectorItem
+src/memory_manager/vector_store_client.py:35: in <module>
+    import chromadb
+.venv/lib/python3.12/site-packages/chromadb/__init__.py:3: in <module>
+    from chromadb.api.client import Client as ClientCreator
+.venv/lib/python3.12/site-packages/chromadb/api/__init__.py:2: in <module>
+    from chromadb.execution.expression import (  # noqa: F401, F403
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/__init__.py:5: in <module>
+    from chromadb.execution.expression.operator import (
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/operator.py:16: in <module>
+    from chromadb.types import (
+.venv/lib/python3.12/site-packages/chromadb/types.py:70: in <module>
+    class Collection(
+E   TypeError: Cannot create a consistent method resolution
+E   order (MRO) for bases object, BaseModelJSONSerializable
+_______ ERROR collecting tests/test_kag_graph/test_memory_integration.py _______
+tests/test_kag_graph/test_memory_integration.py:17: in <module>
+    from knowledge_graph import KAGGraph, Concept, Relationship, RelationshipType
+src/knowledge_graph/__init__.py:13: in <module>
+    from .kag_graph import (
+src/knowledge_graph/kag_graph.py:23: in <module>
+    from memory_manager.memory_manager_interface import MemoryManager, MemoryLayer, MemoryItem
+src/memory_manager/__init__.py:21: in <module>
+    from .vector_store_client import VectorStoreClient, VectorStoreConfig, VectorItem
+src/memory_manager/vector_store_client.py:35: in <module>
+    import chromadb
+.venv/lib/python3.12/site-packages/chromadb/__init__.py:3: in <module>
+    from chromadb.api.client import Client as ClientCreator
+.venv/lib/python3.12/site-packages/chromadb/api/__init__.py:2: in <module>
+    from chromadb.execution.expression import (  # noqa: F401, F403
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/__init__.py:5: in <module>
+    from chromadb.execution.expression.operator import (
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/operator.py:16: in <module>
+    from chromadb.types import (
+.venv/lib/python3.12/site-packages/chromadb/types.py:70: in <module>
+    class Collection(
+E   TypeError: Cannot create a consistent method resolution
+E   order (MRO) for bases object, BaseModelJSONSerializable
+________________ ERROR collecting tests/test_memory_manager.py _________________
+tests/test_memory_manager.py:38: in <module>
+    from memory_manager.memory_manager import (
+src/memory_manager/__init__.py:21: in <module>
+    from .vector_store_client import VectorStoreClient, VectorStoreConfig, VectorItem
+src/memory_manager/vector_store_client.py:35: in <module>
+    import chromadb
+.venv/lib/python3.12/site-packages/chromadb/__init__.py:3: in <module>
+    from chromadb.api.client import Client as ClientCreator
+.venv/lib/python3.12/site-packages/chromadb/api/__init__.py:2: in <module>
+    from chromadb.execution.expression import (  # noqa: F401, F403
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/__init__.py:5: in <module>
+    from chromadb.execution.expression.operator import (
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/operator.py:16: in <module>
+    from chromadb.types import (
+.venv/lib/python3.12/site-packages/chromadb/types.py:70: in <module>
+    class Collection(
+E   TypeError: Cannot create a consistent method resolution
+E   order (MRO) for bases object, BaseModelJSONSerializable
+______________ ERROR collecting tests/test_memory_persistence.py _______________
+tests/test_memory_persistence.py:13: in <module>
+    from memory_manager.memory_manager import MemoryManager
+src/memory_manager/__init__.py:21: in <module>
+    from .vector_store_client import VectorStoreClient, VectorStoreConfig, VectorItem
+src/memory_manager/vector_store_client.py:35: in <module>
+    import chromadb
+.venv/lib/python3.12/site-packages/chromadb/__init__.py:3: in <module>
+    from chromadb.api.client import Client as ClientCreator
+.venv/lib/python3.12/site-packages/chromadb/api/__init__.py:2: in <module>
+    from chromadb.execution.expression import (  # noqa: F401, F403
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/__init__.py:5: in <module>
+    from chromadb.execution.expression.operator import (
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/operator.py:16: in <module>
+    from chromadb.types import (
+.venv/lib/python3.12/site-packages/chromadb/types.py:70: in <module>
+    class Collection(
+E   TypeError: Cannot create a consistent method resolution
+E   order (MRO) for bases object, BaseModelJSONSerializable
+__________________ ERROR collecting tests/test_meta_agent.py ___________________
+tests/test_meta_agent.py:24: in <module>
+    from rebecca.meta_agent import (
+src/rebecca/__init__.py:8: in <module>
+    from .meta_agent import RebeccaMetaAgent
+src/rebecca/meta_agent.py:26: in <module>
+    from memory_manager.memory_manager_interface import MemoryManager, MemoryLayer, MemoryFilter
+src/memory_manager/__init__.py:21: in <module>
+    from .vector_store_client import VectorStoreClient, VectorStoreConfig, VectorItem
+src/memory_manager/vector_store_client.py:35: in <module>
+    import chromadb
+.venv/lib/python3.12/site-packages/chromadb/__init__.py:3: in <module>
+    from chromadb.api.client import Client as ClientCreator
+.venv/lib/python3.12/site-packages/chromadb/api/__init__.py:2: in <module>
+    from chromadb.execution.expression import (  # noqa: F401, F403
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/__init__.py:5: in <module>
+    from chromadb.execution.expression.operator import (
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/operator.py:16: in <module>
+    from chromadb.types import (
+.venv/lib/python3.12/site-packages/chromadb/types.py:70: in <module>
+    class Collection(
+E   TypeError: Cannot create a consistent method resolution
+E   order (MRO) for bases object, BaseModelJSONSerializable
+______________________ ERROR collecting tests/test_run.py ______________________
+ImportError while importing test module '/home/engine/project/tests/test_run.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_run.py:8: in <module>
+    from fastapi.testclient import TestClient
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_________________ ERROR collecting src/architect/test_main.py __________________
+ImportError while importing test module '/home/engine/project/src/architect/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+__________________ ERROR collecting src/codegen/test_main.py ___________________
+ImportError while importing test module '/home/engine/project/src/codegen/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+___________ ERROR collecting src/consolidation/test_consolidator.py ____________
+ImportError while importing test module '/home/engine/project/src/consolidation/test_consolidator.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+__________________ ERROR collecting src/educator/test_main.py __________________
+ImportError while importing test module '/home/engine/project/src/educator/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+__________________ ERROR collecting src/feedback/test_main.py __________________
+ImportError while importing test module '/home/engine/project/src/feedback/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_______________ ERROR collecting src/idea_generator/test_main.py _______________
+ImportError while importing test module '/home/engine/project/src/idea_generator/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_____________ ERROR collecting src/ingest/test_audio_processor.py ______________
+ImportError while importing test module '/home/engine/project/src/ingest/test_audio_processor.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+___________ ERROR collecting src/ingest/test_audio_processor_run.py ____________
+ImportError while importing test module '/home/engine/project/src/ingest/test_audio_processor_run.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_____________ ERROR collecting src/ingest/test_image_processor.py ______________
+ImportError while importing test module '/home/engine/project/src/ingest/test_image_processor.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_____________ ERROR collecting src/ingest/test_ingest_pipeline.py ______________
+ImportError while importing test module '/home/engine/project/src/ingest/test_ingest_pipeline.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+________________ ERROR collecting src/integration/test_main.py _________________
+ImportError while importing test module '/home/engine/project/src/integration/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+___________________ ERROR collecting src/logger/test_main.py ___________________
+ImportError while importing test module '/home/engine/project/src/logger/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+____________ ERROR collecting src/memory_manager/test_interface.py _____________
+ImportError while importing test module '/home/engine/project/src/memory_manager/test_interface.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_______________ ERROR collecting src/memory_manager/test_main.py _______________
+ImportError while importing test module '/home/engine/project/src/memory_manager/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+__________ ERROR collecting src/memory_manager/test_memory_manager.py __________
+ImportError while importing test module '/home/engine/project/src/memory_manager/test_memory_manager.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+___________ ERROR collecting src/memory_manager/test_vector_store.py ___________
+ImportError while importing test module '/home/engine/project/src/memory_manager/test_vector_store.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_____________ ERROR collecting src/observability/test_audit_log.py _____________
+ImportError while importing test module '/home/engine/project/src/observability/test_audit_log.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+________________ ERROR collecting src/orchestrator/test_main.py ________________
+ImportError while importing test module '/home/engine/project/src/orchestrator/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+______________ ERROR collecting src/platform_logger/test_main.py _______________
+ImportError while importing test module '/home/engine/project/src/platform_logger/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+____________________ ERROR collecting src/qa/test_engine.py ____________________
+ImportError while importing test module '/home/engine/project/src/qa/test_engine.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_____________________ ERROR collecting src/qa/test_main.py _____________________
+ImportError while importing test module '/home/engine/project/src/qa/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_________________ ERROR collecting src/researcher/test_main.py _________________
+ImportError while importing test module '/home/engine/project/src/researcher/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+___________ ERROR collecting src/retrieval/test_hybrid_retriever.py ____________
+ImportError while importing test module '/home/engine/project/src/retrieval/test_hybrid_retriever.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_________________ ERROR collecting src/scheduler/test_main.py __________________
+ImportError while importing test module '/home/engine/project/src/scheduler/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+__________________ ERROR collecting src/security/test_main.py __________________
+ImportError while importing test module '/home/engine/project/src/security/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_______________ ERROR collecting src/tests/test_audit_logger.py ________________
+ImportError while importing test module '/home/engine/project/src/tests/test_audit_logger.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_______________ ERROR collecting src/tests/test_core_pipeline.py _______________
+ImportError while importing test module '/home/engine/project/src/tests/test_core_pipeline.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_____________ ERROR collecting src/tests/test_feedback_routine.py ______________
+ImportError while importing test module '/home/engine/project/src/tests/test_feedback_routine.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+__________________ ERROR collecting src/tests/test_indices.py __________________
+ImportError while importing test module '/home/engine/project/src/tests/test_indices.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_ ERROR collecting src/tests/test_kag_system/integration/test_episodic_memory_integration.py _
+ImportError while importing test module '/home/engine/project/src/tests/test_kag_system/integration/test_episodic_memory_integration.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_ ERROR collecting src/tests/test_kag_system/integration/test_full_memory_stack_integration.py _
+ImportError while importing test module '/home/engine/project/src/tests/test_kag_system/integration/test_full_memory_stack_integration.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_ ERROR collecting src/tests/test_kag_system/integration/test_memory_integration.py _
+ImportError while importing test module '/home/engine/project/src/tests/test_kag_system/integration/test_memory_integration.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_ ERROR collecting src/tests/test_kag_system/integration/test_semantic_memory_integration.py _
+ImportError while importing test module '/home/engine/project/src/tests/test_kag_system/integration/test_semantic_memory_integration.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+__ ERROR collecting src/tests/test_kag_system/unit/test_kag_graph_extended.py __
+src/tests/test_kag_system/unit/test_kag_graph_extended.py:17: in <module>
+    from knowledge_graph.kag_graph import KAGGraph, Concept, Relationship, RelationshipType, QueryResult
+src/knowledge_graph/__init__.py:13: in <module>
+    from .kag_graph import (
+src/knowledge_graph/kag_graph.py:23: in <module>
+    from memory_manager.memory_manager_interface import MemoryManager, MemoryLayer, MemoryItem
+src/memory_manager/__init__.py:21: in <module>
+    from .vector_store_client import VectorStoreClient, VectorStoreConfig, VectorItem
+src/memory_manager/vector_store_client.py:35: in <module>
+    import chromadb
+.venv/lib/python3.12/site-packages/chromadb/__init__.py:3: in <module>
+    from chromadb.api.client import Client as ClientCreator
+.venv/lib/python3.12/site-packages/chromadb/api/__init__.py:2: in <module>
+    from chromadb.execution.expression import (  # noqa: F401, F403
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/__init__.py:5: in <module>
+    from chromadb.execution.expression.operator import (
+.venv/lib/python3.12/site-packages/chromadb/execution/expression/operator.py:16: in <module>
+    from chromadb.types import (
+.venv/lib/python3.12/site-packages/chromadb/types.py:70: in <module>
+    class Collection(
+E   TypeError: Cannot create a consistent method resolution
+E   order (MRO) for bases object, BaseModelJSONSerializable
+_______________ ERROR collecting src/tests/test_memory_layers.py _______________
+ImportError while importing test module '/home/engine/project/src/tests/test_memory_layers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+__________________ ERROR collecting src/tests/test_metrics.py __________________
+ImportError while importing test module '/home/engine/project/src/tests/test_metrics.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_________________ ERROR collecting src/tests/test_mock_llm.py __________________
+ImportError while importing test module '/home/engine/project/src/tests/test_mock_llm.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_______________ ERROR collecting src/tests/test_orchestrator.py ________________
+ImportError while importing test module '/home/engine/project/src/tests/test_orchestrator.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+_______________ ERROR collecting src/tests/test_policy_engine.py _______________
+ImportError while importing test module '/home/engine/project/src/tests/test_policy_engine.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+___________________ ERROR collecting src/ui_ux/test_main.py ____________________
+ImportError while importing test module '/home/engine/project/src/ui_ux/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/__init__.py:7: in <module>
+    from .api import app
+src/api.py:11: in <module>
+    from fastapi import Body, FastAPI, File, Header, HTTPException, Request, UploadFile, BackgroundTasks, Path
+.venv/lib/python3.12/site-packages/fastapi/__init__.py:7: in <module>
+    from .applications import FastAPI as FastAPI
+.venv/lib/python3.12/site-packages/fastapi/applications.py:17: in <module>
+    from fastapi import routing
+.venv/lib/python3.12/site-packages/fastapi/routing.py:28: in <module>
+    from fastapi import params, temp_pydantic_v1_params
+.venv/lib/python3.12/site-packages/fastapi/params.py:6: in <module>
+    from fastapi.openapi.models import Example
+.venv/lib/python3.12/site-packages/fastapi/openapi/models.py:4: in <module>
+    from fastapi._compat import (
+.venv/lib/python3.12/site-packages/fastapi/_compat/__init__.py:1: in <module>
+    from .main import BaseConfig as BaseConfig
+.venv/lib/python3.12/site-packages/fastapi/_compat/main.py:12: in <module>
+    from fastapi._compat import may_v1
+.venv/lib/python3.12/site-packages/fastapi/_compat/may_v1.py:76: in <module>
+    from .v1 import AnyUrl as AnyUrl
+.venv/lib/python3.12/site-packages/fastapi/_compat/v1.py:16: in <module>
+    from fastapi._compat import shared
+.venv/lib/python3.12/site-packages/fastapi/_compat/shared.py:22: in <module>
+    from pydantic.version import VERSION as PYDANTIC_VERSION
+E   ModuleNotFoundError: No module named 'pydantic.version'; 'pydantic' is not a package
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/PyPDF2/__init__.py:21
+  /home/engine/project/.venv/lib/python3.12/site-packages/PyPDF2/__init__.py:21: DeprecationWarning: PyPDF2 is deprecated. Please move to the pypdf library instead.
+    warnings.warn(
+
+<frozen importlib._bootstrap>:488
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR tests/simple_git_processor_test.py - TypeError: Cannot create a consistent method resolution
+order (MRO) for bases object, BaseModelJSONSerializable
+ERROR tests/test_agent_factory.py - TypeError: Cannot create a consistent method resolution
+order (MRO) for bases object, BaseModelJSONSerializable
+ERROR tests/test_agents.py
+ERROR tests/test_base_agent.py - TypeError: Cannot create a consistent method resolution
+order (MRO) for bases object, BaseModelJSONSerializable
+ERROR tests/test_chat_stream.py
+ERROR tests/test_concept_extractor.py - TypeError: Cannot create a consistent method resolution
+order (MRO) for bases object, BaseModelJSONSerializable
+ERROR tests/test_core_connection.py
+ERROR tests/test_git_processor.py - TypeError: Cannot create a consistent method resolution
+order (MRO) for bases object, BaseModelJSONSerializable
+ERROR tests/test_health.py
+ERROR tests/test_kag_graph/test_comprehensive.py - TypeError: Cannot create a consistent method resolution
+order (MRO) for bases object, BaseModelJSONSerializable
+ERROR tests/test_kag_graph/test_memory_integration.py - TypeError: Cannot create a consistent method resolution
+order (MRO) for bases object, BaseModelJSONSerializable
+ERROR tests/test_memory_manager.py - TypeError: Cannot create a consistent method resolution
+order (MRO) for bases object, BaseModelJSONSerializable
+ERROR tests/test_memory_persistence.py - TypeError: Cannot create a consistent method resolution
+order (MRO) for bases object, BaseModelJSONSerializable
+ERROR tests/test_meta_agent.py - TypeError: Cannot create a consistent method resolution
+order (MRO) for bases object, BaseModelJSONSerializable
+ERROR tests/test_run.py
+ERROR src/architect/test_main.py
+ERROR src/codegen/test_main.py
+ERROR src/consolidation/test_consolidator.py
+ERROR src/educator/test_main.py
+ERROR src/feedback/test_main.py
+ERROR src/idea_generator/test_main.py
+ERROR src/ingest/test_audio_processor.py
+ERROR src/ingest/test_audio_processor_run.py
+ERROR src/ingest/test_image_processor.py
+ERROR src/ingest/test_ingest_pipeline.py
+ERROR src/integration/test_main.py
+ERROR src/logger/test_main.py
+ERROR src/memory_manager/test_interface.py
+ERROR src/memory_manager/test_main.py
+ERROR src/memory_manager/test_memory_manager.py
+ERROR src/memory_manager/test_vector_store.py
+ERROR src/observability/test_audit_log.py
+ERROR src/orchestrator/test_main.py
+ERROR src/platform_logger/test_main.py
+ERROR src/qa/test_engine.py
+ERROR src/qa/test_main.py
+ERROR src/researcher/test_main.py
+ERROR src/retrieval/test_hybrid_retriever.py
+ERROR src/scheduler/test_main.py
+ERROR src/security/test_main.py
+ERROR src/tests/test_audit_logger.py
+ERROR src/tests/test_core_pipeline.py
+ERROR src/tests/test_feedback_routine.py
+ERROR src/tests/test_indices.py
+ERROR src/tests/test_kag_system/integration/test_episodic_memory_integration.py
+ERROR src/tests/test_kag_system/integration/test_full_memory_stack_integration.py
+ERROR src/tests/test_kag_system/integration/test_memory_integration.py
+ERROR src/tests/test_kag_system/integration/test_semantic_memory_integration.py
+ERROR src/tests/test_kag_system/unit/test_kag_graph_extended.py - TypeError: Cannot create a consistent method resolution
+order (MRO) for bases object, BaseModelJSONSerializable
+ERROR src/tests/test_memory_layers.py
+ERROR src/tests/test_metrics.py
+ERROR src/tests/test_mock_llm.py
+ERROR src/tests/test_orchestrator.py
+ERROR src/tests/test_policy_engine.py
+ERROR src/ui_ux/test_main.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 55 errors during collection !!!!!!!!!!!!!!!!!!!
+=================== 111 tests collected, 55 errors in 6.50s ====================
