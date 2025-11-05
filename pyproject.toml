@@ -69,6 +69,19 @@ markers = [
     "slow: slower running scenarios guarded for CI",
 ]
 
+[tool.uv]
+dev-dependencies = [
+    "black>=24.8,<25",
+    "ruff>=0.6,<0.7",
+    "mypy>=1.11,<2",
+    "coverage[toml]>=7.6,<8",
+    "pytest>=8.3,<9",
+    "pytest-asyncio>=0.23,<0.25",
+    "pytest-cov>=5.0,<6",
+    "pytest-xdist>=3.6,<4",
+    "pytest-timeout>=2.3,<3",
+]
+
 [tool.coverage.run]
 branch = true
 source = ["src"]

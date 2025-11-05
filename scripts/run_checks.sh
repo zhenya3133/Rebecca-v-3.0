@@ -10,7 +10,7 @@ else
   PYTHON="python3"
 fi
 
-ruff check src tests
-black --check src tests
-mypy src
-pytest "$@"
+"$PYTHON" -m ruff check src tests
+"$PYTHON" -m black --check src tests
+"$PYTHON" -m mypy src
+"$PYTHON" -m pytest "$@"
