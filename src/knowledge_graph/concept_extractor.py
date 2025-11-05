@@ -22,15 +22,46 @@ from datetime import datetime
 from typing import Any, Dict, List, Optional, Set, Tuple, Union
 from pathlib import Path
 
-# NLP библиотеки
+# Configuration import
 try:
-    import spacy
-    import nltk
+    from configuration import is_offline_mode
+except ImportError:
+    import os
+    def is_offline_mode() -> bool:
+        return (
+            os.environ.get("REBECCA_OFFLINE_MODE", "").lower() in ("1", "true", "yes", "on") or
+            os.environ.get("REBECCA_TEST_MODE", "").lower() in ("1", "true", "yes", "on")
+        )
+
+# NLP библиотеки - ленивый импорт для offline mode
+spacy = None
+nltk = None
+SentenceTransformer = None
+
+if not is_offline_mode():
+    try:
+        import spacy
+    except ImportError:
+        logging.warning("spacy недоступен")
+    
+    try:
+        import nltk
+    except ImportError:
+        logging.warning("nltk недоступен")
+    
+    try:
+        from sentence_transformers import SentenceTransformer
+    except ImportError:
+        logging.warning("sentence_transformers недоступен")
+
+# sklearn импортируем всегда, так как это легковесная библиотека без моделей
+try:
     from sklearn.feature_extraction.text import TfidfVectorizer
     from sklearn.metrics.pairwise import cosine_similarity
-    from sentence_transformers import SentenceTransformer
 except ImportError as e:
-    logging.warning(f"Некоторые NLP библиотеки недоступны: {e}")
+    logging.warning(f"sklearn недоступен: {e}")
+    TfidfVectorizer = None
+    cosine_similarity = None
 
 # Импорты памяти (с fallback)
 try:
@@ -94,12 +125,20 @@ class SemanticGrouper:
         self.similarity_threshold = similarity_threshold
         self.embeddings_model = None
         
+        # В offline mode не пытаемся загружать модель
+        if is_offline_mode():
+            logger.info("Offline mode: пропускаем загрузку модели SentenceTransformer")
+            return
+        
         # Инициализация модели эмбеддингов
-        try:
-            self.embeddings_model = SentenceTransformer('all-MiniLM-L6-v2')
-            logger.info("Загружена модель SentenceTransformer")
-        except Exception as e:
-            logger.warning(f"Не удалось загрузить модель эмбеддингов: {e}")
+        if SentenceTransformer is not None:
+            try:
+                self.embeddings_model = SentenceTransformer('all-MiniLM-L6-v2')
+                logger.info("Загружена модель SentenceTransformer")
+            except Exception as e:
+                logger.warning(f"Не удалось загрузить модель эмбеддингов: {e}")
+        else:
+            logger.warning("SentenceTransformer не доступен")
     
     async def group_concepts(self, concepts: List[Concept]) -> List[List[Concept]]:
         """Группирует концепты по семантическому сходству."""
@@ -280,6 +319,18 @@ class ConceptExtractor:
     
     def _initialize_nlp_model(self):
         """Инициализирует NLP модель для обработки текста."""
+        # В offline mode пропускаем загрузку spaCy моделей
+        if is_offline_mode():
+            logger.info("Offline mode: пропускаем загрузку spaCy моделей, используем rule-based методы")
+            self.nlp_model = None
+            return
+        
+        # Если spaCy не импортирован, пропускаем
+        if spacy is None:
+            logger.warning("spaCy не доступен, будут использоваться только базовые методы извлечения")
+            self.nlp_model = None
+            return
+        
         try:
             # Пытаемся загрузить модель spaCy
             self.nlp_model = spacy.load("ru_core_news_sm")
@@ -292,6 +343,7 @@ class ConceptExtractor:
             except Exception as e2:
                 logger.warning(f"Не удалось загрузить модель spaCy: {e2}")
                 logger.warning("Будут использоваться только базовые методы извлечения")
+                self.nlp_model = None
     
     async def extract_from_text(self, 
                               text: str, 

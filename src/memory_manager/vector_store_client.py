@@ -11,6 +11,16 @@ import json
 import hashlib
 from pathlib import Path
 
+try:
+    from configuration import is_offline_mode
+except ImportError:
+    def is_offline_mode() -> bool:
+        import os
+        return (
+            os.environ.get("REBECCA_OFFLINE_MODE", "").lower() in ("1", "true", "yes", "on") or
+            os.environ.get("REBECCA_TEST_MODE", "").lower() in ("1", "true", "yes", "on")
+        )
+
 # Внешние зависимости с fallback
 try:
     import numpy as np
@@ -24,26 +34,49 @@ try:
 except ImportError:
     HTTPX_AVAILABLE = False
 
-try:
-    import qdrant_client
-    from qdrant_client.http import models as qdrant_models
-    QDRANT_AVAILABLE = True
-except ImportError:
-    QDRANT_AVAILABLE = False
+# Lazy imports for vector stores - only when not in offline mode
+QDRANT_AVAILABLE = False
+CHROMA_AVAILABLE = False
+WEAVIATE_AVAILABLE = False
 
-try:
-    import chromadb
-    from chromadb.config import Settings as ChromaSettings
-    CHROMA_AVAILABLE = True
-except ImportError:
-    CHROMA_AVAILABLE = False
+def _lazy_import_qdrant():
+    """Lazily import Qdrant client."""
+    global QDRANT_AVAILABLE
+    if not is_offline_mode():
+        try:
+            import qdrant_client
+            from qdrant_client.http import models as qdrant_models
+            QDRANT_AVAILABLE = True
+            return qdrant_client, qdrant_models
+        except ImportError:
+            pass
+    return None, None
 
-try:
-    import weaviate
-    from weaviate.classes.config import Configure, Property, DataType
-    WEAVIATE_AVAILABLE = True
-except ImportError:
-    WEAVIATE_AVAILABLE = False
+def _lazy_import_chroma():
+    """Lazily import ChromaDB."""
+    global CHROMA_AVAILABLE
+    if not is_offline_mode():
+        try:
+            import chromadb
+            from chromadb.config import Settings as ChromaSettings
+            CHROMA_AVAILABLE = True
+            return chromadb, ChromaSettings
+        except ImportError:
+            pass
+    return None, None
+
+def _lazy_import_weaviate():
+    """Lazily import Weaviate."""
+    global WEAVIATE_AVAILABLE
+    if not is_offline_mode():
+        try:
+            import weaviate
+            from weaviate.classes.config import Configure, Property, DataType
+            WEAVIATE_AVAILABLE = True
+            return weaviate, Configure, Property, DataType
+        except ImportError:
+            pass
+    return None, None, None, None
 
 
 @dataclass
@@ -171,27 +204,34 @@ class EmbeddingProvider:
     async def _create_local_embedding(self, text: str) -> List[float]:
         """Создает локальный embedding (заглушка)."""
         
-        # Простой хеш-базированный embedding для демонстрации
-        # В реальном проекте здесь был бы sentence-transformers или подобное
+        # В offline mode всегда используем детерминированный hash-based embedding
+        if is_offline_mode():
+            return self._deterministic_hash_embedding(text)
+        
+        # В online mode пытаемся использовать sentence-transformers
+        # Если недоступен, используем детерминированный embedding
         
         if not NUMPY_AVAILABLE:
             logging.warning("NumPy не доступен, используем простой embedding")
-            return self._simple_hash_embedding(text)
+            return self._deterministic_hash_embedding(text)
         
         # Простой embedding на основе хеша
-        hash_obj = hashlib.md5(text.encode())
+        return self._deterministic_hash_embedding(text)
+    
+    def _deterministic_hash_embedding(self, text: str) -> List[float]:
+        """Создает детерминированный embedding на основе хеша."""
+        # Используем SHA256 для более равномерного распределения
+        hash_obj = hashlib.sha256(text.encode('utf-8'))
         hash_bytes = hash_obj.digest()
         
         # Преобразуем в вектор нужного размера
         vector = [0.0] * self.config.vector_size
         
-        for i, byte_val in enumerate(hash_bytes):
-            if i < self.config.vector_size:
-                vector[i] = (byte_val / 255.0) * 2 - 1
-        
-        # Заполняем остальные измерения
-        for i in range(len(hash_bytes), self.config.vector_size):
-            vector[i] = (hash_obj.digest()[i % len(hash_bytes)] / 255.0) * 2 - 1
+        # Заполняем вектор байтами из хеша
+        for i in range(self.config.vector_size):
+            byte_idx = i % len(hash_bytes)
+            # Нормализуем в диапазон [-1, 1]
+            vector[i] = (hash_bytes[byte_idx] / 255.0) * 2 - 1
         
         return vector
     
@@ -209,6 +249,10 @@ class EmbeddingProvider:
     
     async def _create_openai_embedding(self, text: str) -> List[float]:
         """Создает embedding через OpenAI API."""
+        
+        if is_offline_mode():
+            logging.warning("OpenAI API вызовы отключены в offline mode, используем детерминированный embedding")
+            return self._deterministic_hash_embedding(text)
         
         if not HTTPX_AVAILABLE:
             raise RuntimeError("httpx не доступен для OpenAI API")
@@ -232,6 +276,10 @@ class EmbeddingProvider:
     
     async def _create_ollama_embedding(self, text: str) -> List[float]:
         """Создает embedding через Ollama API."""
+        
+        if is_offline_mode():
+            logging.warning("Ollama API вызовы отключены в offline mode, используем детерминированный embedding")
+            return self._deterministic_hash_embedding(text)
         
         if not HTTPX_AVAILABLE:
             raise RuntimeError("httpx не доступен для Ollama API")
@@ -677,29 +725,43 @@ class VectorStoreClient:
         
         self.stores = {}
         
+        # В offline mode используем только in-memory хранилище
+        if is_offline_mode():
+            self.stores["memory"] = MemoryVectorStore(self.config)
+            self.config.provider = "memory"
+            self.current_store = self.stores["memory"]
+            self.logger.info("Offline mode: используется только in-memory хранилище")
+            return
+        
         # Qdrant
-        if QDRANT_AVAILABLE and self.config.provider == "qdrant":
-            try:
-                self.stores["qdrant"] = QdrantStore(self.config)
-                self.logger.info("Инициализирован Qdrant store")
-            except Exception as e:
-                self.logger.error(f"Не удалось инициализировать Qdrant: {e}")
+        if self.config.provider == "qdrant":
+            qdrant_client, qdrant_models = _lazy_import_qdrant()
+            if qdrant_client:
+                try:
+                    self.stores["qdrant"] = QdrantStore(self.config)
+                    self.logger.info("Инициализирован Qdrant store")
+                except Exception as e:
+                    self.logger.error(f"Не удалось инициализировать Qdrant: {e}")
         
         # ChromaDB
-        if CHROMA_AVAILABLE and self.config.provider == "chroma":
-            try:
-                self.stores["chroma"] = ChromaStore(self.config)
-                self.logger.info("Инициализирован ChromaDB store")
-            except Exception as e:
-                self.logger.error(f"Не удалось инициализировать ChromaDB: {e}")
+        if self.config.provider == "chroma":
+            chromadb, ChromaSettings = _lazy_import_chroma()
+            if chromadb:
+                try:
+                    self.stores["chroma"] = ChromaStore(self.config)
+                    self.logger.info("Инициализирован ChromaDB store")
+                except Exception as e:
+                    self.logger.error(f"Не удалось инициализировать ChromaDB: {e}")
         
         # Weaviate
-        if WEAVIATE_AVAILABLE and self.config.provider == "weaviate":
-            try:
-                self.stores["weaviate"] = WeaviateStore(self.config)
-                self.logger.info("Инициализирован Weaviate store")
-            except Exception as e:
-                self.logger.error(f"Не удалось инициализировать Weaviate: {e}")
+        if self.config.provider == "weaviate":
+            weaviate, Configure, Property, DataType = _lazy_import_weaviate()
+            if weaviate:
+                try:
+                    self.stores["weaviate"] = WeaviateStore(self.config)
+                    self.logger.info("Инициализирован Weaviate store")
+                except Exception as e:
+                    self.logger.error(f"Не удалось инициализировать Weaviate: {e}")
         
         # Fallback память
         self.stores["memory"] = MemoryVectorStore(self.config)

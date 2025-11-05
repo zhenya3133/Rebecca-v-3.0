@@ -35,8 +35,30 @@ uvicorn src.api:app --host 127.0.0.1 --port 8000 --reload
 - Upload: `curl -H "Authorization: Bearer $REBECCA_API_TOKEN" -F "file=@docs/ARCHITECTURE.md" http://127.0.0.1:8000/documents/upload`
 
 ## Тесты
+
+### Обычный режим
 - Smoke: `python -m pytest tests/test_health.py tests/test_run.py tests/test_core_connection.py src/retrieval/test_hybrid_retriever.py`
 - Полный прогон: `python -m pytest -q`
+
+### Offline режим (без сети и загрузки моделей)
+```bash
+# Все тесты автоматически запускаются в offline mode через conftest.py
+python -m pytest -v
+
+# Явная активация offline mode
+export REBECCA_OFFLINE_MODE=1
+python -m pytest tests/
+
+# Для Windows PowerShell
+$env:REBECCA_OFFLINE_MODE="1"
+python -m pytest tests/
+```
+
+**Offline mode обеспечивает:**
+- Детерминированные результаты без внешних зависимостей
+- Быстрое выполнение без загрузки ML моделей
+- Возможность запуска в CI/CD без доступа к сети
+- In-memory хранилища вместо внешних БД
 
 ## Docker compose
 ```bash
