@@ -574,6 +574,100 @@ def validate_agent_setup(agent: RebeccaMetaAgent) -> Dict[str, Any]:
     }
 
 
+class OfflineLLMStub:
+    """Deterministic LLM stub for offline mode testing."""
+    
+    @staticmethod
+    def generate_response(prompt: str, max_tokens: int = 100, temperature: float = 0.0) -> str:
+        """
+        Generate a deterministic response based on the prompt.
+        
+        Args:
+            prompt: Input prompt
+            max_tokens: Maximum tokens (ignored in offline mode)
+            temperature: Temperature parameter (ignored in offline mode)
+            
+        Returns:
+            Deterministic response based on prompt hash
+        """
+        import hashlib
+        
+        hash_val = int(hashlib.sha256(prompt.encode()).hexdigest()[:16], 16)
+        
+        templates = [
+            "Based on the provided information, I can help you with that task. The key considerations are outlined in the context.",
+            "After analyzing the request, here is a structured approach: First, we need to understand the requirements. Second, implement the solution. Third, validate the results.",
+            "The system has processed your request. In offline mode, responses are generated deterministically without external API calls.",
+            "This is a deterministic response generated from the input prompt. The content is predictable and reproducible.",
+            "According to the information provided, the recommended approach involves careful planning and systematic execution.",
+        ]
+        
+        response = templates[hash_val % len(templates)]
+        
+        if "code" in prompt.lower() or "implement" in prompt.lower():
+            response += " Here's a code-based solution approach."
+        elif "analyze" in prompt.lower() or "review" in prompt.lower():
+            response += " A thorough analysis reveals important insights."
+        elif "test" in prompt.lower():
+            response += " Comprehensive testing should be performed."
+        
+        return response
+    
+    @staticmethod
+    def generate_embedding(text: str, model: str = "default") -> List[float]:
+        """
+        Generate a deterministic embedding for the text.
+        
+        Args:
+            text: Input text
+            model: Model name (ignored in offline mode)
+            
+        Returns:
+            Deterministic embedding vector
+        """
+        import hashlib
+        
+        hash_obj = hashlib.sha256(text.encode('utf-8'))
+        hash_bytes = hash_obj.digest()
+        
+        embedding_size = 384
+        embedding = []
+        
+        for i in range(embedding_size):
+            byte_idx = i % len(hash_bytes)
+            value = (hash_bytes[byte_idx] / 255.0) * 2 - 1
+            embedding.append(value)
+        
+        return embedding
+    
+    @staticmethod
+    def score_relevance(query: str, document: str) -> float:
+        """
+        Score the relevance between query and document.
+        
+        Args:
+            query: Query text
+            document: Document text
+            
+        Returns:
+            Relevance score between 0 and 1
+        """
+        import hashlib
+        
+        query_words = set(query.lower().split())
+        doc_words = set(document.lower().split())
+        
+        if not query_words:
+            return 0.5
+        
+        overlap = len(query_words & doc_words) / len(query_words)
+        
+        hash_val = int(hashlib.md5((query + document).encode()).hexdigest()[:8], 16)
+        hash_component = (hash_val % 100) / 1000
+        
+        return min(1.0, 0.3 + overlap * 0.7 + hash_component)
+
+
 # Экспорт утилит
 __all__ = [
     "MetaAgentValidator",
@@ -583,5 +677,6 @@ __all__ = [
     "save_agent_config",
     "load_agent_config",
     "create_sample_blueprint",
-    "validate_agent_setup"
+    "validate_agent_setup",
+    "OfflineLLMStub"
 ]

@@ -17,6 +17,21 @@ class ConfigError(RuntimeError):
     """Raised when configuration cannot be loaded."""
 
 
+def is_offline_mode() -> bool:
+    """Check if the system is running in offline mode.
+    
+    Offline mode disables external network calls, model downloads,
+    and uses deterministic stubs for testing.
+    
+    Returns:
+        True if offline mode is enabled via REBECCA_OFFLINE_MODE or REBECCA_TEST_MODE
+    """
+    return (
+        os.environ.get("REBECCA_OFFLINE_MODE", "").lower() in ("1", "true", "yes", "on") or
+        os.environ.get("REBECCA_TEST_MODE", "").lower() in ("1", "true", "yes", "on")
+    )
+
+
 @lru_cache(maxsize=1)
 def load_config(config_path: Path | None = None) -> Dict[str, Any]:
     path = config_path or DEFAULT_CONFIG_PATH

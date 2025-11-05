@@ -4,6 +4,16 @@ from typing import Dict, Iterable, List, Tuple
 from .scorers import fusion_score
 from .llm_evaluator import llm_judge_relevancy
 
+try:
+    from configuration import is_offline_mode
+except ImportError:
+    import os
+    def is_offline_mode() -> bool:
+        return (
+            os.environ.get("REBECCA_OFFLINE_MODE", "").lower() in ("1", "true", "yes", "on") or
+            os.environ.get("REBECCA_TEST_MODE", "").lower() in ("1", "true", "yes", "on")
+        )
+
 
 class HybridRetriever:
     def __init__(self, dao, graph_view, bm25_idx, vec_idx):
@@ -48,6 +58,7 @@ class HybridRetriever:
             }
             candidates.append(candidate)
 
+        # LLM evaluation работает и в offline mode, но использует детерминированную оценку
         if use_llm_eval:
             for candidate in candidates:
                 llm_score = llm_judge_relevancy(query, candidate.get("text", ""))
