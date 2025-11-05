@@ -1,0 +1,40 @@
+# Python cache and artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+.venv*/
+test_env/
+
+# Packaging outputs
+build/
+dist/
+*.egg-info/
+uv.lock
+
+# Tool caches and reports
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+.coverage
+htmlcov/
+
+!reports/baseline/coverage.xml
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/
+
+# Logs and local data
+*.log
+*.sqlite3
+
+# Frontend artifacts
+frontend/node_modules/
+frontend/dist/
